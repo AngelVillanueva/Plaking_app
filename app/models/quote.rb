@@ -12,5 +12,6 @@
 #
 
 class Quote < ActiveRecord::Base
+  attr_accessible :cc_engine, :number_cylinders, :stroke
   
 end

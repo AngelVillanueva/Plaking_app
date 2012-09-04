@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903180210) do
+ActiveRecord::Schema.define(:version => 20120904153655) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(:version => 20120903180210) do
   create_table "prices", :force => true do |t|
     t.integer  "vehicle_id"
     t.integer  "city_id"
-    t.decimal  "price",      :precision => 10, :scale => 3
+    t.decimal  "price",            :precision => 10, :scale => 3
     t.integer  "year"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.integer  "cc_engine"
+    t.integer  "number_cylinders"
+    t.integer  "stroke"
   end
 
   add_index "prices", ["vehicle_id", "city_id", "year"], :name => "index_prices_on_type_id_and_city_id_and_year"
@@ -34,10 +37,13 @@ ActiveRecord::Schema.define(:version => 20120903180210) do
   create_table "quotes", :force => true do |t|
     t.string   "name"
     t.integer  "state_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "city"
     t.string   "vehicle"
+    t.integer  "cc_engine"
+    t.integer  "number_cylinders"
+    t.integer  "stroke"
   end
 
   create_table "states", :force => true do |t|

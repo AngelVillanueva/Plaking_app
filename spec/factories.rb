@@ -34,6 +34,7 @@ FactoryGirl.define do
     city
     price 199.99
     year 2012
+    cc_engine 125
   end
 
 end

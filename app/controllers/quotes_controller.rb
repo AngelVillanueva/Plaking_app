@@ -4,6 +4,7 @@ class QuotesController < ApplicationController
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
     @vehicles = Vehicle.all.collect{ |v| [v.name, v.id] }
+    @strokes = [2,4]
   end
   def create
     anho = Time.new.year

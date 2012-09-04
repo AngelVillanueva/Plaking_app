@@ -8,6 +8,12 @@
 <%= f.select :city, @cities %>
 <%= f.label :vehicle %>
 <%= f.select :vehicle, @vehicles %>
+<%= f.label :cc_engine, "Engine cc" %>
+<%= f.text_field :cc_engine %>
+<%= f.label :number_cylinders, "Cylinders" %>
+<%= f.text_field :number_cylinders %>
+<%= f.label :stroke %>
+<%= f.select :stroke, @strokes %>
 
 <%= f.submit %>
 

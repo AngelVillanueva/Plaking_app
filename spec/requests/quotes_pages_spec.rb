@@ -1,5 +1,19 @@
 require 'spec_helper'
 
+describe "Quotes" do
+
+  describe "The model" do
+    before { @quote = Quote.new}
+    
+    subject { @quote }
+    
+    it { should respond_to :cc_engine }
+    it { should respond_to :number_cylinders }
+    it { should respond_to :stroke }
+  end
+
+end
+
 describe "QuotesPages" do
   subject { page }
   
