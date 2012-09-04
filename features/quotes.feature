@@ -5,4 +5,4 @@ Scenario: new quote page after selecting an available State
   When I select "Abrera" as "City"
   And I select "Ciclomotor" as "Vehicle"
   And I click "Create Quote"
-  Then I should see "Your Quote is 99.999"
+  Then I should see "Your Quote is 199.99"

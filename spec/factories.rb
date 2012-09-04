@@ -32,7 +32,7 @@ FactoryGirl.define do
   factory :price do
     vehicle
     city
-    price 99.999
+    price 199.99
     year 2012
   end
 
