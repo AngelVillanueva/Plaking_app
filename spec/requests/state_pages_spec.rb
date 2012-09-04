@@ -1,0 +1,52 @@
+require 'spec_helper'
+
+describe "StatePages" do
+  subject { page }
+  let(:success_text) { "This State is covered" }
+  let(:error_text) { "Sorry, this State is not covered" }
+  let(:button_text) { "Check State" }
+  let(:field_label) { "Name" }
+    
+  describe "State model" do
+    before do
+      @state = FactoryGirl.create(:state)
+    end
+    
+    subject { @state }
+    it { should respond_to :name }
+    it { should respond_to :covered }
+    it { should respond_to :cities }
+    it { should be_valid }
+    
+    describe "State should have a name" do
+      before { @state.name = "" }
+      it { should_not be_valid }
+    end
+  end
+  
+  describe "Check page" do
+    before do
+      @state_available = FactoryGirl.create(:state)
+      @state_not_available = FactoryGirl.create(:state_not_covered)
+	  visit root_path   	
+	end
+    
+    it { should have_selector('h1', text: "Check your State") }
+    it { should have_content(@state_available.name) }
+    
+    it "should confirm that a state is available" do
+      select @state_available.name, from: field_label
+      click_button button_text
+      page.should have_content success_text
+      page.should_not have_content error_text
+      page.should have_selector('h1', text: "New Quote for #{@state_available.name} State")
+    end	
+    it "should notice that a state is not available" do
+      select @state_not_available.name, from: field_label
+      click_button button_text
+      page.should have_content error_text
+      page.should_not have_content success_text
+    end
+  end
+  
+end

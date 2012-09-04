@@ -1,0 +1,14 @@
+<h1>New Quote for <%= "#{@state.name}" %> State</h1>
+
+<%= form_for(@quote) do |f| %>
+
+<%= f.label :state_id %>
+<%= f.text_field :state_id, value: @state.name %>
+<%= f.label :city %>
+<%= f.select :city, @cities %>
+<%= f.label :vehicle %>
+<%= f.select :vehicle, @vehicles %>
+
+<%= f.submit %>
+
+<% end %>
