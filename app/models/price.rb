@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  vehicle_id :integer
 #  city_id    :integer
-#  price      :decimal(, )
+#  price      :decimal(10, 3)
 #  year       :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
