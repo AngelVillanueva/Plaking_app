@@ -1,7 +1,7 @@
 class Quote < ActiveRecord::Migration
   def change
     create_table :quotes do |t|
-      t.name :string
+      t.string :name
       t.integer :state_id
             
       t.timestamps

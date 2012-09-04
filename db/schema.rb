@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120903180210) do
   add_index "prices", ["vehicle_id", "city_id", "year"], :name => "index_prices_on_type_id_and_city_id_and_year"
 
   create_table "quotes", :force => true do |t|
+    t.string   "name"
     t.integer  "state_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
