@@ -12,3 +12,7 @@ end
 When /^I fill "(.*?)" in "(.*?)"$/ do |value, field|
   fill_in field, with: value
 end
+
+When /^I select the date "(.*?)" as "(.*?)"$/ do |date_value, date_field|
+  select_date date_field, with: date_value
+end

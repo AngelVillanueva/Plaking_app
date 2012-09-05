@@ -15,7 +15,7 @@
 <%= f.label :stroke %>
 <%= f.select :stroke, @strokes %>
 <%= f.label :plaking_date %>
-<%= f.text_field :plaking_date %>
+<%= f.date_select :plaking_date, order: [:day, :month, :year], start_year: Time.new.year %>
 
 <%= f.submit %>
 
