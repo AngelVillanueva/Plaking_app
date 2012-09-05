@@ -10,6 +10,7 @@ describe "Quotes" do
     it { should respond_to :cc_engine }
     it { should respond_to :number_cylinders }
     it { should respond_to :stroke }
+    it { should respond_to :plaking_date }
   end
 
 end
