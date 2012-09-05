@@ -1,6 +1,6 @@
-Feature: prueba
+Feature: Quote construction
 
-Scenario Outline: del crimen
+Scenario Outline: Happy Quote
   Given I am in the New Quote page
   When I select <city> as "City"
   And I select <vehicle> as "Vehicle"
