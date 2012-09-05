@@ -1,31 +1,18 @@
-Feature: New Quote page
+Feature: prueba
 
-Scenario: new quote for Ciclomotor
+Scenario Outline: del crimen
   Given I am in the New Quote page
-  When I select "Abrera" as "City"
-  And I select "Ciclomotor" as "Vehicle"
-  And I select the date "10-03-2012" as "Plaking date"
+  When I select <city> as "City"
+  And I select <vehicle> as "Vehicle"
+  And I fill <cc> in "Engine cc"
+  And I fill <cyls> in "Cylinders"
+  And I select <strokes> as "Stroke"
+  And I select the date <pdate> as "Plaking date"
   And I click "Create Quote"
-  Then I should see "Your Quote is 199.99"
+  Then I should see "Your Quote is <list_price>"
   
-Scenario: new quote for Motocicleta
-  Given I am in the New Quote page
-  When I select "Abrera" as "City"
-  And I select "Motocicleta" as "Vehicle"
-  And I fill "125" in "Engine cc"
-  And I fill "2" in "Cylinders"
-  And I select "2" as "Stroke"
-  And I select the date "15-10-2012" as "Plaking date"
-  And I click "Create Quote"
-  Then I should see "Your Quote is 74.998"
-
-Scenario: new quote for Turismo
-  Given I am in the New Quote page
-  When I select "Abrera" as "City"
-  And I select "Turismo" as "Vehicle"
-  And I fill "500" in "Engine cc"
-  And I fill "4" in "Cylinders"
-  And I select "4" as "Stroke"
-  And I select the date "31-01-2012" as "Plaking date"
-  And I click "Create Quote"
-  Then I should see "Your Quote is 599.99"
+Examples:
+  |  city    |     vehicle   |    cc   |   cyls  | strokes |     pdate    |  list_price  |
+  | "Abrera" | "Ciclomotor"  |    ""   |   ""    |   ""    | "10-03-2012" |    199.99    |
+  | "Abrera" | "Motocicleta" | "125"   |   "2"   |   "2"   | "15-10-2012" |    74.998    |
+  | "Abrera" | "Turismo"     | "500"   |   "4"   |   "4"   | "31-01-2012" |    599.99    |
