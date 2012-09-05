@@ -17,7 +17,7 @@ Scenario: new quote for Motocicleta
   And I select "2" as "Stroke"
   And I select the date "15-10-2012" as "Plaking date"
   And I click "Create Quote"
-  Then I should see "Your Quote is 299.99"
+  Then I should see "Your Quote is 74.998"
 
 Scenario: new quote for Turismo
   Given I am in the New Quote page
