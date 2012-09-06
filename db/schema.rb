@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905084302) do
+ActiveRecord::Schema.define(:version => 20120906102432) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -23,29 +23,30 @@ ActiveRecord::Schema.define(:version => 20120905084302) do
   create_table "prices", :force => true do |t|
     t.integer  "vehicle_id"
     t.integer  "city_id"
-    t.decimal  "price",            :precision => 10, :scale => 3
+    t.decimal  "price",      :precision => 10, :scale => 3
     t.integer  "year"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
-    t.integer  "cc_engine"
-    t.integer  "number_cylinders"
-    t.integer  "stroke"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "prices", ["vehicle_id", "city_id", "year"], :name => "index_prices_on_type_id_and_city_id_and_year"
 
   create_table "quotes", :force => true do |t|
     t.string   "name"
-    t.integer  "state_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "city"
-    t.string   "vehicle"
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.integer  "cc_engine"
     t.integer  "number_cylinders"
     t.integer  "stroke"
     t.date     "plaking_date"
+    t.decimal  "amount",           :precision => 10, :scale => 3
+    t.integer  "city_id"
+    t.integer  "vehicle_id"
   end
+
+  add_index "quotes", ["city_id", "vehicle_id"], :name => "index_quotes_on_city_id_and_vehicle_id"
+  add_index "quotes", ["city_id"], :name => "index_quotes_on_city_id"
+  add_index "quotes", ["vehicle_id"], :name => "index_quotes_on_vehicle_id"
 
   create_table "states", :force => true do |t|
     t.string   "name"
