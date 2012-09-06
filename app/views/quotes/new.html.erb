@@ -2,12 +2,10 @@
 
 <%= form_for(@quote) do |f| %>
 
-<%= f.label :state_id %>
-<%= f.text_field :state_id, value: @state.name %>
-<%= f.label :city %>
-<%= f.select :city, @cities %>
-<%= f.label :vehicle %>
-<%= f.select :vehicle, @vehicles %>
+<%= f.label :city_id %>
+<%= f.select :city_id, @cities %>
+<%= f.label :vehicle_id %>
+<%= f.select :vehicle_id, @vehicles %>
 <%= f.label :cc_engine, "Engine cc" %>
 <%= f.text_field :cc_engine %>
 <%= f.label :number_cylinders, "Cylinders" %>
