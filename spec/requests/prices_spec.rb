@@ -16,6 +16,19 @@ describe "Prices" do
       before { @price.price = "" }
       it { should_not be_valid }
     end
+    
+    describe "accessible attributes" do
+      it "should not allow vehicle massive assignment" do
+        expect do
+          Price.new(vehicle_id: 1)
+        end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+      end
+      it "should not allow city massive assignment" do
+        expect do
+          Price.new(city_id: 1)
+        end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+      end
+    end
 
   end
   
