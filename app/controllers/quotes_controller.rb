@@ -7,11 +7,28 @@ class QuotesController < ApplicationController
     @strokes = [2,4]
   end
   def create
+    myparams = params[:quote]
+    thevehi = params[:quote][:vehicle_id]
+    thecit = params[:quote][:city_id]
+    myparams.delete(:vehicle_id)
+    myparams.delete(:city_id)
+    
+    @quote = Quote.new(myparams)
+    @quote.city_id = thecit
+    @quote.vehicle_id = thevehi
+  
     anho = params[:quote]["plaking_date(1i)"].to_i
     month = params[:quote]["plaking_date(2i)"].to_i
     quarter_mod = return_quarter(month)
-    list_price = Price.find(:first, conditions: ["city_id= #{params[:quote][:city]} AND vehicle_id= #{params[:quote][:vehicle]} AND year = #{anho}"])
+    list_price = Price.find(:first, conditions: ["city_id= #{thecit} AND vehicle_id= #{thevehi} AND year = #{anho}"])
     @price = BigDecimal(list_price.price * quarter_mod,10).round(3)
+    
+    @quote.amount = @price
+    if @quote.save
+      flash.now.notice = "Your Quote is #{@quote.amount}"
+    else
+      redirect_to new_quote_path, alert: "Error saving the Quote"
+    end
   end
   
   private

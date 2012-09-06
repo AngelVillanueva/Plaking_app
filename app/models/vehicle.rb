@@ -11,6 +11,7 @@
 class Vehicle < ActiveRecord::Base
   attr_accessible :name
   has_many :prices
+  has_many :quotes
   
   validates :name, presence: true
 end

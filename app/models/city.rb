@@ -11,6 +11,7 @@ class City < ActiveRecord::Base
   attr_accessible :name
   belongs_to :state
   has_many :prices
+  has_many :quotes
   
   validates :name, :state_id, presence: true
 end

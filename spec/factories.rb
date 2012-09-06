@@ -35,5 +35,15 @@ FactoryGirl.define do
     price 199.99
     year 2012
   end
+  
+  factory :quote do
+    cc_engine 125
+    number_cylinders 2
+    stroke 2
+    amount 79.98
+    plaking_date "14/07/1971"
+    city
+    vehicle
+  end
 
 end
