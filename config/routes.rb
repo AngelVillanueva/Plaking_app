@@ -6,6 +6,7 @@ LlorensApp::Application.routes.draw do
   match '/states/checking' => 'states#checking', method: 'post'
   
   resources :quotes
+  resources :orders
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

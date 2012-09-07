@@ -16,6 +16,7 @@ describe "Quotes" do
     it { should respond_to :plaking_date }
     it { should respond_to :city_id }
     it { should respond_to :vehicle_id }
+    it { should respond_to :order }
     its(:city) { should == city }
     its(:vehicle) { should == vehicle }
     

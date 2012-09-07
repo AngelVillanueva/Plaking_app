@@ -19,6 +19,7 @@ class Quote < ActiveRecord::Base
   attr_accessible :cc_engine, :number_cylinders, :stroke, :plaking_date
   belongs_to :city
   belongs_to :vehicle
+  has_one :order
   
   validates :amount, :city_id, :vehicle_id, presence: true
 end
