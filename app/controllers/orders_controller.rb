@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   end
   def create
     @order = Order.new(params[:order])
-    @order.quote_id = 1
+    @order.quote_id = session[:quote]
     @order.status_id = 1 # correct order but not paid yet
     
     if @order.save

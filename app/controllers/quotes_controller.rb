@@ -25,7 +25,8 @@ class QuotesController < ApplicationController
     
     @quote.amount = @price
     if @quote.save
-      flash.now.notice = "Your Quote is #{@quote.amount}"
+      session[:quote] = @quote.id
+      flash.now.notice = "Your Quote is #{@quote.amount}}"
     else
       redirect_to new_quote_path, alert: "Error saving the Quote"
     end
