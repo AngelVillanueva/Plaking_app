@@ -1,5 +1,6 @@
 Given /^I am in the New Order page$/ do
   mock_price = FactoryGirl.create(:price)
+  FactoryGirl.create(:status)
   visit root_path
   select "Barcelona", from: "Name"
   click_button "Check State"

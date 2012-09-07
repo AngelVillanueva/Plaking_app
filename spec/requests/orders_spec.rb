@@ -26,8 +26,9 @@ describe "Orders" do
     it { should respond_to :address }
     it { should respond_to :email }
     it { should respond_to :phone_number }
+    it { should respond_to :shop }
     it { should respond_to :status }
-    it { should respond_to :quote_id }
+    it { should respond_to :quote }
     its(:quote) { should == quote }
     its(:status) { should == status }
     it { should be_valid }

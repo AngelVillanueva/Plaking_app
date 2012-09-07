@@ -56,6 +56,7 @@ FactoryGirl.define do
     address "Vandelvira 8, 3 dcha"
     email "ejemplo@ejemplo.es"
     phone_number "933739443"
+    shop "Concesionario Estupendo"
     status
     quote
   end

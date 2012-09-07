@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  def show
+    @order = Order.find(params[:id])
+  end
   def new
     @order = Order.new
   end
@@ -8,7 +11,7 @@ class OrdersController < ApplicationController
     @order.status_id = 1 # correct order but not paid yet
     
     if @order.save
-      redirect_to root_path, notice: "Thanks for your Order"
+      redirect_to @order, notice: "Thanks for your Order"
     else
       redirect_to new_order_path, notice: "Error saving the order"
     end
