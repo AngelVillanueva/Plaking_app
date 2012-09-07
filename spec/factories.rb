@@ -46,13 +46,17 @@ FactoryGirl.define do
     vehicle
   end
   
+  factory :status do
+    name "Pending documentation"
+  end
+  
   factory :order do
     first_name "Angel"
     last_name "Villalba"
     address "Vandelvira 8, 3 dcha"
     email "ejemplo@ejemplo.es"
     phone_number "933739443"
-    status 1
+    status
     quote
   end
 

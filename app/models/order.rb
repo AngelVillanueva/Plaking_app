@@ -17,6 +17,7 @@
 class Order < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :address, :email, :phone_number
   belongs_to :quote
+  belongs_to :status
   
-  validates :first_name, :last_name, :address, :quote_id, :status, presence: true
+  validates :first_name, :last_name, :address, :quote_id, :status_id, presence: true
 end

@@ -4,7 +4,8 @@ describe "Orders" do
   describe "the Model" do
     let(:black_order) { Order.new }
     let(:quote) { FactoryGirl.create(:quote) }
-    let(:order) { FactoryGirl.create(:order, quote: quote) }
+    let(:status) { FactoryGirl.create(:status) }
+    let(:order) { FactoryGirl.create(:order, quote: quote, status: status) }
 
     it "should have all required fields" do
       black_order.should_not be_valid
@@ -28,6 +29,7 @@ describe "Orders" do
     it { should respond_to :status }
     it { should respond_to :quote_id }
     its(:quote) { should == quote }
+    its(:status) { should == status }
     it { should be_valid }
     
   end
