@@ -1,6 +1,6 @@
-Feature: creating new Orders
+Feature: handling Orders
 
-Scenario Outline: Happy Path
+Scenario Outline: Happy Path for a New Order
   Given I am in the New Order page
   When I fill <fname> in "First name"
   And I fill <lname> in "Last name"
