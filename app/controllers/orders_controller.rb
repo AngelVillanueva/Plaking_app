@@ -22,4 +22,17 @@ class OrdersController < ApplicationController
       redirect_to new_order_path, notice: "Error saving the order"
     end
   end
+  def edit
+    @order = Order.find(params[:id])
+    @statuses = Status.all.collect{|s| [s.name, s.id] }
+  end
+  def update
+    @order = Order.find(params[:id])
+    
+    if @order.update_attributes(params[:order])
+      redirect_to @order, notice: "The order was updated with the new status"
+    else
+      redirect_to @order, notice: "Error updating the order"
+    end
+  end
 end

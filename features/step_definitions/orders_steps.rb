@@ -9,3 +9,9 @@ Given /^I am in the New Order page$/ do
   click_button "Create Quote"
   click_link "Accept and Continue"
 end
+
+Given /^I am in the Edit Order page$/ do
+  order = FactoryGirl.create(:order)
+  FactoryGirl.create(:status, name: "Documentation sent")
+  visit edit_order_path(order)
+end

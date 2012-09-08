@@ -2,7 +2,7 @@
 
 <h1>Order #<%= @order.id %></h1>
 
-<p>The status of your order is: "<%= @order.status.name %>"</p>
+<p>The status of your order is: <%= @order.status.name %></p>
 
 <h2>Next steps</h2>
 <p>Please <%= link_to("download the attached documents", yield(:pdf_order_path)) %> and send them back to us once signed</p>

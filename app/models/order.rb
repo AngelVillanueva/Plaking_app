@@ -16,7 +16,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :address, :email, :phone_number, :shop
+  attr_accessible :first_name, :last_name, :address, :email, :phone_number, :shop, :status_id
   belongs_to :quote
   belongs_to :status
   

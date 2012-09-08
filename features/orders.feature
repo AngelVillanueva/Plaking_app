@@ -16,3 +16,11 @@ Examples:
   | "Angela" | "Villanueva" |        "Rambla Jujol, 15"          |    "test@example.com"    |     "902100100"    |   "Concesionario Estu"   |
   | "Miguel" | "Pedrosa"    |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
   | "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
+  
+  
+Scenario: Happy Path for Editing an Order
+  Given I am in the Edit Order page
+  When I select "Documentation sent" as "Status"
+  And I click "Update Order"
+  Then I should see "The order was updated with the new status"
+  And I should see "The status of your order is: Documentation sent"
