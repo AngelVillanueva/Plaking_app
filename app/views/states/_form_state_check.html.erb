@@ -1,7 +1,6 @@
-<%= form_for(@state, url: '/states/checking') do |f| %>
+<%= simple_form_for(@state, url: '/states/checking') do |f| %>
 
-<%= f.label :name %>
 <%= f.select :name, @states %>
-<%= f.submit "Check State" %>
+<%= f.button :submit, "Check State", class: 'btn-primary' %>
 
 <% end %>
