@@ -1,6 +1,8 @@
+<% provide :title, 'New User' %>
+
 <h1>Create new User</h1>
 
-<%= form_for(@user) do |f| %>
+<%= simple_form_for(@user, html: {class: 'form-vertical'}) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :email %>
