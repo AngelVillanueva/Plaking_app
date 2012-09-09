@@ -1,6 +1,10 @@
-<%= simple_form_for(@state, url: '/states/checking') do |f| %>
-
-<%= f.select :name, @states %>
-<%= f.button :submit, "Check State", class: 'btn-primary' %>
-
-<% end %>
+<div class="">
+	<div class="">
+		<%= simple_form_for(@state, url: '/states/checking', html: {class: 'form-inline'}) do |f| %>
+		
+			<%= f.select :name, @states %>
+			<%= f.button :submit, "Check State", class: 'btn-primary' %>
+		
+		<% end %>
+	</div>
+</div>

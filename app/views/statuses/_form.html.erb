@@ -1,7 +1,11 @@
-<%= simple_form_for(@status, html: {class: 'form-vertical'}) do |f| %>
-
-<%= f.input :name %>
-
-<%= f.button :submit, class: 'btn btn-primary' %>
-
-<% end %>
+<div class="row">
+	<div class="span6 offset3">
+		<%= simple_form_for(@status, html: {class: 'form-vertical'}) do |f| %>
+		
+			<%= f.input :name %>
+			
+			<%= f.button :submit, class: 'btn btn-large btn-primary' %>
+		
+		<% end %>
+	</div>
+</div>
