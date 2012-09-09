@@ -19,7 +19,9 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to @order, notice: "Thanks for your Order"
     else
-      redirect_to new_order_path, notice: "Error saving the order"
+      flash.now.alert = "Error saving the order"
+      render 'new'
+      #redirect_to new_order_path, notice: "Error saving the order"
     end
   end
   def edit
@@ -32,7 +34,9 @@ class OrdersController < ApplicationController
     if @order.update_attributes(params[:order])
       redirect_to @order, notice: "The order was updated with the new status"
     else
-      redirect_to @order, notice: "Error updating the order"
+      flash.now.alert = "Error updating the order"
+      render 'edit'
+      #redirect_to @order, notice: "Error updating the order"
     end
   end
 end

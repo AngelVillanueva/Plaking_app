@@ -11,7 +11,8 @@ class StatusesController < ApplicationController
     if @status.save
       redirect_to statuses_path, notice: "New Status added"
     else
-      redirect_to new_status_path, alert: "Error saving the Status"
+      flash.now.alert = "Error saving the Status"
+      render 'new'
     end
   end
 end
