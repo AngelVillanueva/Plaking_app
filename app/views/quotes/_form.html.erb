@@ -1,0 +1,16 @@
+<%= simple_form_for(@quote, html: {class: 'form-vertical'}) do |f| %>
+
+<%= f.label :city_id %>
+<%= f.select :city_id, @cities %>
+<%= f.label :vehicle_id %>
+<%= f.select :vehicle_id, @vehicles %>
+<%= f.input :cc_engine, label: "Engine cc" %>
+<%= f.input :number_cylinders, label: "Cylinders" %>
+<%= f.label :stroke %>
+<%= f.select :stroke, @strokes %>
+<%= f.label :plaking_date %>
+<%= f.date_select :plaking_date, order: [:day, :month, :year], start_year: Time.new.year %>
+
+<%= f.button :submit, class: 'btn btn-primary' %>
+
+<% end %>

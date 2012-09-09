@@ -2,21 +2,4 @@
 
 <h1>New Quote for <%= "#{@state.name}" %> State</h1>
 
-<%= form_for(@quote) do |f| %>
-
-<%= f.label :city_id %>
-<%= f.select :city_id, @cities %>
-<%= f.label :vehicle_id %>
-<%= f.select :vehicle_id, @vehicles %>
-<%= f.label :cc_engine, "Engine cc" %>
-<%= f.text_field :cc_engine %>
-<%= f.label :number_cylinders, "Cylinders" %>
-<%= f.text_field :number_cylinders %>
-<%= f.label :stroke %>
-<%= f.select :stroke, @strokes %>
-<%= f.label :plaking_date %>
-<%= f.date_select :plaking_date, order: [:day, :month, :year], start_year: Time.new.year %>
-
-<%= f.submit %>
-
-<% end %>
+<%= render 'form' %>
