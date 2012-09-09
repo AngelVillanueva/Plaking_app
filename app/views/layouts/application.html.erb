@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <header class="navbar navbar-fixed-top">
+  <!--<header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <%= link_to "Matricula El Coche", '#', id: "logo" %>
@@ -24,15 +24,29 @@
         </nav>
        </div>
     </div>
+  </header>-->
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Matricula El Coche", '#', id: "logo" %>
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Home",    '#' %></li>
+            <li><%= link_to "Help",    '#' %></li>
+            <li><%= link_to "Sign in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
   
   <div class="container">
   
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "flash #{key}") %>
-  <% end %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "flash alert alert-#{key}") %>
+    <% end %>
 
-  <%= yield %>
+    <%= yield %>
   
   </div>
 
