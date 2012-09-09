@@ -5,7 +5,7 @@ Given /^I am in the New Quote page$/ do
   coche = FactoryGirl.create(:vehicle, name: "Turismo")
   FactoryGirl.create(:price, city_id: basic_price.city.id, vehicle_id: coche.id, price: 599.99)
   visit root_path
-  select "Barcelona", from: "Name"
+  select "Barcelona", from: "state_name"
   click_button "Check State"
 end
 
