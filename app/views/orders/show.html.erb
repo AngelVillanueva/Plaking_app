@@ -1,3 +1,4 @@
+<% provide :title, "Order #{@order.id}" %>
 <% provide(:pdf_order_path, order_path + ".pdf") %>
 
 <h1>Order #<%= @order.id %></h1>
