@@ -8,6 +8,7 @@ LlorensApp::Application.routes.draw do
   resources :quotes
   resources :orders
   resources :statuses
+  resources :users
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

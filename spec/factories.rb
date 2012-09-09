@@ -60,5 +60,12 @@ FactoryGirl.define do
     status
     quote
   end
+  
+  factory :user do
+    name "El administrador"
+    email "ejemplo@example.com"
+    password "foobar"
+    password_confirmation "foobar"
+  end
 
 end

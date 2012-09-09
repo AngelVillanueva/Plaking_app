@@ -84,4 +84,19 @@ describe User do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
+  describe "the creation impacts the User count" do
+    it "should increase the count when created successfully" do
+      expect do
+        @user.save
+      end.to change(User, :count)
+    end
+  describe "saving errors not impact the User count" do
+    before { @user.name = "" }
+    it "should not increase the count when there was a saving error" do
+      expect do
+        @user.save
+      end.not_to change(User, :count)
+    end
+  end
+  end
 end
