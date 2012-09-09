@@ -2,10 +2,4 @@
 
 <h1>Edit Order id#<%= @order.id %></h1>
 
-<%= form_for(@order) do |f| %>
-  <%= f.label :status_id %>
-  <%= f.select :status_id, @statuses %>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'status_form' %>

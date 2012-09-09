@@ -1,0 +1,12 @@
+<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
+
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :address %>
+  <%= f.input :email %>
+  <%= f.input :phone_number %>
+  <%= f.input :shop %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+
+<% end %>

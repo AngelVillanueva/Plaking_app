@@ -1,0 +1,7 @@
+<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
+  <%= f.label :status_id %>
+  <%= f.select :status_id, @statuses %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+
+<% end %>
