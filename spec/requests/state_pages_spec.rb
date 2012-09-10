@@ -16,6 +16,7 @@ describe "StatePages" do
     it { should respond_to :name }
     it { should respond_to :covered }
     it { should respond_to :cities }
+    it { should respond_to :cp_prefix }
     it { should be_valid }
     
     describe "State should have a name" do

@@ -13,11 +13,13 @@ FactoryGirl.define do
   factory :state do
     name "Barcelona"
     covered true
+    cp_prefix "08"
   end
   
   factory :state_not_covered, class: "State" do
     name "Albacete"
     covered false
+    cp_prefix "02"
   end
   
   factory :city, class: "City" do
