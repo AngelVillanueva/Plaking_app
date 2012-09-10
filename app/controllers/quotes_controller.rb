@@ -28,7 +28,7 @@ class QuotesController < ApplicationController
       session[:quote] = @quote.id
       flash.now.notice = "Your Quote is #{@quote.amount}"
     else
-      flash.now.alert = "Error saving the Quote"
+      flash.now[:error] = "Error saving the Quote"
       render 'new'
     end
   end

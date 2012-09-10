@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user, notice: "The new user was created successfully"
     else
-      flash.now.alert = "Error saving the user"
+      flash.now[:error] = "Error saving the user"
       render 'new'
     end
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       redirect_to @user, notice: "The User was updated successfully"
     else
-      flash.now.alert = "Error saving the user"
+      flash.now[:error] = "Error saving the user"
       render 'edit'
     end
   end
