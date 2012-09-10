@@ -40,3 +40,4 @@ Scenario: error message dissapears after next request
   
 Scenario: Happy path to Sign out
   Given I am signed in
+  When I follow the "Sign out" link

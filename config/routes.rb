@@ -12,7 +12,8 @@ LlorensApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup' => 'users#new'
   match '/signin' => 'sessions#new'
-  match '/signout' => 'sessions#destroy', via: 'delete'
+  #match '/signout' => 'sessions#destroy', via: 'delete'
+  match '/signout' => 'sessions#destroy'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
