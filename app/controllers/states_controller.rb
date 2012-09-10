@@ -1,6 +1,6 @@
 class StatesController < ApplicationController
   def check
-    if !State.all.size
+    if State.all.size == 0
       redirect_to signin_path, notice: "No State data in db"
     else
       @state = State.new
