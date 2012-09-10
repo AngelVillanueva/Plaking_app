@@ -9,9 +9,9 @@
 #
 
 class Vehicle < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :code
   has_many :prices
   has_many :quotes
   
-  validates :name, presence: true
+  validates :name, :code, presence: true
 end

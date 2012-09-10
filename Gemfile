@@ -19,6 +19,7 @@ group :development, :test do
 
 group :development do
   gem 'annotate', '2.5.0'
+  gem 'fast_seeder'
 end
 # Gems used only for assets and not required
 # in production environments by default.

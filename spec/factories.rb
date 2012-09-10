@@ -27,6 +27,7 @@ FactoryGirl.define do
   
   factory :vehicle do
     name "Ciclomotor"
+    code "F1"
   end
   
   factory :price do
