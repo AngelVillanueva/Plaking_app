@@ -2,7 +2,7 @@ Feature: User authentication
 
 Scenario: Happy path to Sign in
   Given I am in the Sign in page
-  When I fill "a@ex.com" in "Email"
+  When I fill "a@b.com" in "Email"
   And I fill "foobar" in "Password"
   And I click "Sign in"
   Then I should see "Welcome to the User area, Angel"
@@ -26,7 +26,7 @@ Scenario Outline: Incorrect Sign in
   |    email   | password |
   |     ""     |    ""    |
   |     ""     | "foobar" |
-  | "a@ex.com" |    ""    |
+  | "a@b.com" |    ""    |
   |   "Angek"  | "foobar" |
   | "a@ex.com" | "foobak" |
   |   "Angek"  | "foobak" |

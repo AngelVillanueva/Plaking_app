@@ -15,7 +15,7 @@ Given /^I am signed in$/ do
   FactoryGirl.create(:state)
   FactoryGirl.create(:user)
   visit signin_path
-  fill_in "Email", with: "a@ex.com"
+  fill_in "Email", with: "a@b.com"
   fill_in "Password", with: "foobar"
   click_button "Sign in"
 end
