@@ -1,12 +1,3 @@
-#@state_covered = State.create(name: "Barcelona", covered: true)
-#@state_not_covered = State.create(name: "Albacete", covered: false)
-#@city_covered = @state_covered.cities.build(name: "Abrera").save
-
-#FactoryGirl.create(:state)
-#FactoryGirl.create(:state_not_covered)
-#FactoryGirl.create(:city_covered)
-
-
 Given /^I am in the homepage$/ do
     FactoryGirl.create(:state)
     FactoryGirl.create(:state_not_covered)
