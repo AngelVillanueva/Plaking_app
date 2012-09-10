@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910082240) do
+ActiveRecord::Schema.define(:version => 20120910171006) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20120910082240) do
   add_index "prices", ["vehicle_id", "city_id", "year"], :name => "index_prices_on_type_id_and_city_id_and_year"
 
   create_table "quotes", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at",                                      :null => false
     t.datetime "updated_at",                                      :null => false
     t.integer  "cc_engine"
@@ -56,10 +55,6 @@ ActiveRecord::Schema.define(:version => 20120910082240) do
     t.integer  "city_id"
     t.integer  "vehicle_id"
   end
-
-  add_index "quotes", ["city_id", "vehicle_id"], :name => "index_quotes_on_city_id_and_vehicle_id"
-  add_index "quotes", ["city_id"], :name => "index_quotes_on_city_id"
-  add_index "quotes", ["vehicle_id"], :name => "index_quotes_on_vehicle_id"
 
   create_table "states", :force => true do |t|
     t.string   "name"
