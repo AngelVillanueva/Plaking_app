@@ -12,6 +12,7 @@ Then /^I should not see the link "(.*?)"$/ do |link_text|
 end
 
 Given /^I am signed in$/ do
+  FactoryGirl.create(:state)
   FactoryGirl.create(:user)
   visit signin_path
   fill_in "Email", with: "a@ex.com"
