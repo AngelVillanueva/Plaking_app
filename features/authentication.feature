@@ -41,3 +41,6 @@ Scenario: error message dissapears after next request
 Scenario: Happy path to Sign out
   Given I am signed in
   When I follow the "Sign out" link
+  Then I should see "Welcome to Matricula El Coche"
+  And I should see the link "Sign in"
+  And I should not see the link "Sign out"
