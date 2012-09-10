@@ -17,7 +17,7 @@ Given /^I am in the Edit User page$/ do
 end
 
 Given /^I am in the New User page$/ do
-  visit new_user_path
+  visit signup_path
 end
 
 Then /^the "(.*?)" count should be increased by "(.*?)"$/ do |model, range|
