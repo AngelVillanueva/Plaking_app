@@ -6,7 +6,7 @@ Given /^I am not signed in$/ do
   visit root_path
 end
 
-Given /^I sign in at the application$/ do
+Given /^I am signed in at the application$/ do
   user = FactoryGirl.create(:user)
   visit signin_path
   fill_in "Email", with: user.email
@@ -37,4 +37,18 @@ end
 
 Then /^the "(.*?)" count should not be increased by "(.*?)"$/ do |model, range|
   expect { click_button "Create User" }.not_to change(model.constantize, :count).by(range.to_i)
+end
+
+When /^I try to edit a different user$/ do
+  other_user = FactoryGirl.create(:user, email: "another@ex.com")
+  visit edit_user_path(other_user)
+end
+
+Given /^I am at the Edit my User page$/ do
+  own_user = FactoryGirl.create(:user)
+  visit signin_path
+  fill_in "Email", with: own_user.email
+  fill_in "Password", with: own_user.password
+  click_button "Sign in"
+  visit edit_user_path(own_user)
 end
