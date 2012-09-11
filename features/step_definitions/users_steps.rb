@@ -1,6 +1,17 @@
 Given /^I am in the Users page$/ do
-  FactoryGirl.create(:user)
   visit users_path
+end
+
+Given /^I am not signed in$/ do
+  visit root_path
+end
+
+Given /^I sign in at the application$/ do
+  user = FactoryGirl.create(:user)
+  visit signin_path
+  fill_in "Email", with: user.email
+  fill_in "Password", with: user.password
+  click_button "Sign in"
 end
 
 Then /^I should see the header "(.*?)"$/ do |header_text|
@@ -12,7 +23,7 @@ Given /^I see a User called "(.*?)"$/ do |theuser|
 end
 
 Given /^I am in the Edit User page$/ do
-  user = FactoryGirl.create(:user)
+  user = FactoryGirl.create(:user, email: "another@ex.com")
   visit edit_user_path(user)
 end
 

@@ -1,13 +1,3 @@
-#Factory.define :state_covered, class: "State" do |s|
-#  s.name "Barcelona"
-#  s.covered true
-#end
-#
-#Factory.define :state_not_covered, class: "State" do |s|
-#  s.name "Albacete"
-#  s.covered false
-#end
-
 FactoryGirl.define do
 
   factory :state do

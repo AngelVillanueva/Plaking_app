@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :signed_in_user, only: [:index, :show, :edit, :update]
+  
   def index
     @users = User.all
   end
@@ -12,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
+      sign_in(@user) unless signed_in?  # the unless case covers the Admin role ????
       redirect_to @user, notice: "The new user was created successfully"
     else
       flash.now[:error] = "Error saving the user"
@@ -32,5 +35,11 @@ class UsersController < ApplicationController
       flash.now[:error] = "Error saving the user"
       render 'edit'
     end
+  end
+  
+  private
+  def signed_in_user
+    flash[:error] = "Please, sign in"
+    redirect_to signin_url unless signed_in?
   end
 end

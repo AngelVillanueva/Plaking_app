@@ -1,17 +1,32 @@
 Feature: handling the Users resource
 
+Scenario: Not signed in users cannot access Users page
+  Given I am not signed in
+  When I am in the Users page
+  Then I should see the header "Sign in"
+  And I should see "Please, sign in"
+  
+Scenario: Not signed in users cannot access Edit User page
+  Given I am not signed in
+  When I am in the Edit User page
+  Then I should see the header "Sign in"
+  And I should see "Please, sign in"
+  
 Scenario: Happy path to the show user page
-  Given I am in the Users page
+  Given I sign in at the application
+  And I am in the Users page
   When I follow the "See user" link 
   Then I should see the header "User page"
   
 Scenario: Happy path to the edit user page
-  Given I am in the Users page
+  Given I sign in at the application
+  And I am in the Users page
   When I follow the "Edit user" link
   Then I should see the header "Edit User"
   
 Scenario: Happy path for a user edit
-  Given I am in the Edit User page
+  Given I sign in at the application
+  And I am in the Edit User page
   When I fill "Myname" in "Name"
   And I fill "Mypass" in "Password"
   And I fill "Mypass" in "Password confirmation"
@@ -19,13 +34,13 @@ Scenario: Happy path for a user edit
   Then I should see "The User was updated successfully"
   
 Scenario: Error updating a user
-  Given I am in the Edit User page
+  Given I sign in at the application
+  And I am in the Edit User page
   When I fill "Myname" in "Name"
   And I fill "Mypass" in "Password"
   And I click "Update User"
   Then I should see "Error saving the user"
   Then I should not see "The User was updated successfully"
-  
   
 Scenario: Happy path to the new user page
   Given I am in the New User page
