@@ -1,11 +1,7 @@
 class StatesController < ApplicationController
   def check
-    if State.all.size == 0
-      redirect_to signin_path, notice: "No State data in db"
-    else
-      @state = State.new
-      @states = State.all.collect{|s| [s.name, s.id] }
-    end
+    @state = State.new
+    @states = State.all.collect{|s| [s.name, s.id] }
   end
   def checking
   	@id = params[:state][:name]
