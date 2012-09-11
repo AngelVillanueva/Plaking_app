@@ -2,8 +2,12 @@
 
 <h1>List of Users</h1>
 
+<%= will_paginate %>
+
 <ul>
   <% @users.each do |u| %>
     <li><%= u.name %> - <%= u.email %> - <%= link_to "See user", u %> - <%= link_to "Edit user", edit_user_path(u) %></li>
   <% end %>
 </ul>
+
+<%= will_paginate %>

@@ -7,6 +7,8 @@ gem 'bcrypt-ruby', '3.0.1'  # crypted passwords
 gem 'jquery-rails', '2.0.2'
 gem 'prawn_rails' # pdf creation
 gem 'simple_form' # add gem 'country_select' if needed
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
