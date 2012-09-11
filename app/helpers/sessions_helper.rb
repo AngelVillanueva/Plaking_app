@@ -19,4 +19,11 @@ module SessionsHelper
     self.current_user = nil
     cookies.delete(:remember_token)
   end
+  def store_location
+    session[:return_to] = request.url
+  end
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
+  end
 end

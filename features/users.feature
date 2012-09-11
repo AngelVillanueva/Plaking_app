@@ -26,6 +26,13 @@ Scenario: Not signed_in users cannot access Edit User page
   Then I should see the header "Sign in"
   And I should see "Please, sign in"
   
+Scenario: Not signed_in users are redirected to the protected page after signin in
+  Given I am not signed in
+  When I am in the Edit User page
+  And I sign in at the application
+  Then I should see the header "Edit User"
+  And I should not see "Please, sign in"
+  
 Scenario: each User can just be edited by himself
   Given I am signed in at the application
   When I try to edit a different user

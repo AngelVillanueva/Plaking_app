@@ -52,3 +52,11 @@ Given /^I am at the Edit my User page$/ do
   click_button "Sign in"
   visit edit_user_path(own_user)
 end
+
+When /^I sign in at the application$/ do
+  user = FactoryGirl.create(:user)
+  fill_in "Email", with: "another@ex.com"
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
