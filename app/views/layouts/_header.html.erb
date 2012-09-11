@@ -12,19 +12,7 @@
         	<li><%= link_to "Sign in",    signin_path %></li>
         <% end %>
         <% if admin_user? %>
-	        <li id="fat-menu" class="dropdown">
-	         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	           Admin menu<b class="caret"></b>
-	         </a>
-	         <ul class="dropdown-menu">
-	           <li><%= link_to "States management", states_path %></li>
-	           <li><%= link_to "Option 2", '#' %></li>
-	           <li class="divider"></li>
-	           <li>
-	             <%= link_to "Sign Out", signout_path, method: "delete" %>
-	           </li>
-	         </ul>
-	       </li>
+	        <%= render 'layouts/admin_menu' %>
 	     <% end %>
       </ul>
     </nav>
