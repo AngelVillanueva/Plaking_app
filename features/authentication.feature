@@ -44,3 +44,15 @@ Scenario: Happy path to Sign out
   Then I should see "Welcome to Matricula El Coche"
   And I should see the link "Sign in"
   And I should not see the link "Sign out"
+  
+Scenario: Non Admin users do not have access to the admin menu
+  Given I am a logged common user
+  When I go to any page
+  Then I should not see the link "Admin menu"
+  And I should not see the link "States management"
+  
+Scenario: Just Admin users have access to the admin menu
+  Given I am a logged Admin user
+  When I go to any page
+  Then I should see the link "Admin menu"
+  And I should see the link "States management"

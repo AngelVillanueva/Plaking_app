@@ -28,3 +28,6 @@ Scenario: Non Admin users cannot manage States
   Then I should not see "States Admin Area"
   And I should not see a list of States
   
+Scenario: next
+  Given hay que hacer ejemplos para todas las páginas
+  

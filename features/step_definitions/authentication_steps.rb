@@ -19,3 +19,7 @@ Given /^I am signed in$/ do
   fill_in "Password", with: "foobar"
   click_button "Sign in"
 end
+
+When /^I go to any page$/ do
+  visit root_path
+end
