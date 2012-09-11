@@ -26,7 +26,7 @@ Scenario Outline: Incorrect Sign in
   |    email   | password |
   |     ""     |    ""    |
   |     ""     | "foobar" |
-  | "a@b.com" |    ""    |
+  |  "a@b.com" |    ""    |
   |   "Angek"  | "foobar" |
   | "a@ex.com" | "foobak" |
   |   "Angek"  | "foobak" |
