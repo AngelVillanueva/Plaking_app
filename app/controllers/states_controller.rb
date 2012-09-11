@@ -1,4 +1,11 @@
 class StatesController < ApplicationController
+  before_filter :signed_in_user, only: [:index]
+  before_filter :admin_user, only: [:index]
+
+  def index
+    @states = State.paginate(page: params[:page], per_page: 10)
+  end
+  
   def check
     @state = State.new
     @states = State.all.collect{|s| [s.name, s.id] }

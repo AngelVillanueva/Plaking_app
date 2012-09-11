@@ -60,3 +60,20 @@ When /^I sign in at the application$/ do
   click_button "Sign in"
 end
 
+Given /^I am a logged Admin user$/ do
+  admin = FactoryGirl.create(:user, email: "admin@ex.com", admin: true)
+  visit signin_path
+  fill_in "Email", with: admin.email
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
+Given /^I am a logged common user$/ do
+  user = FactoryGirl.create(:user, email: "common@ex.com")
+  visit signin_path
+  fill_in "Email", with: user.email
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
+

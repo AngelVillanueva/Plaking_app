@@ -19,3 +19,16 @@ end
 Then /^I should not see "(.*?)"$/ do |text_message|
   page.should_not have_content text_message
 end
+
+When /^I go to the States Admin Area$/ do
+  FactoryGirl.create(:state, name: "Liliput")
+  visit states_path
+end
+
+Then /^I should see a list of States$/ do
+  page.should have_selector('td', text: "Liliput")
+end
+
+Then /^I should not see a list of States$/ do
+  page.should_not have_selector('td', text: "Liliput")
+end

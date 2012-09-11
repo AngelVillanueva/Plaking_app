@@ -4,6 +4,7 @@ LlorensApp::Application.routes.draw do
   
   resources :states
   match '/states/checking' => 'states#checking', method: 'post'
+  match '/states/delete' => 'states#destroy', via: 'delete'
   
   resources :quotes
   resources :orders

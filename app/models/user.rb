@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string
+#  admin           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base

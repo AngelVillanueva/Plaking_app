@@ -15,3 +15,16 @@ Scenario: Select a not available State
   Then I should see "Sorry, this State is not covered"
   And I should not see "This State is covered"
   
+Scenario: Admin users can manage States
+  Given I am a logged Admin user
+  When I go to the States Admin Area
+  Then I should see "States Admin Area"
+  And I should see a list of States
+  
+Scenario: Non Admin users cannot manage States
+  Given I am a logged common user
+  When I go to the States Admin Area
+  Then I should see "Welcome to Matricula El Coche"
+  Then I should not see "States Admin Area"
+  And I should not see a list of States
+  
