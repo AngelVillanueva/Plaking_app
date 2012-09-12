@@ -51,6 +51,10 @@ class StatesController < ApplicationController
   def checking
   	@id = params[:state][:name]
   	@match = State.find(@id)
+  	if @match
+  	  @match.requests = @match.requests + 1
+  	  @match.save
+  	end
   	if @match && @match.covered
   	  session[:state] = @match
       flash[:success] = "This State is covered"
