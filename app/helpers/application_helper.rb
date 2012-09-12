@@ -9,5 +9,10 @@ module ApplicationHelper
        "#{page_title} | #{base_title}"                 # String interpolation
      end
    end
+
+  # Returns a price in Euro, two digits after decimal point
+  def in_euro(number)
+    number_to_currency(number, format: "%n %u", precision: 2, unit: "&euro;")
+  end
    
 end

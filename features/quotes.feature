@@ -12,7 +12,7 @@ Scenario Outline: Happy Quote
   Then I should see "Your Quote is <list_price>"
   
 Examples:
-  |  city    |     vehicle   |    cc   |   cyls  | strokes |     pdate    |  list_price  |
-  | "Abrera" | "Ciclomotor"  |    ""   |   ""    |   ""    | "10-03-2012" |    199.99    |
-  | "Abrera" | "Motocicleta" | "125"   |   "2"   |   "2"   | "15-10-2012" |    74.998    |
-  | "Abrera" | "Turismo"     | "500"   |   "4"   |   "4"   | "31-01-2012" |    599.99    |
+  |  city    |     vehicle   |    cc   |   cyls  | strokes |     pdate    |   list_price  |
+  | "Abrera" | "Ciclomotor"  |    ""   |   ""    |   ""    | "10-03-2012" |    199.99 €   |
+  | "Abrera" | "Motocicleta" | "125"   |   "2"   |   "2"   | "15-10-2012" |    75.00 €    |
+  | "Abrera" | "Turismo"     | "500"   |   "4"   |   "4"   | "31-01-2012" |    599.99 €   |
