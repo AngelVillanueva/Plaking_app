@@ -1,0 +1,13 @@
+<div class="">
+	<div class="">
+		<%= simple_form_for(@state, html: {class: 'form-inline'}) do |f| %>
+		
+			<%= f.input :name %>
+			<%= f.input :cp_prefix, label: "CP" %>
+			<%= f.label :covered %>
+			<%= f.select :covered, [false, true] %>
+			<%= f.button :submit, class: 'btn-primary' %>
+		
+		<% end %>
+	</div>
+</div>

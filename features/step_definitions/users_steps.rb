@@ -32,11 +32,17 @@ Given /^I am in the New User page$/ do
 end
 
 Then /^the "(.*?)" count should be increased by "(.*?)"$/ do |model, range|
-  expect { click_button "Create User" }.to change(model.constantize, :count).by(range.to_i)
+  expect { click_button "Create #{model.capitalize}" }.to change(model.constantize, :count).by(range.to_i)
 end
 
 Then /^the "(.*?)" count should not be increased by "(.*?)"$/ do |model, range|
-  expect { click_button "Create User" }.not_to change(model.constantize, :count).by(range.to_i)
+  expect { click_button "Create #{model.capitalize}" }.not_to change(model.constantize, :count).by(range.to_i)
+end
+
+Then /^the "(.*?)" count should be decreased by "(.*?)"$/ do |model, range|
+  expect do
+    click_link "Delete"
+  end.to change(model.constantize, :count).by(-(range.to_i))
 end
 
 When /^I try to edit a different user$/ do
