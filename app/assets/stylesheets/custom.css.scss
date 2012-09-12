@@ -3,6 +3,9 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$softRed : #fdeede;
+$softBlue: #d9edf7;
+$medBlue: #3a87ad;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -79,6 +82,21 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.navbar .nav li {
+	a.signin {
+		color: $medBlue;
+		&:hover {
+		  color: $softBlue;
+		}
+	}
+	a.signout {
+		color: $softRed;
+		&:hover {
+		  color: #f00;
+		}
+	}
 }
 
 /* footer */
