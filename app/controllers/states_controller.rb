@@ -3,7 +3,7 @@ class StatesController < ApplicationController
   before_filter :admin_user, only: [:index, :new, :destroy, :edit, :update]
 
   def index
-    @states = State.paginate(page: params[:page], per_page: 10)
+    @states = State.paginate(page: params[:page], order: :id, per_page: 10)
   end
   
   def new
