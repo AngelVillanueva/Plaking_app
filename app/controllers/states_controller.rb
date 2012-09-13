@@ -46,7 +46,7 @@ class StatesController < ApplicationController
   
   def check
     @state = State.new
-    @states = State.all.collect{|s| [s.name, s.id] }
+    @states = State.all.collect{ |s| [s.name, s.id] }.sort_by{|e| e[1]}
   end
   def checking
   	@id = params[:state][:name]
