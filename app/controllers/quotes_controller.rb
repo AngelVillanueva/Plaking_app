@@ -48,4 +48,8 @@ class QuotesController < ApplicationController
           1
       end
     end
+    def potencia_fiscal(cc_engine, number_cylinders, stroke)
+      factor = (stroke == 4 && 0.08) || 0.11
+      ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
+    end 
 end
