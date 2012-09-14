@@ -1,5 +1,5 @@
 Feature: Quote construction
-
+@now
 Scenario Outline: Happy Quote
   Given I am in the New Quote page
   When I select <city> as "City"
