@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_filter :signed_up_user, only: [:new, :create]
+
   def show
     @order = Order.find(params[:id])
     

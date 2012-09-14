@@ -1,14 +1,16 @@
 Feature: handling Orders
 
 Scenario Outline: Happy Path for a New Order
-  Given I am in the New Order page
-  When I fill <fname> in "First name"
-  And I fill <lname> in "Last name"
-  And I fill <address> in "Address"
-  And I fill <email> in "Email"
-  And I fill <phone> in "Phone number"
-  And I fill <shop> in "Shop"
-  And I click "Create Order"
+  Given I am a logged common user
+    And I have created a Quote
+  When I go to the New Order page
+    And I fill <fname> in "First name"
+    And I fill <lname> in "Last name"
+    And I fill <address> in "Address"
+    And I fill <email> in "Email"
+    And I fill <phone> in "Phone number"
+    And I fill <shop> in "Shop"
+    And I click "Create Order"
   Then I should see "Thanks for your Order"
   
 Examples:
@@ -16,6 +18,17 @@ Examples:
   | "Angela" | "Villanueva" |        "Rambla Jujol, 15"          |    "test@example.com"    |     "902100100"    |   "Concesionario Estu"   |
   | "Miguel" | "Pedrosa"    |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
   | "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
+  
+Scenario: signup / in is needed to create an Order
+  Given I am not a logged user
+    And I have created a Quote
+  When I go to the New Order page
+  Then I cannot create an Order before signing up or in
+  
+Scenario: After signup I can create an Order
+  Given I have been redirected to signup page before creating an Order
+  When I create a valid User
+  Then I am able to create a new Order
   
   
 Scenario: Happy Path for Editing an Order

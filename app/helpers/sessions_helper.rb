@@ -41,4 +41,11 @@ module SessionsHelper
       current_user.admin
     end
   end
+  def signed_up_user
+    unless signed_in?
+      store_location
+      flash[:error] = "Please, sign up. An user account is needed to create Orders"
+      redirect_to signup_url
+    end
+  end
 end
