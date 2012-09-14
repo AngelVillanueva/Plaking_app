@@ -30,6 +30,12 @@ Scenario: After signup I can create an Order
   When I create a valid User
   Then I am able to create a new Order
   
+Scenario: After signing in I can create an Order
+  Given I have already a valid account
+    And I have been redirected to signup page before creating an Order
+  When I sign in as a valid user
+  Then I am able to create a new Order
+  
   
 Scenario: Happy Path for Editing an Order
   Given I am in the Edit Order page
