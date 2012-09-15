@@ -1,8 +1,8 @@
 Given /^I am in the New Quote page$/ do
   basic_price = FactoryGirl.create(:price)
-  moto = FactoryGirl.create(:vehicle, name: "Motocicleta")
+  moto = FactoryGirl.create(:moto)
   FactoryGirl.create(:price, city_id: basic_price.city.id, vehicle_id: moto.id, price: 299.99)
-  coche = FactoryGirl.create(:vehicle, name: "Turismo")
+  coche = FactoryGirl.create(:car)
   FactoryGirl.create(:price, city_id: basic_price.city.id, vehicle_id: coche.id, price: 599.99)
   visit root_path
   select "Barcelona", from: "state_name"

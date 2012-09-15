@@ -4,9 +4,9 @@
 		
 			<%= f.label :city_id %>
 			<%= f.select :city_id, @cities %>
-			<%= f.label :vehicle_id %>
-			<%= f.select :vehicle_id, @vehicles %>
-			<%= f.input :cc_engine, label: "Engine cc" %>
+			<%= f.label :vehicle %>
+			<%= f.select :vehicle, @vehicles %>
+			<%= f.input :cc_engine, label: "Engine cc", required: true %>
 			<%= f.input :number_cylinders, label: "Cylinders" %>
 			<%= f.label :stroke %>
 			<%= f.select :stroke, @strokes %>

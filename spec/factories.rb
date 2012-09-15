@@ -18,8 +18,21 @@ FactoryGirl.define do
   end
   
   factory :vehicle do
+    id 6
     name "Ciclomotor"
     code "F1"
+  end
+  
+  factory :car, class: "Vehicle" do
+    id 1
+    name "Turismo de menos de 8 CV"
+    code "A1"
+  end
+  
+  factory :moto, class: "Vehicle" do
+    id 7
+    name "Motocicleta de menos de 125 cc"
+    code "F2"
   end
   
   factory :price do

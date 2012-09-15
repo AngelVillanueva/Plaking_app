@@ -3,14 +3,17 @@ class QuotesController < ApplicationController
     @quote = Quote.new
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
-    @vehicles = Vehicle.all.collect{ |v| [v.name, v.id] }
+    @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
+    #@vehicles = Vehicle.all.collect{|v| [v.name, v.id] }
     @strokes = [2,4]
   end
   def create
     myparams = params[:quote]
-    thevehi = params[:quote][:vehicle_id]
+    #thevehi = params[:quote][:vehicle_id]
+    thevehi = type_to_vehicle(params[:quote][:vehicle])
+    #thevehi = tovehicle_id(tovehicle(myparams[:vehicle_id], potencia_fiscal(myparams[:cc_engine].to_i, myparams[:number_cylinders].to_i, myparams[:stroke].to_i)))
     thecit = params[:quote][:city_id]
-    myparams.delete(:vehicle_id)
+    myparams.delete(:vehicle)
     myparams.delete(:city_id)
     
     @quote = Quote.new(myparams)
@@ -28,8 +31,8 @@ class QuotesController < ApplicationController
       session[:quote] = @quote.id
       flash.now.notice = "Quote created successfully"
     else
-      flash.now[:error] = "Error saving the Quote"
-      render 'new'
+      flash[:error] = "Error saving the Quote"
+      redirect_to :new_quote
     end
   end
   
@@ -49,7 +52,58 @@ class QuotesController < ApplicationController
       end
     end
     def potencia_fiscal(cc_engine, number_cylinders, stroke)
-      factor = (stroke == 4 && 0.08) || 0.11
-      ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
-    end 
+      if cc_engine == 0 || number_cylinders == 0 || stroke == 0
+        0
+      else
+        factor = (stroke == 4 && 0.08) || 0.11
+        ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
+      end
+    end
+    def tovehicle(type, potencia)
+      case type
+        when "Turismo"
+          case potencia
+            when 0..7.99
+              "A1"
+            when 8..11.99
+              "A2"
+            when 12..15.99
+              "A3"
+            when 16..19.99
+              "A4"
+            default
+              "A5"
+          end
+        when "Motocicleta"
+          case number_cylinders
+            when 0..125
+              "F2"
+            when 126..250
+              "F3"
+            when 251..500
+              "F4"
+            when 501..1000
+              "F5"
+            default
+              "F6"
+          end
+        else
+          "F1"
+      end
+    end
+    def tovehicle_id(code)
+      Vehicle.find_by_code(code).id
+    end
+    def type_to_vehicle(type)
+      case type
+        when "Turismo"
+          1
+        when "Ciclomotor"
+          6
+        when "Motocicleta"
+          7
+        else
+          6
+      end
+    end
 end

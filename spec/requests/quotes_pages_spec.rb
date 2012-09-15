@@ -4,7 +4,7 @@ describe "Quotes" do
 
   describe "The model" do
     let(:city) { FactoryGirl.create(:city) }
-    let(:vehicle) { FactoryGirl.create(:vehicle) }
+    let(:vehicle) { FactoryGirl.create(:car) }
     
     before { @quote = FactoryGirl.create(:quote, city: city, vehicle: vehicle) }
     
@@ -59,21 +59,21 @@ describe "Quotes" do
         end.to change(Quote, :count).by(1)
       end
     end
+#    describe "needs CC if car or motorcycle" do
+#      before do
+#        @quote.vehicle_id = 1
+#        @quote.cc_engine = ""
+#      end
+#      it { should_not be_valid }
+#    end
+#    describe "needs NCyls if car" do
+#      before do
+#        @quote.vehicle_id = 1
+#        @quote.number_cylinders = ""
+#      end
+#      it { should_not be_valid }
+#    end
 
   end
 
-end
-
-describe "QuotesPages" do
-  subject { page }
-  
-  describe "New Quote page" do
-    before do
-      visit new_quote_path
-    end
-    
-    #it { should have_selector('h1', text: heading_text) }
-
-  end
-  
 end
