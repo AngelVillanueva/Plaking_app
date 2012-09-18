@@ -3,6 +3,22 @@ Given /^I am in the homepage$/ do
   visit root_path
 end
 
+Given /^I am in the Edit Order page$/ do
+  order = FactoryGirl.create(:order)
+  FactoryGirl.create(:status, name: "Documentation sent")
+  visit edit_order_path(order)
+end
+
+Given /^I have already a valid account$/ do
+  @already_user = FactoryGirl.create(:user)
+end
+
+Given /^I am not a logged user$/ do
+  visit root_path
+  page.should have_selector('a', text: "Sign in")
+  page.should_not have_selector('a', text: "Sign out")
+end
+
 Given /^I have selected a covered State$/ do
   step "I am in the homepage"
   select "Barcelona", from: "state_name"
@@ -12,6 +28,19 @@ Given /^I have prepared a Quote for the city of (.*?)$/ do |city|
   step "I have selected a covered State"
   step "I click \"Check State\""
   select city, from: "City"
+end
+
+Given /^I have created a Quote$/ do
+  FactoryGirl.create(:status)
+  step "I have prepared a Quote for the city of VIC"
+  select "Ciclomotor", from: "Vehicle"
+  click_button "Create Quote"
+end
+
+Given /^I have been redirected to signup page before creating an Order$/ do
+  step "I am not a logged user"
+  step "I have created a Quote"
+  step "I go to the New Order page"
 end
 
 ## When
@@ -37,6 +66,10 @@ end
 
 When /^I go to delete a State$/ do
   visit states_path
+end
+
+When /^I go to the New Order page$/ do
+  click_link "Accept and Continue"
 end
 
 When /^I go to edit a State$/ do
@@ -72,6 +105,20 @@ When /^I enter the \{"(.*?)": "(.*?)", "(.*?)": "(.*?)", "(.*?)": "(.*?)"\}$/ do
   click_button "Create Quote"
 end
 
+When /^I create a valid User$/ do
+  fill_in "Name", with: "Nuevo usuario"
+  fill_in "Email", with: "nuevo@email.com"
+  fill_in "Password", with: "foobar"
+  fill_in "Password confirmation", with: "foobar"
+  click_button "Create User"
+end
+
+When /^I sign in as a valid user$/ do
+  click_link "Sign in here!"
+  fill_in "Email", with: @already_user.email
+  fill_in "Password", with: @already_user.password
+  click_button "Sign in"
+end
 
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
@@ -113,4 +160,13 @@ Then /^the Quote should not be valid$/ do
     click_button "Create Quote"
   end.not_to change(Quote, :count).by(1)
   page.should have_content("Error saving the Quote")
+end
+
+Then /^I cannot create an Order before signing up or in$/ do
+  page.should have_selector('title', text: "New User")
+  page.should have_selector("form[action='/users']")
+end
+
+Then /^I am able to create a new Order$/ do
+  page.should have_selector("form[action='/orders']")
 end
