@@ -18,11 +18,11 @@ group :development, :test do
   gem 'rspec-rails', '2.10.0'
   gem 'guard-rspec', '0.5.5'
   gem 'guard-cucumber'
+  gem 'fast_seeder'
  end
 
 group :development do
   gem 'annotate', '2.5.0'
-  gem 'fast_seeder'
 end
 # Gems used only for assets and not required
 # in production environments by default.
