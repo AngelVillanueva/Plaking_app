@@ -9,8 +9,21 @@ Given /^I am in the Edit Order page$/ do
   visit edit_order_path(order)
 end
 
+Given /^I am in the Sign in page$/ do
+  FactoryGirl.create(:user)
+  visit signin_path
+end
+
 Given /^I have already a valid account$/ do
   @already_user = FactoryGirl.create(:user)
+end
+
+Given /^I am signed in$/ do
+  FactoryGirl.create(:user)
+  visit signin_path
+  fill_in "Email", with: "a@b.com"
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
 end
 
 Given /^I am not a logged user$/ do
@@ -54,6 +67,10 @@ end
 
 When /^I select the (.*?) from "(.*?)"$/ do |value, field|
   select value, from: field
+end
+
+When /^I go to any page$/ do
+  step "I am in the homepage"
 end
 
 When /^I go to the States Admin Area$/ do
@@ -131,6 +148,14 @@ end
 
 Then /^I should see a form$/ do
   page.should have_selector('form')
+end
+
+Then /^I should see the link "(.*?)"$/ do |link_text|
+  page.should have_selector('a', text: link_text)
+end
+
+Then /^I should not see the link "(.*?)"$/ do |link_text|
+  page.should_not have_selector('a', text: link_text)
 end
 
 Then /^I should see a list of States$/ do

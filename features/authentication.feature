@@ -10,6 +10,7 @@ Scenario: Happy path to Sign in
   And I should see the link "Sign out"
   And I should not see the link "Sign in"
   And I should see the link "My account"
+  And I should see "My Orders"
   
 Scenario Outline: Incorrect Sign in
   Given I am in the Sign in page
