@@ -9,7 +9,8 @@ describe "StatePages" do
     
   describe "State model" do
     before do
-      @state = FactoryGirl.create(:state)
+      #@state = FactoryGirl.create(:state)
+      @state = State.find(1)
     end
     
     subject { @state }
@@ -28,8 +29,8 @@ describe "StatePages" do
   
   describe "Check page" do
     before do
-      @state_available = FactoryGirl.create(:state)
-      @state_not_available = FactoryGirl.create(:state_not_covered)
+      @state_available = State.find_by_name("Barcelona")
+      @state_not_available = State.find_by_name("Albacete")
 	  visit root_path   	
 	  end
     
