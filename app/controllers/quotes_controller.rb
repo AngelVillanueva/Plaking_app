@@ -1,32 +1,44 @@
 class QuotesController < ApplicationController
+  
   def new
     @quote = Quote.new
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
     @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
-    #@vehicles = Vehicle.all.collect{|v| [v.name, v.id] }
     @strokes = [2,4]
   end
-  def create
-    myparams = params[:quote]
-    #thevehi = params[:quote][:vehicle_id]
-    thevehi = type_to_vehicle(params[:quote][:vehicle])
-    #thevehi = tovehicle_id(tovehicle(myparams[:vehicle_id], potencia_fiscal(myparams[:cc_engine].to_i, myparams[:number_cylinders].to_i, myparams[:stroke].to_i)))
-    thecit = params[:quote][:city_id]
-    myparams.delete(:vehicle)
-    myparams.delete(:city_id)
-    
-    @quote = Quote.new(myparams)
-    @quote.city_id = thecit
-    @quote.vehicle_id = thevehi
   
+  def create
+    # build up some temp variables to be used in the calculations
+    cc_engine = params[:quote][:cc_engine].to_i
+    n_cylinders = params[:quote][:number_cylinders].to_i
+    stroke = params[:quote][:stroke].to_i
     anho = params[:quote]["plaking_date(1i)"].to_i
     month = params[:quote]["plaking_date(2i)"].to_i
-    quarter_mod = return_quarter(month)
-    list_price = Price.find(:first, conditions: ["city_id= #{thecit} AND vehicle_id= #{thevehi} AND year = #{anho}"])
-    @price = BigDecimal(list_price.price * quarter_mod,10).round(3)
+    city_id = params[:quote][:city_id]
+    vehicle_type = params[:quote][:vehicle]
     
-    @quote.amount = @price
+    # determine the vehicle category to be used to recover the right list price
+    potencia = return_potencia_fiscal(cc_engine, n_cylinders, stroke) # returns integer for a car and 0 if not a car
+    vehicle_code = return_vehicle_code(vehicle_type, potencia, cc_engine) # returns Ax (cars) or Fx (not cars) code to look in the prices table
+    vehicle = Vehicle.find_by_code(vehicle_code)
+  
+    # calculate the quote amount based on city, vehicle_category and plaking_date
+    list_price = Price.find_by_city_id_and_vehicle_id(city_id, vehicle.id)
+    date_modifier = return_quarter(month) # list price is adjusted depending on the remaining quarters for the year
+    amount = BigDecimal(list_price.price * date_modifier, 10).round(2)
+    
+    # rebuild the params for the Quote creation
+    revised_params = params[:quote]
+    revised_params.delete(:vehicle) # to avoid massive assignment error
+    revised_params.delete(:city_id) # idem
+    
+    @quote = Quote.new(revised_params)
+    @quote.city_id = city_id
+    @quote.vehicle_id = vehicle.id
+    @quote.amount = amount
+    
+    # save and redirect
     if @quote.save
       session[:quote] = @quote.id
       flash.now.notice = "Quote created successfully"
@@ -51,7 +63,7 @@ class QuotesController < ApplicationController
           1
       end
     end
-    def potencia_fiscal(cc_engine, number_cylinders, stroke)
+    def return_potencia_fiscal(cc_engine, number_cylinders, stroke)
       if cc_engine == 0 || number_cylinders == 0 || stroke == 0
         0
       else
@@ -59,7 +71,7 @@ class QuotesController < ApplicationController
         ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
       end
     end
-    def tovehicle(type, potencia)
+    def return_vehicle_code(type, potencia, cc_engine)
       case type
         when "Turismo"
           case potencia
@@ -75,7 +87,7 @@ class QuotesController < ApplicationController
               "A5"
           end
         when "Motocicleta"
-          case number_cylinders
+          case cc_engine
             when 0..125
               "F2"
             when 126..250
@@ -91,19 +103,5 @@ class QuotesController < ApplicationController
           "F1"
       end
     end
-    def tovehicle_id(code)
-      Vehicle.find_by_code(code).id
-    end
-    def type_to_vehicle(type)
-      case type
-        when "Turismo"
-          1
-        when "Ciclomotor"
-          6
-        when "Motocicleta"
-          7
-        else
-          6
-      end
-    end
+
 end

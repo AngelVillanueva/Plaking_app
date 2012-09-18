@@ -59,20 +59,52 @@ describe "Quotes" do
         end.to change(Quote, :count).by(1)
       end
     end
-#    describe "needs CC if car or motorcycle" do
-#      before do
-#        @quote.vehicle_id = 1
-#        @quote.cc_engine = ""
-#      end
-#      it { should_not be_valid }
-#    end
-#    describe "needs NCyls if car" do
-#      before do
-#        @quote.vehicle_id = 1
-#        @quote.number_cylinders = ""
-#      end
-#      it { should_not be_valid }
-#    end
+    describe "needs CC if car or motorcycle" do
+     before do
+        @quote.vehicle_id = 7
+        @quote.cc_engine = ""
+      end
+      it "quote should fail" do
+        expect do
+          @quote.save!
+        end.to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
+    describe "needs Cylinders if car" do
+     before do
+        @quote.vehicle_id = 1
+        @quote.number_cylinders = ""
+      end
+      it "quote should fail" do
+        expect do
+          @quote.save!
+        end.to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
+    describe "needs Stroke if car" do
+     before do
+        @quote.vehicle_id = 1
+        @quote.stroke = ""
+      end
+      it "quote should fail" do
+        expect do
+          @quote.save!
+        end.to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
+    describe "no needs engine data if Ciclomotor" do
+     before do
+        @quote.vehicle_id = 6
+        @quote.cc_engine = ""
+        @quote.number_cylinders = ""
+        @quote.stroke = ""
+      end
+      it "quote should not fail" do
+        expect do
+          @quote.save!
+        end.not_to raise_error(ActiveRecord::RecordInvalid)
+      end
+    end
 
   end
 
