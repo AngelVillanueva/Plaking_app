@@ -6,10 +6,9 @@
 			<%= f.select :city_id, @cities %>
 			<%= f.label :vehicle %>
 			<%= f.select :vehicle, @vehicles %>
-			<%= f.input :cc_engine, label: "Engine cc", required: true %>
-			<%= f.input :number_cylinders, label: "Cylinders" %>
-			<%= f.label :stroke %>
-			<%= f.select :stroke, @strokes %>
+			<%= f.input :cc_engine, label: "Engine cc", required: true, wrapper_html: {id: "engine"} %>
+			<%= f.input :number_cylinders, label: "Cylinders", wrapper_html: {id: "cyls"} %>
+			<%= f.input :stroke, collection: @strokes, wrapper_html: {id: "stroke"} %>
 			<%= f.label :plaking_date %>
 			<%= f.date_select :plaking_date, order: [:day, :month, :year], start_year: Time.new.year %>
 			
