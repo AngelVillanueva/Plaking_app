@@ -18,7 +18,7 @@ Scenario: Select a not available State
 Scenario: Admin users can manage States
   Given I am a logged Admin user
   When I go to the States Admin Area
-  Then I should see "States Admin Area"
+  Then I should see the header "States Admin Area"
   And I should see a list of States
   
 Scenario: Non Admin users cannot manage States
