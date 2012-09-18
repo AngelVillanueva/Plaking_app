@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Quotes" do
 
   describe "The model" do
-    let(:city) { FactoryGirl.create(:city) }
-    let(:vehicle) { FactoryGirl.create(:car) }
+    let(:city) { City.find_by_name("VIC") }
+    let(:vehicle) { Vehicle.find_by_code("A1") }
     
     before { @quote = FactoryGirl.create(:quote, city: city, vehicle: vehicle) }
     
