@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :show, :edit, :update]
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :correct_user, only: [:show, :edit, :update]
   
   def index
     @users = User.paginate(page: params[:page])

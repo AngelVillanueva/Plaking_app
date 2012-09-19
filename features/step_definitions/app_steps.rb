@@ -169,6 +169,11 @@ When /^I sign in as a valid user$/ do
   click_button "Sign in"
 end
 
+When /^I try to see a different user$/ do
+  FactoryGirl.create(:user, email: "999@ex.com", id: 999)
+  visit user_path(999)
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message

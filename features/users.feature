@@ -33,6 +33,12 @@ Scenario: Not signed_in users are redirected to the protected page after signin 
   Then I should see the header "Edit User"
   And I should not see "Please, sign in"
   
+Scenario: each User can just be viewed by himself
+  Given I am signed in at the application
+  When I try to see a different user
+  Then I should not see the header "User page for"
+  And I should see the header "Welcome to Matricula El Coche"
+
 Scenario: each User can just be edited by himself
   Given I am signed in at the application
   When I try to edit a different user
