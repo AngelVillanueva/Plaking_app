@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.quote_id = session[:quote]
     @order.status_id = 1 # correct order but not paid yet
+    @order.user = current_user
     
     if @order.save
       redirect_to @order, notice: "Thanks for your Order"

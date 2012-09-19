@@ -13,12 +13,14 @@
 #  updated_at   :datetime         not null
 #  status_id    :integer
 #  shop         :string(255)
+#  user_id      :integer
 #
 
 class Order < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :address, :email, :phone_number, :shop, :status_id
   belongs_to :quote
   belongs_to :status
+  belongs_to :user
   
-  validates :first_name, :last_name, :address, :shop, :quote_id, :status_id, presence: true
+  validates :first_name, :last_name, :address, :shop, :quote_id, :status_id, :user_id, presence: true
 end

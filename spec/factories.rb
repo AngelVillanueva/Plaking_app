@@ -62,6 +62,7 @@ FactoryGirl.define do
     shop "Concesionario Estupendo"
     status
     quote
+    user
   end
   
   factory :user do
