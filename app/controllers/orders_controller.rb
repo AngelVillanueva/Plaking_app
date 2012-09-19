@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_filter :signed_up_user, only: [:new, :create]
+  before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update]
+  #before_filter :correct_user, only: [:show]
 
   def show
     @order = Order.find(params[:id])
@@ -41,5 +42,11 @@ class OrdersController < ApplicationController
       render 'edit'
       #redirect_to @order, notice: "Error updating the order"
     end
+  end
+  
+  private
+  def correct_user
+    @order = current_user.orders.find_by_id(params[:id])
+    redirect_to root_url if @order.nil?
   end
 end

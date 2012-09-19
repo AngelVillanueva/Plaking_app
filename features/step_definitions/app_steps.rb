@@ -3,8 +3,15 @@ Given /^I am in the homepage$/ do
   visit root_path
 end
 
+Given /^I am in the Order page$/ do
+  step "I am a logged common user"
+  @order = FactoryGirl.create(:order, user: @user)
+  visit order_path(@order)
+end
+
 Given /^I am in the Edit Order page$/ do
-  order = FactoryGirl.create(:order)
+  step "I am a logged common user"
+  order = FactoryGirl.create(:order, user: @user)
   FactoryGirl.create(:status, name: "Documentation sent")
   visit edit_order_path(order)
 end
@@ -88,6 +95,10 @@ end
 
 When /^I select the (.*?) from "(.*?)"$/ do |value, field|
   select value, from: field
+end
+
+When /^I follow the "(.*?)" link$/ do |link_text|
+  click_link link_text
 end
 
 When /^I go to any page$/ do
