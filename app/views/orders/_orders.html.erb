@@ -1,0 +1,27 @@
+<%= will_paginate %>
+
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th><th>Number</th><th>Status</th><th>User</th><th>Shop</th><th>City</th><th>Action</th>
+    </tr>
+ </thead>
+ <tbody>
+	 <% @orders.each do |order| %>
+	   <tr>
+	     <td><%= order.id %></td>
+       <td><%= "Order ##{order.id}" %></td>
+       <td><%= order.status.name %></td>
+       <td><%= order.user.id %></td>
+       <td><%= order.shop %></td>
+       <td><%= order.quote.city.name %></td>
+       <td>
+         <%= link_to "Edit", edit_order_path(order), class: "btn btn-info" %>
+         <%= link_to "Delete", order, method: "delete", confirm: "Are you sure?", class: "btn btn-danger" %>
+       </td>
+	   </tr>
+	 <% end %>
+ </tbody>
+</table>
+
+<%= will_paginate %>

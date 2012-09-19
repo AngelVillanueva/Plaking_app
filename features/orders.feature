@@ -52,6 +52,18 @@ Scenario: Happy path to My Account
     And I should see the item "Order #1" in the list
     And I should see the item "Order #2" in the list
     And I should see "Status: "
+    
+Scenario: Happy path to Orders page
+  Given I am a logged Admin user
+  When I follow the "Orders management" link
+  Then the page title should be "Orders"
+    And I should see a list of all Orders
+  
+Scenario: common users cannot access to Orders page
+  Given I am a logged common user
+  When I go to any page
+  Then I should not see the link "Orders management"
+    And I should not arrive to the "Orders" page
   
 Scenario: Happy Path for Editing an Order
   Given I am in the Edit Order page

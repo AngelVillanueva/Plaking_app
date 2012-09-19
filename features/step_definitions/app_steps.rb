@@ -194,6 +194,11 @@ Then /^the page title should be "(.*?)"$/ do |page_title|
   page.should have_selector('title', text: page_title)
 end
 
+Then /^I should not arrive to the "(.*?)" page$/ do |controller|
+  visit "/#{controller.downcase}"
+  page.should have_selector('title', text: "Welcome")
+end
+
 Then /^I should see a list of States$/ do
   page.should have_selector('a', text: "New State")
   page.should have_selector('th', text: "State")
@@ -202,6 +207,13 @@ end
 
 Then /^I should not see a list of States$/ do
   page.should_not have_selector('td', text: "Liliput")
+end
+
+Then /^I should see a list of all Orders$/ do
+  order = FactoryGirl.create(:order)
+  visit current_path
+  page.should have_selector('th', text: "Status")
+  page.should have_selector('td', text: "Order ##{order.id}")
 end
 
 Then /^there should be one State more in the app$/ do

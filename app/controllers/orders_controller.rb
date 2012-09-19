@@ -1,7 +1,12 @@
 class OrdersController < ApplicationController
   before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update]
   before_filter :correct_user, only: [:show]
+  before_filter :admin_user, only: [:index]
 
+  def index
+    @orders = Order.paginate(page: params[:page])
+  end
+  
   def show
     @order = Order.find(params[:id])
     
