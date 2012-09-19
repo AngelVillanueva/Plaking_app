@@ -36,6 +36,14 @@ Scenario: After signing in I can create an Order
   When I sign in as a valid user
   Then I am able to create a new Order
   
+Scenario: Happy path to My Account
+  Given I am a logged common user
+    And I have some orders in place
+  When I follow the "My account" link
+  Then I should see "My Orders"
+    And I should see the item "Order #1" in the list
+    And I should see the item "Order #2" in the list
+    And I should see "Status: "
   
 Scenario: Happy Path for Editing an Order
   Given I am in the Edit Order page

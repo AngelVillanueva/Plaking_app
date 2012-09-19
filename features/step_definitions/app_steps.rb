@@ -26,6 +26,22 @@ Given /^I am signed in$/ do
   click_button "Sign in"
 end
 
+Given /^I am a logged Admin user$/ do
+  admin = FactoryGirl.create(:user, email: "admin@ex.com", admin: true)
+  visit signin_path
+  fill_in "Email", with: admin.email
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
+Given /^I am a logged common user$/ do
+  @user = FactoryGirl.create(:user, email: "common@ex.com")
+  visit signin_path
+  fill_in "Email", with: @user.email
+  fill_in "Password", with: "foobar"
+  click_button "Sign in"
+end
+
 Given /^I am not a logged user$/ do
   visit root_path
   page.should have_selector('a', text: "Sign in")
@@ -54,6 +70,11 @@ Given /^I have been redirected to signup page before creating an Order$/ do
   step "I am not a logged user"
   step "I have created a Quote"
   step "I go to the New Order page"
+end
+
+Given /^I have some orders in place$/ do
+  order_one = FactoryGirl.create(:order, user: @user)
+  order_two = FactoryGirl.create(:order, shop: "Another", user: @user)
 end
 
 ## When
