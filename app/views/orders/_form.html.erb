@@ -2,12 +2,12 @@
 	<div class="span6 offset3">
 		<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
 		
-		  <%= f.input :first_name %>
+		  <%= f.input :first_name, input_html: {value: current_user.name} %>
 		  <%= f.input :last_name %>
 		  <%= f.input :address %>
-		  <%= f.input :email %>
+		  <%= f.input :email, input_html: {value: current_user.email} %>
 		  <%= f.input :phone_number %>
-		  <%= f.input :shop %>
+		  <%= f.input :shop, label: "Concesionario" %>
 		
 		  <%= f.button :submit, class: 'btn btn-primary' %>
 		

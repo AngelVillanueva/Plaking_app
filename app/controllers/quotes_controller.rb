@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
     @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
-    @strokes = [2,4]
+    @strokes = {"2 tiempos" => 2 , "4 tiempos" => 4}
   end
   
   def create
@@ -83,7 +83,7 @@ class QuotesController < ApplicationController
               "A3"
             when 16..19.99
               "A4"
-            default
+            else
               "A5"
           end
         when "Motocicleta"
@@ -96,7 +96,7 @@ class QuotesController < ApplicationController
               "F4"
             when 501..1000
               "F5"
-            default
+            else
               "F6"
           end
         else

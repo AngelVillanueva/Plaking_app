@@ -9,7 +9,7 @@ Scenario Outline: Happy Path for a New Order
     And I fill <address> in "Address"
     And I fill <email> in "Email"
     And I fill <phone> in "Phone number"
-    And I fill <shop> in "Shop"
+    And I fill <shop> in "Concesionario"
     And I click "Create Order"
   Then I should see "Thanks for your Order"
   
@@ -70,4 +70,4 @@ Scenario: Happy Path for Editing an Order
   When I select "Documentation sent" as "Status"
   And I click "Update Order"
   Then I should see "The order was updated with the new status"
-  And I should see "The status of your order is: Documentation sent"
+  And I should see "The current status of your order is: Documentation sent"

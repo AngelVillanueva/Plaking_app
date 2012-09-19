@@ -3,7 +3,23 @@
 
 <h1>Order #<%= @order.id %></h1>
 
-<p>The status of your order is: <%= @order.status.name %></p>
+<% if flash.any? %>
+  <% flash.each do |key, value| %>
+    <% if value.downcase == "thanks for your order" %>
+      <p class="alert alert-success">Your Order has been created successfully</p>
+    <% end %>
+  <% end %>
+<% end %>
+
+<p class="alert alert-info">The current status of your order is: <strong><%= @order.status.name %></strong></p>
 
 <h2>Next steps</h2>
-<p>Please <%= link_to("download the attached documents", yield(:pdf_order_path), target: "_blank") %> and send them back to us once signed</p>
+<ol>
+<li>Please <%= link_to("download the attached documents", yield(:pdf_order_path), target: "_blank") %> and send them back to us once signed</li>
+<li>You will be notified by email as soon as we receive the documentation</li>
+<li>We will handle the Tax in your behalf</li>
+<li>You will be notified by email as soon as we send you the Tax receipt and complementary documentation</li>
+<li>You can come back to this page at any moment to check the status of your Order</li>
+</ol>
+
+<p>Please, do not hesitate to contact us for any further question at 900.000.000</p>
