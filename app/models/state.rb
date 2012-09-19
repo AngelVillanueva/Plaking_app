@@ -8,7 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  cp_prefix  :string(255)
-#  requests   :integer
+#  requests   :integer          default(0)
 #
 
 class State < ActiveRecord::Base
