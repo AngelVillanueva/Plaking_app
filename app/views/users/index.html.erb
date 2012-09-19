@@ -4,10 +4,26 @@
 
 <%= will_paginate %>
 
-<ul>
-  <% @users.each do |u| %>
-    <li><%= u.name %> - <%= u.email %> - <%= link_to "See user", u %> - <%= link_to "Edit user", edit_user_path(u) %></li>
-  <% end %>
-</ul>
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th><th>Name</th><th>Email</th><th>Admin ?</th><th>Action</th>
+    </tr>
+ </thead>
+ <tbody>
+	 <% @users.each do |user| %>
+	   <tr>
+	     <td><%= user.id %></td>
+       <td><%= user.name %></td>
+       <td><%= user.email %></td>
+       <td><%= user.admin %></td>
+       <td>
+         <%= link_to "Edit user", edit_user_path(user), class: "btn btn-info" %>
+         <%= link_to "Delete", user, method: "delete", confirm: "Are you sure?", class: "btn btn-danger" %>
+       </td>
+	   </tr>
+	 <% end %>
+ </tbody>
+</table>
 
 <%= will_paginate %>

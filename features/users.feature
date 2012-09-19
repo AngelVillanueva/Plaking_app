@@ -6,15 +6,31 @@ Scenario: Not signed_in users cannot access Users page
   Then I should see the header "Sign in"
   And I should see "Please, sign in"
   
+Scenario: Not Admin users cannot access Users page
+  Given I am a logged common user
+  When I go to the Users page
+  Then I should not arrive to the "Users" page
+  
+Scenario: Admin users can access Users page
+  Given I am a logged Admin user
+  When I go to the Users page
+  Then the page title should be "Users"
+    And I should see a list of all Users 
+  
 Scenario: Happy path to the show user page
   Given I am signed in at the application
-  And I am in the Users page
-  When I follow the "See user" link 
+  When I follow the "My account" link
   Then I should see the header "User page"
   And I should not see "Please, sign in"
   
-Scenario: Happy path to the edit user page
+Scenario: each User can just be viewed by himself
   Given I am signed in at the application
+  When I try to see a different user
+  Then I should not see the header "User page for"
+  And I should see the header "Welcome to Matricula El Coche"
+  
+Scenario: Happy path to the edit user page
+  Given I am a logged Admin user
   And I am in the Users page
   When I follow the "Edit user" link
   Then I should see the header "Edit User"
@@ -32,12 +48,6 @@ Scenario: Not signed_in users are redirected to the protected page after signin 
   And I sign in at the application
   Then I should see the header "Edit User"
   And I should not see "Please, sign in"
-  
-Scenario: each User can just be viewed by himself
-  Given I am signed in at the application
-  When I try to see a different user
-  Then I should not see the header "User page for"
-  And I should see the header "Welcome to Matricula El Coche"
 
 Scenario: each User can just be edited by himself
   Given I am signed in at the application

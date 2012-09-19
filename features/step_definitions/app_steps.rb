@@ -113,6 +113,10 @@ When /^I go to the New State page$/ do
   visit new_state_path
 end
 
+When /^I go to the Users page$/ do
+  visit users_path
+end
+
 When /^I go to delete a State$/ do
   visit states_path
 end
@@ -219,6 +223,11 @@ Then /^I should see a list of all Orders$/ do
   visit current_path
   page.should have_selector('th', text: "Status")
   page.should have_selector('td', text: "Order ##{order.id}")
+end
+
+Then /^I should see a list of all Users$/ do
+  page.should have_selector('th', text: "Name")
+  page.should have_selector('td', text: "Angel")
 end
 
 Then /^there should be one State more in the app$/ do
