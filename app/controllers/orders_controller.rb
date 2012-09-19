@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update]
-  #before_filter :correct_user, only: [:show]
+  before_filter :correct_user, only: [:show]
 
   def show
     @order = Order.find(params[:id])
@@ -24,8 +24,7 @@ class OrdersController < ApplicationController
       redirect_to @order, notice: "Thanks for your Order"
     else
       flash.now[:error] = "Error saving the order"
-      render 'new'
-      #redirect_to new_order_path, notice: "Error saving the order"
+      render :new
     end
   end
   def edit
@@ -39,8 +38,7 @@ class OrdersController < ApplicationController
       redirect_to @order, notice: "The order was updated with the new status"
     else
       flash.now[:error] = "Error updating the order"
-      render 'edit'
-      #redirect_to @order, notice: "Error updating the order"
+      render :edit
     end
   end
   

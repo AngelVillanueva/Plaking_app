@@ -19,6 +19,14 @@ Examples:
   | "Miguel" | "Pedrosa"    |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
   | "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
   
+Scenario: error creating an Order
+  Given I am a logged common user
+    And I have created a Quote
+  When I go to the New Order page
+    And I click "Create Order"
+  Then I should see "Error saving the order"
+    And the page title should be "New Order"
+
 Scenario: signup / in is needed to create an Order
   Given I am not a logged user
     And I have created a Quote

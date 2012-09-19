@@ -190,6 +190,10 @@ Then /^I should not see the link "(.*?)"$/ do |link_text|
   page.should_not have_selector('a', text: link_text)
 end
 
+Then /^the page title should be "(.*?)"$/ do |page_title|
+  page.should have_selector('title', text: page_title)
+end
+
 Then /^I should see a list of States$/ do
   page.should have_selector('a', text: "New State")
   page.should have_selector('th', text: "State")
