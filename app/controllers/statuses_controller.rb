@@ -1,4 +1,7 @@
 class StatusesController < ApplicationController
+  before_filter :signed_in_user, only: [:index, :new, :create]
+  before_filter :admin_user, only: [:index, :new, :create]
+  
   def index
     @statuses = Status.all
   end

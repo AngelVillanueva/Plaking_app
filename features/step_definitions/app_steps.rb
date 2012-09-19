@@ -105,8 +105,8 @@ When /^I go to any page$/ do
   step "I am in the homepage"
 end
 
-When /^I go to the States Admin Area$/ do
-  visit states_path
+When /^I go to the (.*?) Admin Area$/ do |controller|
+  visit "/#{controller.downcase}"
 end
 
 When /^I go to the New State page$/ do
@@ -203,6 +203,10 @@ Then /^the page title should be "(.*?)"$/ do |page_title|
   page.should have_selector('title', text: page_title)
 end
 
+Then /^I should not see the header "(.*?)"$/ do |header_text|
+  page.should_not have_selector('h1', text: header_text)
+end
+
 Then /^I should not arrive to the "(.*?)" page$/ do |controller|
   visit "/#{controller.downcase}"
   page.should have_selector('title', text: "Welcome")
@@ -228,6 +232,10 @@ end
 Then /^I should see a list of all Users$/ do
   page.should have_selector('th', text: "Name")
   page.should have_selector('td', text: "Angel")
+end
+
+Then /^I should see the item "(.*?)" in the list$/ do |li_item_text|
+  page.should have_selector('li', text: li_item_text)
 end
 
 Then /^there should be one State more in the app$/ do

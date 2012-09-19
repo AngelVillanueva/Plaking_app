@@ -2,8 +2,8 @@
 
 <h1>List of Statuses</h1>
 
-<ul>
-  <% @statuses.each do |s| %>
-    <li><%= s.name %></li>
-  <% end %>
-</ul>
+<ol>
+<%= render @statuses %>
+</ol>
+
+<%= link_to "New Status", new_status_path, class: "btn btn-primary" %>
