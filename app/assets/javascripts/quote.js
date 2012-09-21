@@ -4,14 +4,14 @@ $(document).ready(function(){
   		var selector = $(this).val();
   		switch (selector) {
   			case "Ciclomotor":
-  			$('#engine, #cyls, #stroke').hide();
+  			$('#engine, #cyls').hide();
   			break;
   			case "Motocicleta":
   			$('#engine').show();
-  			$('#cyls, #stroke').hide();
+  			$('#cyls').hide();
   			break;
   			default:
-  			$('#engine, #cyls, #stroke').show();
+  			$('#engine, #cyls').show();
   		}
   	});
 });
