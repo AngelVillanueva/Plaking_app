@@ -1,8 +1,7 @@
 <% provide :title, "Create Quote" %>
 
 <div class="center hero-unit">
-<h1>Your Quote</h1>
-<h2>Your Quote is <%= in_euro(@quote.amount) %></h2>
+<h2>Your Quote is <%= number_to_currency(@quote.amount) %></h2>
 
 <a class="btn btn-small" href="<%= new_quote_path %>">Cancel and Start Again</a>
 <a class="btn btn-primary" href="<%= new_order_path %>">Accept and Continue</a>

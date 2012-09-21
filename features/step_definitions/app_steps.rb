@@ -71,6 +71,7 @@ Given /^I have created a Quote$/ do
   step "I have prepared a Quote for the city of VIC"
   select "Ciclomotor", from: "Vehicle"
   click_button "Create Quote"
+  #click_button I18n.t("Create Quote")
 end
 
 Given /^I have been redirected to signup page before creating an Order$/ do
@@ -259,9 +260,9 @@ end
 
 Then /^I cannot create an Order before signing up or in$/ do
   page.should have_selector('title', text: "New User")
-  page.should have_selector("form[action='/users']")
+  page.should have_selector("form[action='/#{I18n.locale}/users']")
 end
 
 Then /^I am able to create a new Order$/ do
-  page.should have_selector("form[action='/orders']")
+  page.should have_selector("form[action='/#{I18n.locale}/orders']")
 end

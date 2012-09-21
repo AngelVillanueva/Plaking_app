@@ -17,8 +17,8 @@ class StatesController < ApplicationController
       flash[:success] = "New State successfully created"
       redirect_to states_path
     else
-      flash.now[:error] = "Error saving the State"
-      render new_state_path
+      flash[:error] = "Error saving the State"
+      redirect_to new_state_path
     end
   end
   

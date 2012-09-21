@@ -9,7 +9,7 @@ Scenario Outline: Happy Path for a New Order
     And I fill <address> in "Address"
     And I fill <email> in "Email"
     And I fill <phone> in "Phone number"
-    And I fill <shop> in "Concesionario"
+    And I fill <shop> in "Shop"
     And I click "Create Order"
   Then I should see "Thanks for your Order"
   
