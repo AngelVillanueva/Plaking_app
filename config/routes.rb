@@ -1,5 +1,7 @@
 LlorensApp::Application.routes.draw do
 
+  filter :locale #routing-filter gem, possible to exclude some resources as admin etc
+
   root to: 'states#check'
   
   resources :states
