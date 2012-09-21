@@ -5,21 +5,21 @@ class QuotesController < ApplicationController
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
     @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
-    @strokes = {"2 tiempos" => 2 , "4 tiempos" => 4}
+    #@strokes = {"2 tiempos" => 2 , "4 tiempos" => 4} # let's assume that all engines are "4tiempos"
   end
   
   def create
     # build up some temp variables to be used in the calculations
     cc_engine = params[:quote][:cc_engine].to_i
     n_cylinders = params[:quote][:number_cylinders].to_i
-    stroke = params[:quote][:stroke].to_i
+      # stroke = params[:quote][:stroke].to_i # let's assume that all engines are "4tiempos"
     anho = params[:quote]["plaking_date(1i)"].to_i
     month = params[:quote]["plaking_date(2i)"].to_i
     city_id = params[:quote][:city_id]
     vehicle_type = params[:quote][:vehicle]
     
     # determine the vehicle category to be used to recover the right list price
-    potencia = return_potencia_fiscal(cc_engine, n_cylinders, stroke) # returns integer for a car and 0 if not a car
+    potencia = return_potencia_fiscal(cc_engine, n_cylinders, 4) # returns integer for a car and 0 if not a car # let's assume that all engines are "4tiempos"
     vehicle_code = return_vehicle_code(vehicle_type, potencia, cc_engine) # returns Ax (cars) or Fx (not cars) code to look in the prices table
     vehicle = Vehicle.find_by_code(vehicle_code)
   

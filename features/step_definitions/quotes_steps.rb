@@ -14,5 +14,9 @@ When /^I fill "(.*?)" in "(.*?)"$/ do |value, field|
 end
 
 When /^I select the date "(.*?)" as "(.*?)"$/ do |date_value, date_field|
-  select_date date_field, with: date_value
+    select_date date_field, with: date_value
+end
+
+When /^I select the month "(.*?)" as "(.*?)"$/ do |date_value, date_field|
+    select_month date_value, from: date_field
 end

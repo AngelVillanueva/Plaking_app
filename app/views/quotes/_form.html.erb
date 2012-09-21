@@ -8,9 +8,8 @@
 			<%= f.select :vehicle, @vehicles %>
 			<%= f.input :cc_engine, label: "Engine cc", required: true, wrapper_html: {id: "engine"} %>
 			<%= f.input :number_cylinders, label: "Cylinders", wrapper_html: {id: "cyls"} %>
-			<%= f.input :stroke, collection: @strokes, wrapper_html: {id: "stroke"} %>
 			<%= f.label :plaking_date %>
-			<%= f.date_select :plaking_date, order: [:day, :month, :year], start_year: Time.new.year %>
+			<%= f.date_select :plaking_date, order: [:month, :year], start_year: Time.new.year, discard_day: true %>
 			
 			<%= f.button :submit, class: 'btn btn-large btn-primary' %>
 		

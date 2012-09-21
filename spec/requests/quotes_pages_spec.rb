@@ -81,17 +81,17 @@ describe "Quotes" do
         end.to raise_error(ActiveRecord::RecordInvalid)
       end
     end
-    describe "needs Stroke if car" do
-     before do
-        @quote.vehicle_id = 1
-        @quote.stroke = ""
-      end
-      it "quote should fail" do
-        expect do
-          @quote.save!
-        end.to raise_error(ActiveRecord::RecordInvalid)
-      end
-    end
+#    describe "needs Stroke if car" do
+#     before do
+#        @quote.vehicle_id = 1
+#        @quote.stroke = ""
+#      end
+#      it "quote should fail" do
+#        expect do
+#          @quote.save!
+#        end.to raise_error(ActiveRecord::RecordInvalid)
+#      end
+#    end
     describe "no needs engine data if Ciclomotor" do
      before do
         @quote.vehicle_id = 6

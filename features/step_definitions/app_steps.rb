@@ -152,10 +152,9 @@ When /^I create the Quote for (.*?) without (.*?) data$/ do |type, engine_field|
   fill_in engine_field, with: ""
 end
 
-When /^I enter the \{"(.*?)": "(.*?)", "(.*?)": "(.*?)", "(.*?)": "(.*?)"\}$/ do |engine_field, engine_value, cylinders_field, cylinders_value, stroke_field, stroke_value|
+When /^I enter the \{"(.*?)": "(.*?)", "(.*?)": "(.*?)"\}$/ do |engine_field, engine_value, cylinders_field, cylinders_value|
   fill_in engine_field, with: engine_value
   fill_in cylinders_field, with: cylinders_value
-  select stroke_value, from: stroke_field
   click_button "Create Quote"
 end
 

@@ -15,7 +15,7 @@
 #
 
 class Quote < ActiveRecord::Base
-  attr_accessible :cc_engine, :number_cylinders, :stroke, :plaking_date
+  attr_accessible :cc_engine, :number_cylinders, :plaking_date
   belongs_to :city
   belongs_to :vehicle
   has_one :order
@@ -23,7 +23,7 @@ class Quote < ActiveRecord::Base
   validates :amount, :city_id, :vehicle_id, presence: true
   validates :cc_engine, presence: true, if: :needs_cc?
   validates :number_cylinders, presence: true, if: :needs_cyl?
-  validates :stroke, presence: true, if: :needs_cyl?
+    # validates :stroke, presence: true, if: :needs_cyl? # let's assume that all engines are "4tiempos"
   
   private
   def needs_cyl?
