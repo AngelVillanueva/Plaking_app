@@ -7,3 +7,7 @@ en:
   welcome: "Welcome to Matricula El Coche"
   check_availability: "Check your State for service availability"
   check: "Check State"
+  sure_to_cancel_quote?: "Do you know that big savings are possible?"
+  did_you_at_least_review_the_Quote?: "Take a moment and review the Quote you obtained from your Car Dealer; the Plaking tax and all related steps could add quite a lot to your car total Quote."
+  cancel: "Cancel"
+  really_quit: "It's ok, let me quit"
