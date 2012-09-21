@@ -1,0 +1,13 @@
+<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%= t(:sure_to_cancel_quote?) %></h3>
+  </div>
+  <div class="modal-body">
+    <p><%= t(:did_you_at_least_review_the_Quote?) %></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t(:cancel) %></button>
+    <a class="btn btn-primary" href="<%= new_quote_path %>"><%= t(:really_quit) %></a>
+  </div>
+</div>
