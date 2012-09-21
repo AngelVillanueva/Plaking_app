@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   // Hide not required fields depending on vehicle type
   	$('#quote_vehicle').bind('change', function(){
   		var selector = $(this).val();
@@ -14,4 +15,6 @@ $(document).ready(function(){
   			$('#engine, #cyls').show();
   		}
   	});
+  // end of script to hide fields
+  	
 });
