@@ -1,5 +1,8 @@
-Feature: Quote calculation
-
+Feature: Quote
+  In order to save money when buying a car
+  As a user
+  I should be able to obtain a detailed plaking Quote
+  
 Scenario Outline: a Quote needs CC, Cylinders and Stroke data depending on the vehicle
   Given I have prepared a Quote for the city of <city>
   When I create the Quote for <type> without <engine_field> data
