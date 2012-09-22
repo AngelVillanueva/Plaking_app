@@ -238,6 +238,14 @@ Then /^I should see the item "(.*?)" in the list$/ do |li_item_text|
   page.should have_selector('li', text: li_item_text)
 end
 
+Then /^I should see the separate value for each "(.*?)" line$/ do |list_items|
+  item = list_items.split(",")
+  item.each do |i|
+    page.should have_selector('li', text: i)
+  end
+end
+
+
 Then /^there should be one State more in the app$/ do
   expect do
     click_button "Create State"
