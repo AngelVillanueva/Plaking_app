@@ -10,6 +10,7 @@
 #
 
 class Tax < ActiveRecord::Base
+  attr_accessible :symbol, :percentage
   has_many :quote_concepts
 
 end

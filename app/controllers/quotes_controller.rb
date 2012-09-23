@@ -23,10 +23,21 @@ class QuotesController < ApplicationController
     vehicle_code = return_vehicle_code(vehicle_type, potencia, cc_engine) # returns Ax (cars) or Fx (not cars) code to look in the prices table
     vehicle = Vehicle.find_by_code(vehicle_code)
   
-    # calculate the quote amount based on city, vehicle_category and plaking_date
+    # calculate the ivtm tax based on city, vehicle_category and plaking_date
     list_price = Price.find_by_city_id_and_vehicle_id(city_id, vehicle.id)
     date_modifier = return_quarter(month) # list price is adjusted depending on the remaining quarters for the year
-    amount = BigDecimal(list_price.price * date_modifier, 10).round(2)
+    ivtm_tax = BigDecimal(list_price.price * date_modifier, 10).round(2)
+    
+    # calculate each line for the Quote   
+        total_net = 0
+        total_vat = 0
+        QuoteConcept.all.each do |c|
+          total_net += c.net_amount
+          total_vat += c.vat_tax
+        end
+    
+    # creates quotes lines hash
+    @quote_lines = QuoteConcept.all.collect { |v| [v.symbol, v.net_amount] }
     
     # rebuild the params for the Quote creation
     revised_params = params[:quote]
@@ -36,7 +47,9 @@ class QuotesController < ApplicationController
     @quote = Quote.new(revised_params)
     @quote.city_id = city_id
     @quote.vehicle_id = vehicle.id
-    @quote.amount = amount
+      @quote.amount = total_net + ivtm_tax + total_vat
+    @ivtm = ivtm_tax
+    @vat_tax = total_vat
     
     # save and redirect
     if @quote.save
