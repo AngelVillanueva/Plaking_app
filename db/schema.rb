@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923164356) do
+ActiveRecord::Schema.define(:version => 20120923175558) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -52,8 +52,11 @@ ActiveRecord::Schema.define(:version => 20120923164356) do
     t.decimal  "net_amount",  :precision => 10, :scale => 2
     t.integer  "tax_id"
     t.boolean  "show_before"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.boolean  "for_car",                                    :default => true
+    t.boolean  "for_ciclo",                                  :default => true
+    t.boolean  "for_moto",                                   :default => true
   end
 
   create_table "quotes", :force => true do |t|

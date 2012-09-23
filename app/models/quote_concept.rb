@@ -9,6 +9,9 @@
 #  show_before :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  for_car     :boolean          default(TRUE)
+#  for_ciclo   :boolean          default(TRUE)
+#  for_moto    :boolean          default(TRUE)
 #
 
 class QuoteConcept < ActiveRecord::Base

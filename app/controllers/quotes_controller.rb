@@ -29,15 +29,16 @@ class QuotesController < ApplicationController
     ivtm_tax = BigDecimal(list_price.price * date_modifier, 10).round(2)
     
     # calculate each line for the Quote   
+        relevant_concepts = QuoteConcept.find(:all, conditions: {relevant_vehicle(vehicle_type) => 'true'})
         total_net = 0
         total_vat = 0
-        QuoteConcept.all.each do |c|
+        relevant_concepts.each do |c|
           total_net += c.net_amount
           total_vat += c.vat_tax
         end
     
     # creates quotes lines hash
-    @quote_lines = QuoteConcept.all.collect { |v| [v.symbol, v.net_amount] }
+    @quote_lines = relevant_concepts.collect { |v| [v.symbol, v.net_amount] }
     
     # rebuild the params for the Quote creation
     revised_params = params[:quote]
@@ -114,6 +115,16 @@ class QuotesController < ApplicationController
           end
         else
           "F1"
+      end
+    end
+    def relevant_vehicle(type)
+      case type
+        when "Turismo"
+          :for_car
+        when "Ciclomotor"
+          :for_ciclo
+        when "Motocicleta"
+          :for_moto
       end
     end
 

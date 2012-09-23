@@ -27,7 +27,7 @@ namespace :feed do
   
   desc 'Feeding Quote Concepts'
   task :concepts do
-    FastSeeder.seed_csv!(QuoteConcept, "concepts.csv", :id, :symbol, :net_amount, :tax_id, :show_before, :created_at => "23-09-2012", :updated_at => "23-09-2012")
+    FastSeeder.seed_csv!(QuoteConcept, "concepts.csv", :id, :symbol, :net_amount, :tax_id, :show_before, :for_car, :for_ciclo, :for_moto, :created_at => "23-09-2012", :updated_at => "23-09-2012")
   end
   
   desc 'Feeding Taxes'
