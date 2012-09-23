@@ -25,13 +25,18 @@ namespace :feed do
     FastSeeder.seed_csv!(Price, "prices.csv", :id, :vehicle_id, :city_id, :price, :year, :created_at => "23-09-2012", :updated_at => "23-09-2012")
   end
   
+  desc 'Feeding Quote Concepts'
+  task :concepts do
+    FastSeeder.seed_csv!(QuoteConcept, "concepts.csv", :id, :symbol, :net_amount, :tax_id, :show_before, :created_at => "23-09-2012", :updated_at => "23-09-2012")
+  end
+  
   desc 'Feeding Taxes'
   task :taxes do
     FastSeeder.seed_csv!(Tax, "taxes.csv", :id, :symbol, :percentage, :created_at => "23-09-2012", :updated_at => "23-09-2012")
   end
   
   desc 'Run all feedings'
-  task :all => [:states, :cities, :vehicles, :prices, :taxes]
+  task :all => [:states, :cities, :vehicles, :prices, :concepts, :taxes]
   
   task :default => :all
   
