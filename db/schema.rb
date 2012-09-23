@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919085422) do
+ActiveRecord::Schema.define(:version => 20120922183956) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(:version => 20120919085422) do
   end
 
   add_index "prices", ["vehicle_id", "city_id", "year"], :name => "index_prices_on_type_id_and_city_id_and_year"
+
+  create_table "quote_concepts", :force => true do |t|
+    t.string   "symbol"
+    t.decimal  "net_amount",  :precision => 10, :scale => 2
+    t.integer  "tax_id"
+    t.boolean  "show_before"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
 
   create_table "quotes", :force => true do |t|
     t.datetime "created_at",                                      :null => false
