@@ -19,7 +19,7 @@ Scenario Outline: Happy path for a Quote
   When I select the <vehicle_type> from "Vehicle"
     And I select the month <pdate> as "Plaking date"
     And I enter the <engine_information>
-  Then I should see "Your Quote is <quote>"
+  Then I should see "IVTM : <quote>"
   
 Examples:
 |   city   | vehicle_type |                    engine_information   |    quote  |     pdate    |
