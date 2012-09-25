@@ -2,9 +2,9 @@
   <% relevant_before.each do |key, value| %>
     <li><%= t(key) %>: <%= number_to_currency(value) %></li>
   <% end %>
-  <li>IVTM : <%= number_to_currency(@ivtm) %></li>
+  <li><%= t(:ivtm_line) %> : <%= number_to_currency(@ivtm) %></li>
   <% relevant_after.each do |key, value| %>
     <li><%= t(key) %>: <%= number_to_currency(value) %></li>
   <% end %>
-  <li>IVA : <%= number_to_currency(@vat_tax) %></li>
+  <li><%= t(:vat_line) %> : <%= number_to_currency(@vat_tax) %></li>
 </ul>
