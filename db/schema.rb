@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923175558) do
+ActiveRecord::Schema.define(:version => 20120925152349) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20120923175558) do
     t.boolean  "for_car",                                    :default => true
     t.boolean  "for_ciclo",                                  :default => true
     t.boolean  "for_moto",                                   :default => true
+    t.integer  "ordering"
   end
 
   create_table "quotes", :force => true do |t|

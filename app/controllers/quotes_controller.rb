@@ -35,7 +35,7 @@ class QuotesController < ApplicationController
         end
     
     # creates quotes lines hash
-    @quote_lines = relevant_concepts.collect { |v| [v.symbol, v.net_amount] }
+    @quote_lines = relevant_concepts
     
     # rebuild the params for the Quote creation
     revised_params = params[:quote]
