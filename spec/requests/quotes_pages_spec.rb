@@ -17,8 +17,10 @@ describe "Quotes" do
     it { should respond_to :city_id }
     it { should respond_to :vehicle_id }
     it { should respond_to :order }
+    it { should respond_to :tax_power }
     its(:city) { should == city }
     its(:vehicle) { should == vehicle }
+    its(:tax_power) { should_not == nil }
     
     describe "validating fields" do
       before { @quote.amount = "" }

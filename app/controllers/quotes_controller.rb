@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
     @state = State.find(session[:state])
     @cities = @state.cities.collect{ |c| [c.name, c.id] }
     @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
-    #@strokes = {"2 tiempos" => 2 , "4 tiempos" => 4} # let's assume that all engines are "4tiempos"
+      #@strokes = {"2 tiempos" => 2 , "4 tiempos" => 4} # let's assume that all engines are "4tiempos"
   end
   
   def create
@@ -29,7 +29,7 @@ class QuotesController < ApplicationController
     ivtm_tax = BigDecimal(list_price.price * date_modifier, 10).round(2)
     
     # calculate each line for the Quote   
-        relevant_concepts = QuoteConcept.find(:all, conditions: {relevant_vehicle(vehicle_type) => 'true'})
+        relevant_concepts = QuoteConcept.where(relevant_vehicle(vehicle_type) => "true")
         total_net = 0
         total_vat = 0
         relevant_concepts.each do |c|
