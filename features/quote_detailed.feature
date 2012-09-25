@@ -10,6 +10,7 @@ Scenario Outline: Happy path for a Quote
     And I enter the <engine_information>
   Then I should see "Your Quote is <total_quote>"
     And I should see the separate value for each "<tasa_jefatura>,<tasa_colegio>,<ivtm>,<honorarios>,<iva>" line
+    And I should see "Legal Advice"
   
 Examples:
 |   city   | vehicle_type |                    engine_information   |     pdate    | tasa_jefatura | tasa_colegio |    ivtm   |  honorarios  |  iva   | total_quote  |

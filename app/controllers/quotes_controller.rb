@@ -19,14 +19,11 @@ class QuotesController < ApplicationController
     vehicle_type = params[:quote][:vehicle]
     
     # determine the vehicle category to be used to recover the right list price
-    potencia = return_potencia_fiscal(cc_engine, n_cylinders, 4) # returns integer for a car and 0 if not a car # let's assume that all engines are "4tiempos"
-    vehicle_code = return_vehicle_code(vehicle_type, potencia, cc_engine) # returns Ax (cars) or Fx (not cars) code to look in the prices table
-    vehicle = Vehicle.find_by_code(vehicle_code)
+    vehicle = VehicleInstance.new(cc_engine, n_cylinders, vehicle_type)
   
     # calculate the ivtm tax based on city, vehicle_category and plaking_date
-    list_price = Price.find_by_city_id_and_vehicle_id(city_id, vehicle.id)
-    date_modifier = return_quarter(month) # list price is adjusted depending on the remaining quarters for the year
-    ivtm_tax = BigDecimal(list_price.price * date_modifier, 10).round(2)
+    list_price = Price.find_by_city_id_and_vehicle_id(city_id, vehicle.vehicle_id)
+    ivtm_tax = BigDecimal(list_price.price * date_modifier(month), 10).round(2)
     
     # calculate each line for the Quote   
         relevant_concepts = QuoteConcept.where(relevant_vehicle(vehicle_type) => "true")
@@ -47,7 +44,7 @@ class QuotesController < ApplicationController
     
     @quote = Quote.new(revised_params)
     @quote.city_id = city_id
-    @quote.vehicle_id = vehicle.id
+    @quote.vehicle_id = vehicle.vehicle_id
       @quote.amount = total_net + ivtm_tax + total_vat
     @ivtm = ivtm_tax
     @vat_tax = total_vat
@@ -63,7 +60,7 @@ class QuotesController < ApplicationController
   end
   
   private
-    def return_quarter(a_month)
+    def date_modifier(a_month)
       case a_month
         when 1..3
           1
@@ -75,46 +72,6 @@ class QuotesController < ApplicationController
           0.25
         else
           1
-      end
-    end
-    def return_potencia_fiscal(cc_engine, number_cylinders, stroke)
-      if cc_engine == 0 || number_cylinders == 0 || stroke == 0
-        0
-      else
-        factor = (stroke == 4 && 0.08) || 0.11
-        ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
-      end
-    end
-    def return_vehicle_code(type, potencia, cc_engine)
-      case type
-        when "Turismo"
-          case potencia
-            when 0..7.99
-              "A1"
-            when 8..11.99
-              "A2"
-            when 12..15.99
-              "A3"
-            when 16..19.99
-              "A4"
-            else
-              "A5"
-          end
-        when "Motocicleta"
-          case cc_engine
-            when 0..125
-              "F2"
-            when 126..250
-              "F3"
-            when 251..500
-              "F4"
-            when 501..1000
-              "F5"
-            else
-              "F6"
-          end
-        else
-          "F1"
       end
     end
     def relevant_vehicle(type)

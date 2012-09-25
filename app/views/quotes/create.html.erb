@@ -2,13 +2,14 @@
 
 <div class="center hero-unit">
   <h2>Your Quote is <%= number_to_currency(@quote.amount) %></h2>
-
   <h3><%= t(:detailed_quote) %></h3>
 
   <%= render 'quote_lines' %>
 
   <a class="btn btn-small" href="#myModal" role="button" data-toggle="modal">Cancel and Start Again</a>
   <a class="btn btn-primary" href="<%= new_order_path %>">Accept and Continue</a>
+  
+  <%= render 'legal_advice' %>
 </div>
 
 <%= render 'modal' %>

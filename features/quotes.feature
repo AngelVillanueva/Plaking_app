@@ -20,6 +20,7 @@ Scenario Outline: Happy path for a Quote
     And I select the month <pdate> as "Plaking date"
     And I enter the <engine_information>
   Then I should see "IVTM : <quote>"
+    And I should see "Legal Advice"
   
 Examples:
 |   city   | vehicle_type |                    engine_information   |    quote  |     pdate    |

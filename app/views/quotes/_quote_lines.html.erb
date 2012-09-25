@@ -1,4 +1,4 @@
-<ul>
+<ul class="unstyled">
   <% @quote_lines.each do |key, value| %>
     <li><%= t(key) %>: <%= number_to_currency(value) %></li>
   <% end %>

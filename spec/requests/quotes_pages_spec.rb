@@ -17,10 +17,8 @@ describe "Quotes" do
     it { should respond_to :city_id }
     it { should respond_to :vehicle_id }
     it { should respond_to :order }
-    it { should respond_to :tax_power }
     its(:city) { should == city }
     its(:vehicle) { should == vehicle }
-    its(:tax_power) { should_not == nil }
     
     describe "validating fields" do
       before { @quote.amount = "" }
@@ -83,17 +81,6 @@ describe "Quotes" do
         end.to raise_error(ActiveRecord::RecordInvalid)
       end
     end
-#    describe "needs Stroke if car" do
-#     before do
-#        @quote.vehicle_id = 1
-#        @quote.stroke = ""
-#      end
-#      it "quote should fail" do
-#        expect do
-#          @quote.save!
-#        end.to raise_error(ActiveRecord::RecordInvalid)
-#      end
-#    end
     describe "no needs engine data if Ciclomotor" do
      before do
         @quote.vehicle_id = 6

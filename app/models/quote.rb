@@ -16,26 +16,16 @@
 
 class Quote < ActiveRecord::Base
   attr_accessible :cc_engine, :number_cylinders, :plaking_date
-  attr_accessor :tax_power
   belongs_to :city
   belongs_to :vehicle
   has_one :order
   
-  before_save :set_tax_power
   
   validates :amount, :city_id, :vehicle_id, presence: true
   validates :cc_engine, presence: true, if: :needs_cc?
   validates :number_cylinders, presence: true, if: :needs_cyl?
     # validates :stroke, presence: true, if: :needs_cyl? # let's assume that all engines are "4tiempos"
   
-  def set_tax_power
-    if cc_engine == 0 || number_cylinders == 0 || stroke == 0
-      self.tax_power = 0
-    else
-      factor = (stroke == 4 && 0.08) || 0.11
-      self.tax_power = ((cc_engine / number_cylinders) ** 0.6) * factor * number_cylinders
-    end
-  end
   
   private
   def needs_cyl?
