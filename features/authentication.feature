@@ -50,10 +50,11 @@ Scenario: Non Admin users do not have access to the admin menu
   Given I am a logged common user
   When I go to any page
   Then I should not see the link "Admin menu"
-  And I should not see the link "States management"
+  #And I should not see the link "States management"
+  And I should not see the links within the admin menu
   
 Scenario: Just Admin users have access to the admin menu
   Given I am a logged Admin user
   When I go to any page
   Then I should see the link "Admin menu"
-  And I should see the link "States management"
+  And I should see the links within the admin menu

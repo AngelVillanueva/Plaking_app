@@ -2,14 +2,41 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    models:
+      city: 'City'
+      order: 'Order'
+      price: 'Price'
+      quote: 'Quote'
+      quote_concept: "Quote Concept"
+      state: 'State'
+      status: 'Status'
+      tax: 'Tax'
+      user: 'User'
+      vehicle: 'Vehicle'
+      vehicle_instance: 'Vehicle Instance'
+  attributes:
+      city:
+        name: 'Name'
+  #layouts
+  states_management: "States management"
+  orders_management: "Orders management"
+  status_management: "Status management"
+  taxes_management: "Taxes management"
   # views
   # states
   welcome: "Welcome to Matricula El Coche"
   check_availability: "Check your State for service availability"
   check: "Check State"
   # taxes
+  taxes: "taxes"
   vat_exempt: "No VAT"
   vat_general: "VAT general"
+  new_tax: "New Tax"
+  create_new_tax: "Create New Tax"
+  create_tax: "Create Tax"
+  new_tax_success: "Tax successfully created"
+  new_tax_error: "Error creating the new Tax"
   # quotes
   traffic_tax_global: "Tasa de Jefatura de Tráfico"
   college_tax: "Tasa del Colegio de Gestores"

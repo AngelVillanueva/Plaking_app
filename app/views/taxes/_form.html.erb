@@ -1,0 +1,11 @@
+<div class="">
+	<div class="">
+		<%= simple_form_for(@tax, html: {class: 'form-inline'}) do |f| %>
+		
+			<%= f.input :symbol %>
+			<%= f.input :percentage %>
+			<%= f.button :submit, t(:create_tax), class: 'btn-primary' %>
+		
+		<% end %>
+	</div>
+</div>

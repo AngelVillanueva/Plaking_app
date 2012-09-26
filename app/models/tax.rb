@@ -13,4 +13,6 @@ class Tax < ActiveRecord::Base
   attr_accessible :symbol, :percentage
   has_many :quote_concepts
 
+  validates :symbol, :percentage, presence: true
+  validates :percentage, numericality: {greater_than_or_equal_to: 0}
 end

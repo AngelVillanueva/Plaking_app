@@ -8,7 +8,7 @@ LlorensApp::Application.routes.draw do
   match '/states/checking' => 'states#checking', method: 'post'
   match '/states/delete' => 'states#destroy', via: 'delete'
   
-  resources :taxes, only: [:index, :new]
+  resources :taxes
   resources :quotes
   resources :orders
   resources :statuses

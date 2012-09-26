@@ -202,10 +202,13 @@ es:
       order: 'Pedido'
       price: 'Precio'
       quote: 'Presupuesto'
+      quote_concept: 'Concepto de Presupuesto'
       state: 'Provincia'
       status: 'Estado'
       user: 'Usuario'
+      tax: 'Impuesto'
       vehicle: 'Vehículo'
+      vehicle_instance: 'Vehículo Concreto'
     attributes:
       city:
         name: 'Nombre'

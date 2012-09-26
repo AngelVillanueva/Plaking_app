@@ -131,6 +131,10 @@ When /^I go to edit a State$/ do
   visit edit_state_path(@state_editable)
 end
 
+When /^I go to create a new Tax$/ do
+  visit new_tax_path
+end
+
 When /^I fill a valid information for a new State$/ do
   fill_in "Name", with: "Liliput"
   fill_in "CP", with: "01"
@@ -166,6 +170,18 @@ When /^I create a valid User$/ do
   click_button "Create User"
 end
 
+When /^I supply all the tax data$/ do
+  fill_in "Symbol", with: "new tax"
+  fill_in "Percentage", with: 8.00
+  click_button I18n.t(:create_tax)
+end
+
+When /^I do not supply all the tax data$/ do
+  fill_in "Symbol", with: "new tax"
+  fill_in "Percentage", with: -8.00
+  click_button I18n.t(:create_tax)
+end
+
 When /^I sign in as a valid user$/ do
   click_link "Sign in here!"
   fill_in "Email", with: @already_user.email
@@ -197,6 +213,20 @@ end
 
 Then /^I should not see the link "(.*?)"$/ do |link_text|
   page.should_not have_selector('a', text: link_text)
+end
+
+Then /^I should see the links within the admin menu$/ do 
+  page.should have_link(I18n.t(:states_management), href: states_path)
+  page.should have_link(I18n.t(:orders_management), href: orders_path)
+  page.should have_link(I18n.t(:status_management), href: statuses_path)
+  page.should have_link(I18n.t(:taxes_management), href: taxes_path)
+end
+
+Then /^I should not see the links within the admin menu$/ do 
+  page.should_not have_link(I18n.t(:states_management), href: states_path)
+  page.should_not have_link(I18n.t(:orders_management), href: orders_path)
+  page.should_not have_link(I18n.t(:status_management), href: statuses_path)
+  page.should_not have_link(I18n.t(:taxes_management), href: taxes_path)
 end
 
 Then /^the page title should be "(.*?)"$/ do |page_title|
@@ -238,13 +268,25 @@ Then /^I should see the item "(.*?)" in the list$/ do |li_item_text|
   page.should have_selector('li', text: li_item_text)
 end
 
+Then /^I should see the cell "(.*?)" in the table$/ do |td_item_text|
+  page.should have_selector('td', text: td_item_text)
+end
+
+Then /^I should see the new Tax cell in the table$/ do
+  step 'I should see the cell "new tax" in the table'
+  step 'I should see the cell "8.0" in the table'
+end
+
+Then /^I should not see the new Tax cell in the table$/ do
+  page.should have_selector("form[action='/#{I18n.locale}/#{I18n.t("taxes")}']")
+end
+
 Then /^I should see the separate value for each "(.*?)" line$/ do |list_items|
   item = list_items.split(",")
   item.each do |i|
     page.should have_selector('li', text: i)
   end
 end
-
 
 Then /^there should be one State more in the app$/ do
   expect do
@@ -273,3 +315,8 @@ end
 Then /^I am able to create a new Order$/ do
   page.should have_selector("form[action='/#{I18n.locale}/orders']")
 end
+
+Then /^I should be redirected to the home page$/ do
+  page.should have_selector('h1', text: I18n.t("welcome"))
+end
+
