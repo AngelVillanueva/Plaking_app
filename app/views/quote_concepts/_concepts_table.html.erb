@@ -1,0 +1,26 @@
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th><th><%= t(:concept) %></th><th><%= t(:net_amount) %></th><th><%= t(:tax) %></th><th><%= t(:show_before) %></th><th><%= t(:ordering) %></th><th><%= t(:for_car) %></th><th><%= t(:for_ciclo) %></th><th><%= t(:for_moto) %></th><th><%= t(:actions) %></th>
+    </tr>
+ </thead>
+ <tbody>
+	 <% @concepts.each do |concept| %>
+	   <tr>
+	     <td><%= concept.id %></td>
+       <td><%= t(concept.symbol) %></td>
+       <td><%= number_to_currency(concept.net_amount) %></td>
+       <td><%= t(concept.tax.symbol) %></td>
+       <td><%= concept.show_before %></td>
+       <td><%= concept.ordering %></td>
+       <td><%= concept.for_car %></td>
+       <td><%= concept.for_ciclo %></td>
+       <td><%= concept.for_moto %></td>
+       <td>
+         <%= link_to "Edit", edit_quote_concept_path(concept), class: "btn btn-info" %>
+         <%= link_to "Delete", concept, method: "delete", confirm: "Are you sure?", class: "btn btn-danger" %>
+       </td>
+	   </tr>
+	 <% end %>
+ </tbody>
+</table>

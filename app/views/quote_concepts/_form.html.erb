@@ -1,0 +1,17 @@
+<div class="">
+	<div class="">
+		<%= simple_form_for(@concept, html: {class: 'form-inline'}) do |f| %>
+		
+			<%= f.input :symbol %>
+			<%= f.input :net_amount %>
+			<%= f.input :tax_id, collection: Tax.all.collect {|t| [t.symbol, t.id]} %>
+			<%= f.input :show_before %>
+			<%= f.input :ordering %>
+			<%= f.input :for_car %>
+			<%= f.input :for_ciclo %>
+			<%= f.input :for_moto %>
+			<%= f.button :submit, class: 'btn-primary' %>
+		
+		<% end %>
+	</div>
+</div>

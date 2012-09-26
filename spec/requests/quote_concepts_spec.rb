@@ -12,6 +12,9 @@ describe "Quote Concepts" do
     it { should respond_to :net_amount }
     it { should respond_to :tax_id }
     it { should respond_to :show_before }
+    it { should respond_to :for_car }
+    it { should respond_to :for_ciclo }
+    it { should respond_to :for_moto }
     its(:tax) { should == iva }
     
   end

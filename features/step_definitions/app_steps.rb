@@ -115,6 +115,10 @@ When /^I go to the (.*?) Admin Area$/ do |controller|
   visit "/#{controller.pluralize.downcase}"
 end
 
+When /^I go to the Quote Concepts Administration Area$/ do
+  visit quote_concepts_path
+end
+
 When /^I go to the New State page$/ do
   visit new_state_path
 end
@@ -169,6 +173,10 @@ When /^I try to edit a tax with wrong information$/ do
   click_button I18n.t(:update_tax)
 end
 
+When /^I go to create a new Quote Concept$/ do
+  visit new_quote_concept_path
+end
+
 When /^I fill a valid information for a new State$/ do
   fill_in "Name", with: "Liliput"
   fill_in "CP", with: "01"
@@ -214,6 +222,23 @@ When /^I do not supply all the tax data$/ do
   fill_in "Symbol", with: "new tax"
   fill_in "Percentage", with: -8.00
   click_button I18n.t(:create_tax)
+end
+
+When /^I supply all the Concept data$/ do
+  fill_in "Symbol", with: "new concept"
+  fill_in I18n.t(:net_amount), with: 10
+  select "vat_general", from: "Tax"
+  check "Show before"
+  fill_in "Ordering", with: 6
+  check "For car"
+  uncheck "For ciclo"
+  check "For moto"
+  click_button I18n.t(:create_quote_concept)
+end
+
+When /^I do not supply all the Concept data$/ do
+  fill_in "Symbol", with: "new concept"
+  click_button I18n.t(:create_quote_concept)
 end
 
 When /^I sign in as a valid user$/ do
@@ -375,3 +400,14 @@ end
 Then /^I should be back in the Edit Tax page$/ do
   page.should have_selector('title', text: I18n.t(:edit_tax_page))
 end
+
+Then /^I should see the new Quote Concept cell in the table$/ do
+  page.should have_selector('title', text: I18n.t(:concepts_list))
+  page.should have_selector('td', text: "New Concept")
+end
+
+Then /^I should not see the new Quote Concept cell in the table$/ do
+  page.should have_selector('title', text: I18n.t(:new_concept_page))
+  page.should_not have_selector('td', text: "New Concept")
+end
+

@@ -1,0 +1,7 @@
+<% provide :title, t(:concepts_list) %>
+
+<h1><%= t(:quote_concepts) %></h1>
+
+<p><%= link_to t(:new_concept), new_quote_concept_path , class: "btn btn-primary" %></p>
+
+<%= render 'concepts_table' %>
