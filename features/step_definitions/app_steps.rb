@@ -107,7 +107,7 @@ When /^I go to any page$/ do
 end
 
 When /^I go to the (.*?) Admin Area$/ do |controller|
-  visit "/#{controller.downcase}"
+  visit "/#{controller.pluralize.downcase}"
 end
 
 When /^I go to the New State page$/ do
