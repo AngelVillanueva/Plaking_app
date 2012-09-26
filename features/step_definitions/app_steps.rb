@@ -86,8 +86,11 @@ Given /^I have some orders in place$/ do
 end
 
 Given /^there is at least one tax created$/ do
-  @tax = Tax.new(symbol: "new_tax", percentage: 21)
-  @tax.save!
+  @tax = FactoryGirl.create(:tax)
+end
+
+Given /^there is at least one Quote Concept created$/ do
+  @concept = FactoryGirl.create(:concept)
 end
 
 ## When
@@ -158,6 +161,11 @@ When /^I try to delete a tax$/ do
   click_link I18n.t(:delete_tax)
 end
 
+When /^I try to delete a Quote Concept$/ do
+  visit quote_concepts_path
+  click_link I18n.t(:delete_concept)
+end
+
 When /^I try to edit a tax$/ do
   visit taxes_path
   click_link I18n.t(:edit_tax)
@@ -173,8 +181,32 @@ When /^I try to edit a tax with wrong information$/ do
   click_button I18n.t(:update_tax)
 end
 
+When /^I try to edit a Quote Concept$/ do
+  visit quote_concepts_path
+  click_link I18n.t(:edit_concept)
+  fill_in "Symbol", with: "modified_concept"
+  click_button I18n.t(:update_concept)
+end
+
+When /^I try to edit a Quote Concept with wrong information$/ do
+  visit quote_concepts_path
+  click_link I18n.t(:edit_concept)
+  fill_in "Net amount", with: ""
+  click_button I18n.t(:update_concept)
+end
+
+
 When /^I go to create a new Quote Concept$/ do
   visit new_quote_concept_path
+end
+
+When /^I go to delete a Quote Concept$/ do
+  visit quote_concepts_path
+end
+
+When /^I go to edit a Quote Concept$/ do
+  step "there is at least one Quote Concept created"
+  visit edit_quote_concept_path(@concept)
 end
 
 When /^I fill a valid information for a new State$/ do
@@ -379,18 +411,32 @@ Then /^I should be redirected to the home page$/ do
   page.should have_selector('h1', text: I18n.t("welcome"))
 end
 
-Then /^I should see a deletion confirmation message$/ do
+Then /^I should see a tax deletion confirmation message$/ do
   page.should have_content(I18n.t(:tax_deleted_success))
   page.should have_selector('title', text: I18n.t(:taxes_list))
 end
 
-Then /^I should see a edition confirmation message$/ do
+Then /^I should see a concept deletion confirmation message$/ do
+  page.should have_content(I18n.t(:concept_deleted_success))
+  page.should have_selector('title', text: I18n.t(:concepts_list))
+end
+
+Then /^I should see a tax edition confirmation message$/ do
   page.should have_content(I18n.t(:tax_edition_success))
   page.should have_selector('title', text: I18n.t(:taxes_list))
 end
 
-Then /^I should see a edition error message$/ do
+Then /^I should see a concept edition confirmation message$/ do
+  page.should have_content(I18n.t(:concept_edition_success))
+  page.should have_selector('title', text: I18n.t(:concepts_list))
+end
+
+Then /^I should see a tax edition error message$/ do
   page.should have_content(I18n.t(:tax_edition_error))
+end
+
+Then /^I should see a concept edition error message$/ do
+  page.should have_content(I18n.t(:concept_edition_error))
 end
 
 Then /^I should see the edited Tax cell in the table$/ do
@@ -411,3 +457,10 @@ Then /^I should not see the new Quote Concept cell in the table$/ do
   page.should_not have_selector('td', text: "New Concept")
 end
 
+Then /^I should see the edited Quote Concept cell in the table$/ do
+  page.should have_selector('td', text: "Modified Concept")
+end
+
+Then /^I should be back in the Edit Quote Concept page$/ do
+  page.should have_selector('title', text: I18n.t(:edit_concept_page))
+end

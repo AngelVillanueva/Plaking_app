@@ -28,7 +28,7 @@ Scenario: Happy path to delete a Tax
   Given I am a logged Admin user
     And there is at least one tax created
   When I try to delete a tax
-  Then I should see a deletion confirmation message
+  Then I should see a tax deletion confirmation message
   
 Scenario: just Admin users should access the tax deletion area
   Given I am a logged common user
@@ -39,14 +39,14 @@ Scenario: Happy path for Tax editing
   Given I am a logged Admin user
     And there is at least one tax created
   When I try to edit a tax
-  Then I should see a edition confirmation message
+  Then I should see a tax edition confirmation message
     And I should see the edited Tax cell in the table
 
 Scenario: Invalid tax editing supplying invalid data
   Given I am a logged Admin user
     And there is at least one tax created
   When I try to edit a tax with wrong information
-  Then I should see a edition error message
+  Then I should see a tax edition error message
     And I should be back in the Edit Tax page
     
 Scenario: just Admin users should access the tax edition area

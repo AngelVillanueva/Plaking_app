@@ -49,6 +49,22 @@ FactoryGirl.define do
     vehicle
   end
   
+  factory :tax do
+    symbol "new_tax"
+    percentage 21.0
+  end
+  
+  factory :concept, class: "QuoteConcept" do
+    symbol "new concept"
+    net_amount 10
+    tax_id 2
+    show_before true
+    ordering 6
+    for_car true
+    for_ciclo false
+    for_moto false
+  end
+  
   factory :status do
     name "Pending documentation"
   end
