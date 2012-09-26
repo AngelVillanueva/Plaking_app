@@ -22,6 +22,22 @@ class TaxesController < ApplicationController
     end
   end
   
+  def edit
+    @tax = Tax.find(params[:id])
+  end
+  
+  def update
+    @tax = Tax.find(params[:id])
+    
+    if @tax.update_attributes(params[:tax])
+      flash[:success] = t(:tax_edition_success)
+      redirect_to taxes_path
+    else
+      flash[:error] = t(:tax_edition_error)
+      redirect_to edit_tax_path(@tax)
+    end
+  end
+  
   def destroy
     Tax.find(params[:id]).destroy
     flash[:success] = t(:tax_deleted_success)

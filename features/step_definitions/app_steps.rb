@@ -144,6 +144,21 @@ When /^I try to delete a tax$/ do
   click_link I18n.t(:delete_tax)
 end
 
+When /^I try to edit a tax$/ do
+  visit taxes_path
+  click_link I18n.t(:edit_tax)
+  fill_in "Symbol", with: "modified_tax"
+  click_button I18n.t(:update_tax)
+end
+
+When /^I try to edit a tax with wrong information$/ do
+  visit taxes_path
+  click_link I18n.t(:edit_tax)
+  fill_in "Symbol", with: "modified_tax"
+  fill_in "Percentage", with: -10
+  click_button I18n.t(:update_tax)
+end
+
 When /^I fill a valid information for a new State$/ do
   fill_in "Name", with: "Liliput"
   fill_in "CP", with: "01"
@@ -332,4 +347,21 @@ end
 Then /^I should see a deletion confirmation message$/ do
   page.should have_content(I18n.t(:tax_deleted_success))
   page.should have_selector('title', text: I18n.t(:taxes_list))
+end
+
+Then /^I should see a edition confirmation message$/ do
+  page.should have_content(I18n.t(:tax_edition_success))
+  page.should have_selector('title', text: I18n.t(:taxes_list))
+end
+
+Then /^I should see a edition error message$/ do
+  page.should have_content(I18n.t(:tax_edition_error))
+end
+
+Then /^I should see the edited Tax cell in the table$/ do
+  page.should have_selector('td', text: "modified_tax")
+end
+
+Then /^I should be back in the Edit Tax page$/ do
+  page.should have_selector('title', text: I18n.t(:edit_tax_page))
 end

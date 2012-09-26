@@ -40,6 +40,11 @@ en:
   new_tax_error: "Error creating the new Tax"
   delete_tax: "Delete"
   tax_deleted_success: "Tax successfully deleted"
+  edit_tax_page: "Edit Tax"
+  edit_tax: "Edit"
+  update_tax: "Update Tax"
+  tax_edition_success: "Tax successfully edited"
+  tax_edition_error: "Error updating the tax"
   # quotes
   traffic_tax_global: "Tasa de Jefatura de Tráfico"
   college_tax: "Tasa del Colegio de Gestores"

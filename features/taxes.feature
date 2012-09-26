@@ -30,8 +30,16 @@ Scenario: Happy path to delete a Tax
   When I try to delete a tax
   Then I should see a deletion confirmation message
 
-@wip
 Scenario: Happy path for Tax editing
+  Given I am a logged Admin user
+    And there is at least one tax created
+  When I try to edit a tax
+  Then I should see a edition confirmation message
+    And I should see the edited Tax cell in the table
 
-@wip
 Scenario: Invalid tax editing supplying invalid data
+  Given I am a logged Admin user
+    And there is at least one tax created
+  When I try to edit a tax with wrong information
+  Then I should see a edition error message
+    And I should be back in the Edit Tax page
