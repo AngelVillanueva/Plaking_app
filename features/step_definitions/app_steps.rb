@@ -87,6 +87,7 @@ end
 
 Given /^there is at least one tax created$/ do
   @tax = Tax.new(symbol: "new_tax", percentage: 21)
+  @tax.save!
 end
 
 ## When
@@ -137,6 +138,15 @@ end
 
 When /^I go to create a new Tax$/ do
   visit new_tax_path
+end
+
+When /^I go to delete a tax$/ do
+  visit taxes_path
+end
+
+When /^I go to edit a tax$/ do
+  step "there is at least one tax created"
+  visit edit_tax_path(@tax)
 end
 
 When /^I try to delete a tax$/ do
