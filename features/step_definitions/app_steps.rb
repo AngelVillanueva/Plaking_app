@@ -85,6 +85,10 @@ Given /^I have some orders in place$/ do
   order_two = FactoryGirl.create(:order, shop: "Another", user: @user)
 end
 
+Given /^there is at least one tax created$/ do
+  @tax = Tax.new(symbol: "new_tax", percentage: 21)
+end
+
 ## When
 When /^I select "(.*?)" as "(.*?)"$/ do |value, selector|
   select value, from: selector
@@ -133,6 +137,11 @@ end
 
 When /^I go to create a new Tax$/ do
   visit new_tax_path
+end
+
+When /^I try to delete a tax$/ do
+  visit taxes_path
+  click_link I18n.t(:delete_tax)
 end
 
 When /^I fill a valid information for a new State$/ do
@@ -320,3 +329,7 @@ Then /^I should be redirected to the home page$/ do
   page.should have_selector('h1', text: I18n.t("welcome"))
 end
 
+Then /^I should see a deletion confirmation message$/ do
+  page.should have_content(I18n.t(:tax_deleted_success))
+  page.should have_selector('title', text: I18n.t(:taxes_list))
+end

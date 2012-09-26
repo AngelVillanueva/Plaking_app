@@ -21,5 +21,11 @@ class TaxesController < ApplicationController
       redirect_to new_tax_path
     end
   end
+  
+  def destroy
+    Tax.find(params[:id]).destroy
+    flash[:success] = t(:tax_deleted_success)
+    redirect_to taxes_path
+  end
 
 end

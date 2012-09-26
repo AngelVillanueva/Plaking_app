@@ -24,8 +24,11 @@ Scenario: just Admin users should access the tax creation area
   When I go to create a new Tax
   Then I should be redirected to the home page
 
-@wip
 Scenario: Happy path to delete a Tax
+  Given I am a logged Admin user
+    And there is at least one tax created
+  When I try to delete a tax
+  Then I should see a deletion confirmation message
 
 @wip
 Scenario: Happy path for Tax editing
