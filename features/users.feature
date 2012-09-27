@@ -29,6 +29,12 @@ Scenario: each User can just be viewed by himself
   Then I should not see the header "User page for"
   And I should see the header "Welcome to Matricula El Coche"
   
+Scenario: Admin user can see everybody
+  Given I am a logged Admin user
+  When I try to see a different user
+  Then I should see the header "User page for"
+    And I should not see the header "Welcome to Matricula El Coche"
+  
 Scenario: Happy path to the edit user page
   Given I am a logged Admin user
   And I am in the Users page
@@ -54,6 +60,12 @@ Scenario: each User can just be edited by himself
   When I try to edit a different user
   Then I should not see the header "Edit User"
   And I should see the header "Welcome to Matricula El Coche"
+  
+Scenario: Admin User can edit everybody
+  Given I am a logged Admin user
+  When I try to edit a different user
+  Then I should see the header "Edit User"
+    And I should not see the header "Welcome to Matricula El Coche"
     
 Scenario: Happy path for a user edit
   Given I am at the Edit my User page
