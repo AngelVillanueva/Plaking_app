@@ -294,6 +294,12 @@ When /^I check the status of my orders$/ do
   visit user_path(@user)
 end
 
+When /^I go to the Edit Order page$/ do
+  step "I have some orders in place"
+  step "I check the status of my orders"
+  step "I should be able to edit any of the Orders"
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -488,6 +494,24 @@ end
 
 Then /^I should be able to edit any of the Orders$/ do
   page.should have_selector('h2', text: I18n.t(:my_orders))
+  step "I should be able to change its status"
+end
+
+Then /^I should be able to see any of the orders in detail$/ do
+  click_link "Order #1"
+  page.should have_selector('title', text: I18n.t(:order_page))
+end
+
+Then /^I should be able to change its status$/ do
   click_link I18n.t(:edit_order_status)
   page.should have_selector('h1', text: I18n.t(:edit_order))
+end
+
+Then /^my options to change the Order status should be very limited$/ do
+  page.should have_selector('option', count: 2)
+end
+
+Then /^my options to change the Order status should not be restricted$/ do
+  all_options = Status.all.size
+  page.should have_selector('option', count: all_options)
 end

@@ -1,7 +1,7 @@
-<% provide :title, "Order #{@order.id}" %>
+<% provide :title, "#{t(:order_page)} #{@order.id}" %>
 <% provide(:pdf_order_path, order_path + ".pdf") %>
 
-<h1>Order #<%= @order.id %></h1>
+<h1><%= t(:order_page) %><%= @order.id %></h1>
 
 <% if flash.any? %>
   <% flash.each do |key, value| %>
@@ -12,6 +12,7 @@
 <% end %>
 
 <p class="alert alert-info">The current status of your order is: <strong><%= @order.status.name %></strong></p>
+<p><%= link_to t(:edit_order_status), edit_order_path(@order), class: "btn" %></p>
 
 <h2>Next steps</h2>
 <ol>

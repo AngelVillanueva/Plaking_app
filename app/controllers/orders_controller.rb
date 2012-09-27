@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
   end
   def edit
     @order = Order.find(params[:id])
-    @statuses = Status.all.collect{|s| [s.name, s.id] }
+    @statuses = collect_status
   end
   def update
     @order = Order.find(params[:id])
@@ -51,5 +51,12 @@ class OrdersController < ApplicationController
   def correct_user
     @order = current_user.orders.find_by_id(params[:id])
     redirect_to root_url if @order.nil?
+  end
+  def collect_status
+    if admin_user?
+      Status.all.collect{|s| [s.name, s.id] }
+    else
+      Status.find([1,2]).collect{|s| [s.name, s.id] }
+    end
   end
 end

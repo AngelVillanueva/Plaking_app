@@ -59,6 +59,13 @@ Scenario: Happy path to Orders page
   When I follow the "Orders management" link
   Then the page title should be "Orders"
     And I should see a list of all Orders
+    
+Scenario: Happy path to a specific Order page
+  Given I am a logged common user
+    And I have some orders in place
+  When I check the status of my orders
+  Then I should be able to see any of the orders in detail
+    And I should be able to change its status
   
 Scenario: common users cannot access to Orders page
   Given I am a logged common user
@@ -78,3 +85,20 @@ Scenario: Happy Path of Order edition
     And I click "Update Order"
   Then I should see "The order was updated with the new status"
   And I should see "The current status of your order is: Documentation sent"
+  
+Scenario: a not Admin user can just change the Order status within a few options
+  Given I am a logged common user
+  When I go to the Edit Order page
+  Then my options to change the Order status should be very limited
+
+Scenario: Admin user can change the Order status without restrictions
+  Given I am a logged Admin user
+  When I am in the Edit Order page
+  Then my options to change the Order status should not be restricted
+  
+  
+@wip
+Scenario: a user cannot edit other user's order
+
+@wip
+Scenario: a Admin user can edit any user's order

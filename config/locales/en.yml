@@ -19,6 +19,7 @@ en:
       city:
         name: 'Name'
   #layouts
+  my_account: "My account"
   states_management: "States management"
   orders_management: "Orders management"
   status_management: "Status management"
@@ -83,6 +84,7 @@ en:
   concept_edition_success: "Quote Concept edited successfully"
   concept_edition_error: "Error updating the concept"
   # orders
+  order_page: "Order #"
   my_orders: "My Orders"
   edit_order: "Edit Order id#"
   edit_order_status: "Change status"
