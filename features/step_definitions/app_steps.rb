@@ -300,6 +300,12 @@ When /^I go to the Edit Order page$/ do
   step "I should be able to edit any of the Orders"
 end
 
+When /^I try to edit the order of a different user$/ do
+  other_user = FactoryGirl.create(:user, email: "very@new.com")
+  other_order = FactoryGirl.create(:order, user: other_user)
+  visit edit_order_path(other_order)
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -504,6 +510,10 @@ end
 
 Then /^I should be able to change its status$/ do
   click_link I18n.t(:edit_order_status)
+  page.should have_selector('h1', text: I18n.t(:edit_order))
+end
+
+Then /^I should be able to edit that order$/ do
   page.should have_selector('h1', text: I18n.t(:edit_order))
 end
 

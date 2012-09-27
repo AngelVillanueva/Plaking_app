@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update]
-  before_filter :correct_user, only: [:show]
+  before_filter :correct_user, only: [:show, :edit, :update]
   before_filter :admin_user, only: [:index]
 
   def index
@@ -50,13 +50,13 @@ class OrdersController < ApplicationController
   private
   def correct_user
     @order = current_user.orders.find_by_id(params[:id])
-    redirect_to root_url if @order.nil?
+    redirect_to root_url if @order.nil? && !admin_user?
   end
   def collect_status
     if admin_user?
       Status.all.collect{|s| [s.name, s.id] }
     else
-      Status.find([1,2]).collect{|s| [s.name, s.id] }
+      Status.where(id: 1..2).collect{|s| [s.name, s.id] }
     end
   end
 end

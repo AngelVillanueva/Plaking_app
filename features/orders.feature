@@ -96,9 +96,12 @@ Scenario: Admin user can change the Order status without restrictions
   When I am in the Edit Order page
   Then my options to change the Order status should not be restricted
   
-  
-@wip
 Scenario: a user cannot edit other user's order
+  Given I am a logged common user
+  When I try to edit the order of a different user
+  Then I should be redirected to the home page
 
-@wip
 Scenario: a Admin user can edit any user's order
+  Given I am a logged Admin user
+  When I try to edit the order of a different user
+  Then I should be able to edit that order
