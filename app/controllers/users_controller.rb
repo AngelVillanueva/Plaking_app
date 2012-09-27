@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       redirect_back_or @user
     else
       flash.now[:error] = "Error saving the user"
-      render 'new'
+      render :new
     end
   end
   def edit
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash.now[:error] = "Error saving the user"
-      render 'edit'
+      render :edit
     end
   end
   

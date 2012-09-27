@@ -18,6 +18,7 @@ Scenario: Invalid tax creation supplying invalid data
     But I do not supply all the tax data
   Then I should see "Error creating the new Tax"
     And I should not see the new Tax cell in the table
+    And the flash message should be gone if I left the page
    
 Scenario: just Admin users should access the tax creation area
   Given I am a logged common user
@@ -48,6 +49,7 @@ Scenario: Invalid tax editing supplying invalid data
   When I try to edit a tax with wrong information
   Then I should see a tax edition error message
     And I should be back in the Edit Tax page
+    And the flash message should be gone if I left the page
     
 Scenario: just Admin users should access the tax edition area
   Given I am a logged common user

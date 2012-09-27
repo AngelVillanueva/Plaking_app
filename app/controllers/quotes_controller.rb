@@ -2,10 +2,7 @@ class QuotesController < ApplicationController
   
   def new
     @quote = Quote.new
-    @state = State.find(session[:state])
-    @cities = @state.cities.collect{ |c| [c.name, c.id] }
-    @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
-      #@strokes = {"2 tiempos" => 2 , "4 tiempos" => 4} # let's assume that all engines are "4tiempos"
+    form_population
   end
   
   def create
@@ -54,12 +51,19 @@ class QuotesController < ApplicationController
       session[:quote] = @quote.id
       flash.now.notice = "Quote created successfully"
     else
-      flash[:error] = "Error saving the Quote"
-      redirect_to :new_quote
+      form_population
+      flash.now[:error] = "Error saving the Quote"
+      render :new
     end
   end
   
   private
+    def form_population
+      @state = State.find(session[:state])
+      @cities = @state.cities.collect{ |c| [c.name, c.id] }
+      @vehicles = ["Turismo", "Ciclomotor", "Motocicleta"]
+      #@strokes = {"2 tiempos" => 2 , "4 tiempos" => 4} # let's assume that all engines are "4tiempos"
+    end
     def date_modifier(a_month)
       case a_month
         when 1..3

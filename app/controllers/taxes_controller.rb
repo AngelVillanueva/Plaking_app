@@ -17,8 +17,8 @@ class TaxesController < ApplicationController
       flash[:success] = t(:new_tax_success)
       redirect_to taxes_path
     else
-      flash[:error] = t(:new_tax_error)
-      redirect_to new_tax_path
+      flash.now[:error] = t(:new_tax_error)
+      render :new
     end
   end
   
@@ -33,8 +33,8 @@ class TaxesController < ApplicationController
       flash[:success] = t(:tax_edition_success)
       redirect_to taxes_path
     else
-      flash[:error] = t(:tax_edition_error)
-      redirect_to edit_tax_path(@tax)
+      flash.now[:error] = t(:tax_edition_error)
+      render :edit
     end
   end
   

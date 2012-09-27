@@ -17,7 +17,7 @@ class QuoteConceptsController < ApplicationController
       flash[:success] = t(:new_concept_success)
       redirect_to quote_concepts_path
     else
-      flash[:error] = t(:new_concept_error)
+      flash.now[:error] = t(:new_concept_error)
       render :new
     end
   end
@@ -33,7 +33,7 @@ class QuoteConceptsController < ApplicationController
       flash[:success] = t(:concept_edition_success)
       redirect_to quote_concepts_path
     else
-      flash[:error] = t(:concept_edition_error)
+      flash.now[:error] = t(:concept_edition_error)
       render :edit
     end
   end

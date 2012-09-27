@@ -71,6 +71,7 @@ Scenario: Error updating a user
   And I click "Update User"
   Then I should see "Error saving the user"
   Then I should not see "The User was updated successfully"
+  And the flash message should be gone if I left the page
   
 Scenario: Happy path to the new user page
   Given I am in the New User page
@@ -88,3 +89,4 @@ Scenario: Error saving a new User
   Then the "User" count should not be increased by "1"
   And I should not see "The new user was created successfully"
   And I should see "Error saving the user"
+  And the flash message should be gone if I left the page

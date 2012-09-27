@@ -26,6 +26,7 @@ Scenario: error creating an Order
     And I click "Create Order"
   Then I should see "Error saving the order"
     And the page title should be "New Order"
+    And the flash message should be gone if I left the page
 
 Scenario: signup / in is needed to create an Order
   Given I am not a logged user

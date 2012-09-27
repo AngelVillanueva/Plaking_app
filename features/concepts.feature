@@ -18,6 +18,7 @@ Scenario: Invalid Quote Concept creation supplying invalid data
     But I do not supply all the Concept data
   Then I should see "Error creating the new Quote Concept"
     And I should not see the new Quote Concept cell in the table
+    And the flash message should be gone if I left the page
  
 Scenario: just Admin users should access the Quote Concept creation area
   Given I am a logged common user
@@ -48,6 +49,7 @@ Scenario: Invalid Quote Concept editing supplying invalid data
   When I try to edit a Quote Concept with wrong information
   Then I should see a concept edition error message
     And I should be back in the Edit Quote Concept page
+    And the flash message should be gone if I left the page
   
 Scenario: just Admin users should access the Quote Concept edition area
   Given I am a logged common user

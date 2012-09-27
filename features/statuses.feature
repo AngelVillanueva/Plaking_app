@@ -17,6 +17,7 @@ Scenario: create a not valid new Status
   Then I should not see "New Status added"
   And I should see "Error saving the Status"
   And I should not see the header "List of Statuses"
+  And the flash message should be gone if I left the page
 
 Scenario: non Admin users cannot access Status management
   Given I am a logged common user

@@ -7,6 +7,7 @@ Scenario Outline: a Quote needs CC, Cylinders and Stroke data depending on the v
   Given I have prepared a Quote for the city of <city>
   When I create the Quote for <type> without <engine_field> data
   Then the Quote should not be valid
+  And the flash message should be gone if I left the page
   
 Examples:
   | city |     type    | engine_field |

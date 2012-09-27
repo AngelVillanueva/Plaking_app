@@ -224,6 +224,11 @@ When /^I make a valid change for the State$/ do
   click_button "Update State"
 end
 
+When /^I make an invalid change for the State$/ do
+  fill_in "CP", with: ""
+  click_button "Update State"
+end
+
 When /^I create the Quote for (.*?) without (.*?) data$/ do |type, engine_field|
   select type, from: "Vehicle"
   fill_in "Engine cc", with: 125 unless engine_field == "Engine cc"
@@ -391,6 +396,13 @@ Then /^the State should reflect the change$/ do
   @state_editable.cp_prefix.should == "10"
 end
 
+Then /^the State should not reflect the change$/ do
+  page.should have_content("Error updating the State")
+  cp = @state_editable.cp_prefix
+  @state_editable.reload
+  @state_editable.cp_prefix.should == cp
+end
+
 Then /^the Quote should not be valid$/ do
   expect do
     click_button "Create Quote"
@@ -463,4 +475,9 @@ end
 
 Then /^I should be back in the Edit Quote Concept page$/ do
   page.should have_selector('title', text: I18n.t(:edit_concept_page))
+end
+
+Then /^the flash message should be gone if I left the page$/ do
+  visit root_path
+  page.should_not have_css('div.flash')
 end

@@ -14,6 +14,7 @@ Scenario: Select a not available State
   And I click "Check State"
   Then I should see "Sorry, this State is not covered"
   And I should not see "This State is covered"
+  And the flash message should be gone if I left the page
   
 Scenario: Admin users can manage States
   Given I am a logged Admin user
@@ -54,6 +55,7 @@ Scenario: Error saving a new State
   Then the "State" count should not be increased by "1"
   And I should see "Error saving the State"
   And I should not see "New State successfully created"
+  And the flash message should be gone if I left the page
   
 Scenario: Admin users can delete States
   Given I am a logged Admin user
@@ -66,3 +68,10 @@ Scenario: Admin users can edit States
   When I go to edit a State
   And I make a valid change for the State
   Then the State should reflect the change
+  
+Scenario: Admin users can not edit States with invalid information
+  Given I am a logged Admin user
+  When I go to edit a State
+  And I make an invalid change for the State
+  Then the State should not reflect the change
+  And the flash message should be gone if I left the page
