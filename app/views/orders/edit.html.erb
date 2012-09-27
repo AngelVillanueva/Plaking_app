@@ -1,5 +1,5 @@
 <% provide :title, "Edit Order" %>
 
-<h1>Edit Order id#<%= @order.id %></h1>
+<h1><%= t(:edit_order) %><%= @order.id %></h1>
 
 <%= render 'status_form' %>

@@ -66,9 +66,15 @@ Scenario: common users cannot access to Orders page
   Then I should not see the link "Orders management"
     And I should not arrive to the "Orders" page
   
-Scenario: Happy Path for Editing an Order
+Scenario: Happy Path for a User to Edit an Order
+  Given I am a logged common user
+    And I have some orders in place
+  When I check the status of my orders
+    Then I should be able to edit any of the Orders
+    
+Scenario: Happy Path of Order edition
   Given I am in the Edit Order page
   When I select "Documentation sent" as "Status"
-  And I click "Update Order"
+    And I click "Update Order"
   Then I should see "The order was updated with the new status"
   And I should see "The current status of your order is: Documentation sent"

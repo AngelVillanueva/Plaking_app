@@ -290,6 +290,10 @@ When /^I try to see a different user$/ do
   visit user_path(999)
 end
 
+When /^I check the status of my orders$/ do
+  visit user_path(@user)
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -480,4 +484,10 @@ end
 Then /^the flash message should be gone if I left the page$/ do
   visit root_path
   page.should_not have_css('div.flash')
+end
+
+Then /^I should be able to edit any of the Orders$/ do
+  page.should have_selector('h2', text: I18n.t(:my_orders))
+  click_link I18n.t(:edit_order_status)
+  page.should have_selector('h1', text: I18n.t(:edit_order))
 end

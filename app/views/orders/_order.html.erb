@@ -1,1 +1,1 @@
-<li><%= link_to "Order ##{order.id}", order %>. Status: <strong><%= order.status.name %></strong></li>
+<li><%= link_to "Order ##{order.id}", order %>. Status: <strong><%= order.status.name %></strong><%= link_to t(:edit_order_status), edit_order_path(order), class: 'btn' %></li>
