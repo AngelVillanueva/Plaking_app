@@ -1,11 +1,15 @@
 Feature: handling Orders
-
+@current
 Scenario Outline: Happy Path for a New Order
   Given I am a logged common user
     And I have created a Quote
   When I go to the New Order page
+    And I select <owner> as "Owner"
+    And I fill <reg_name> in "Registered name"
+    And I fill <cif> in "CIF"
     And I fill <fname> in "First name"
     And I fill <lname> in "Last name"
+    And I select <gender> as "Gender"
     And I fill <address> in "Address"
     And I fill <email> in "Email"
     And I fill <phone> in "Phone number"
@@ -14,10 +18,10 @@ Scenario Outline: Happy Path for a New Order
   Then I should see "Thanks for your Order"
   
 Examples:
-  |  fname   |    lname     |          address                   |            email         |        phone       |          shop            |
-  | "Angela" | "Villanueva" |        "Rambla Jujol, 15"          |    "test@example.com"    |     "902100100"    |   "Concesionario Estu"   |
-  | "Miguel" | "Pedrosa"    |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
-  | "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
+  |    owner   |  reg_name  |     cif    |   gender  |  fname   |    lname     |          address                   |            email         |        phone       |          shop            |
+  | "Personal" |     ""     |     ""     |"Mrs., Ms."| "Angela" | "Villanueva" |        "Rambla Jujol, 15"          |    "test@example.com"    |     "902100100"    |   "Concesionario Estu"   |
+  | "Business" | "Sinapse"  | "B64862600"|   "Mr."   |  "Dani"  |   "Pedrosa"  |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
+  | "Personal" |     ""     |     ""     |"Mrs., Ms."| "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
   
 Scenario: error creating an Order
   Given I am a logged common user

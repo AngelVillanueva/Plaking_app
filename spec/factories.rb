@@ -70,8 +70,11 @@ FactoryGirl.define do
   end
   
   factory :order do
+    owner "Personal"
     first_name "Angel"
     last_name "Villalba"
+    gender 1
+    nif "00000000T"
     address "Vandelvira 8, 3 dcha"
     email "ejemplo@ejemplo.es"
     phone_number "933739443"
