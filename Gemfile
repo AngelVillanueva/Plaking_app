@@ -11,8 +11,8 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'routing-filter' # to prepend locale to url; other uses (pagination, extension, uuid,...)
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Locale app
+gem 'localeapp'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
