@@ -14,12 +14,15 @@
 		  <%= f.input :last_name %>
 		  <%= f.input :address %>
 		  <%= f.input :gender, collection: {t("Mr") => 1, t("Mrs/Ms.") => 2} %>
+		  <%= f.input :nif %>
 		  <%= f.input :email, input_html: {value: current_user.email} %>
 		  <%= f.input :phone_number %>
 		  </fieldset>
 		  <fieldset id="shop_data">
 		  <legend><%= t("Shop data") %></legend>
 		  <%= f.input :shop %>
+		  <%= f.input :shop_salesman %>
+		  <%= f.input :shop_phone %>
 		  </fieldset>
 		
 		  <%= f.button :submit, class: 'btn btn-primary' %>

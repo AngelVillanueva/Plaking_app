@@ -21,12 +21,12 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :owner, :registered_name, :cif, :first_name, :last_name, :gender, :nif, :address, :email, :phone_number, :shop, :status_id
+  attr_accessible :owner, :registered_name, :cif, :first_name, :last_name, :gender, :nif, :address, :email, :phone_number, :shop, :shop_salesman, :shop_phone, :status_id
   belongs_to :quote
   belongs_to :status
   belongs_to :user
   
-  validates :first_name, :last_name, :gender, :nif, :address, :shop, :quote_id, :status_id, :user_id, presence: true
+  validates :first_name, :last_name, :gender, :nif, :address, :shop, :shop_salesman, :shop_phone, :quote_id, :status_id, :user_id, presence: true
   validates :owner, inclusion: {in: %w(Business Personal)}
   validates :registered_name, presence: true, if: :business_owner?
   validates :cif, presence: true, if: :business_owner?

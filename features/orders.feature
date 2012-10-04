@@ -10,18 +10,21 @@ Scenario Outline: Happy Path for a New Order
     And I fill <fname> in "First name"
     And I fill <lname> in "Last name"
     And I select <gender> as "Gender"
+    And I fill <nif> in "Nif"
     And I fill <address> in "Address"
     And I fill <email> in "Email"
     And I fill <phone> in "Phone number"
     And I fill <shop> in "Shop"
+    And I fill <salesm> in "Shop salesman"
+    And I fill <s_phone> in "Shop phone"
     And I click "Create Order"
   Then I should see "Thanks for your Order"
   
 Examples:
-  |    owner   |  reg_name  |     cif    |   gender  |  fname   |    lname     |          address                   |            email         |        phone       |          shop            |
-  | "Personal" |     ""     |     ""     |"Mrs., Ms."| "Angela" | "Villanueva" |        "Rambla Jujol, 15"          |    "test@example.com"    |     "902100100"    |   "Concesionario Estu"   |
-  | "Business" | "Sinapse"  | "B64862600"|   "Mr."   |  "Dani"  |   "Pedrosa"  |       "Melrose Place, 90210"       |  "prueba@example.co.uk"  |      "967223776"   |   "Concesionario Pendo"  |
-  | "Personal" |     ""     |     ""     |"Mrs., Ms."| "Lolita" | "Jackson"    | "Avenida Diagonal 8ª planta 08006" |     "A.t@ejemplo.es"     |  "+34 93 3962038"  |    "Concesionario OK"    |
+  |  owner   |reg_name|    cif    |   nif    |   gender  |fname| lname |     address     |     email      |    phone    |   shop   |  salesm   |   s_phone   |
+  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Ana"|"Abadí"|"Rambla Llí,15-2"|"un@example.com"| "902100100" |"Auto2000"|"Iñú Gómez"|"+34 9339620"|
+  |"Business"|"Soc SL"|"B64862600"|"OOOOOOOT"|   "Mr."   |"Ivo"|"Gómez"|"Melros Place,1º"|"dos@exam.co.uk"| "967223776" |"Aut 2000"|"Ana Cañüs"| "902100100" |
+  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Eva"|"Pérez"|"Diagonal 8ª 3d."|"t.s@ejemplo.es"|"+34 9339620"|"Ñám?$5%-"|"Eva Ribás"| "902145199" |
   
 Scenario: error creating an Order
   Given I am a logged common user

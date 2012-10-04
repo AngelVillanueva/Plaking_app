@@ -54,6 +54,14 @@ describe "Orders" do
       # order.should_not be_valid
       pending
     end
+    it "should have a salesman" do
+      order.shop_salesman = ""
+      order.should_not be_valid
+    end
+    it "should have a shop phone" do
+      order.shop_phone = ""
+      order.should_not be_valid
+    end
     
     
     
@@ -69,6 +77,8 @@ describe "Orders" do
     it { should respond_to :email }
     it { should respond_to :phone_number }
     it { should respond_to :shop }
+    it { should respond_to :shop_salesman }
+    it { should respond_to :shop_phone }
     it { should respond_to :status }
     it { should respond_to :quote }
     it { should respond_to :user_id }

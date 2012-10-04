@@ -79,6 +79,8 @@ FactoryGirl.define do
     email "ejemplo@ejemplo.es"
     phone_number "933739443"
     shop "Concesionario Estupendo"
+    shop_salesman "Esteban Casado"
+    shop_phone "900100000"
     status
     quote
     user
