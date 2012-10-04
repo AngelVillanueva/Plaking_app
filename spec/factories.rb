@@ -86,6 +86,12 @@ FactoryGirl.define do
     user
   end
   
+  factory :business_order, parent: :order, class: "Order" do
+    owner "Business"
+    registered_name "Sinapse"
+    cif "B64862600"
+  end
+  
   factory :user do
     name "Angel"
     email "a@b.com"

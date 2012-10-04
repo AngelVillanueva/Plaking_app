@@ -1,5 +1,5 @@
 Feature: handling Orders
-@current
+
 Scenario Outline: Happy Path for a New Order
   Given I am a logged common user
     And I have created a Quote

@@ -1,94 +1,167 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   activerecord:
     models:
-      city: 'City'
-      order: 'Order'
-      price: 'Price'
-      quote: 'Quote'
-      quote_concept: "Quote Concept"
-      state: 'State'
-      status: 'Status'
-      tax: 'Tax'
-      user: 'User'
-      vehicle: 'Vehicle'
-      vehicle_instance: 'Vehicle Instance'
+      city: City
+      order: Order
+      price: Price
+      quote: Quote
+      quote_concept: Quote Concept
+      state: State
+      status: Status
+      tax: Tax
+      user: User
+      vehicle: Vehicle
+      vehicle_instance: Vehicle Instance
+    attributes:
+      order:
+        address: Address
+        email: Email
+        first_name: First name
+        gender: Gender
+        last_name: Last name
+        nif: Nif
+        owner: Owner
+        phone_number: Phone number
+        quote_id: Quote
+        registered_name: Registered name
+        salesman: Salesman
+        shop: Shop
+        shop_phone: Shop phone
+        status_id: Status
+        user_id: User
+      quote:
+        city_id: City
+        plaking_date: Plaking date
+        vehicle: Vehicle
+      user:
+        email: Email
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+    errors:
+      models:
+        order:
+          attributes:
+            gender:
+              blank: can't be blank
+            nif:
+              blank: can't be blank
+            quote_id:
+              blank: can't be blank
+            status_id:
+              blank: can't be blank
+            user_id:
+              blank: can't be blank
   attributes:
-      city:
-        name: 'Name'
-  #layouts
-  my_account: "My account"
-  states_management: "States management"
-  orders_management: "Orders management"
-  status_management: "Status management"
-  taxes_management: "Taxes management"
-  # views
-  # states
-  welcome: "Welcome to Matricula El Coche"
-  check_availability: "Check your State for service availability"
-  check: "Check State"
-  # taxes
-  taxes: "taxes"
-  vat_exempt: "No VAT"
-  vat_general: "VAT general"
-  taxes_list: "List of Taxes"
-  new_tax: "New Tax"
-  create_new_tax: "Create New Tax"
-  create_tax: "Create Tax"
-  new_tax_success: "Tax successfully created"
-  new_tax_error: "Error creating the new Tax"
-  delete_tax: "Delete"
-  tax_deleted_success: "Tax successfully deleted"
-  edit_tax_page: "Edit Tax"
-  edit_tax: "Edit"
-  update_tax: "Update Tax"
-  tax_edition_success: "Tax successfully edited"
-  tax_edition_error: "Error updating the tax"
-  # quotes
-  traffic_tax_global: "Tasa de Jefatura de Tráfico"
-  college_tax: "Tasa del Colegio de Gestores"
-  traffic_tax_ciclo: "Tasa de Jefatura de Tráfico"
-  our_fee: "Fees"
-  ivtm_line: "IVTM"
-  vat_line: "VAT"
-  sure_to_cancel_quote?: "Do you know that big savings are possible?"
-  did_you_at_least_review_the_Quote?: "Take a moment and review the Quote you obtained from your Car Dealer; the Plaking tax and all related steps could add quite a lot to your car total Quote."
-  cancel: "Cancel"
-  really_quit: "It's ok, let me quit"
-  legal_advice: "Legal Advice: any change in public taxes will be reflected accordingly"
-  # quote concepts
-  concepts_list: "List of Quote Concepts"
-  quote_concepts: "Quote Concepts"
-  new_concept_page: "New Concept"
-  new_concept: "New Concept"
-  concept: "Concept"
-  tax: "Tax"
-  net_amount: "Net amount"
-  show_before: "Show before IVTM"
-  ordering: "Order in list"
-  for_car: "Apply to cars"
-  for_ciclo: "Apply to cyclomotors"
-  for_moto: "Apply to motorcycles"
-  actions: "Actions"
-  create_concept: "Create a new Quote Concept"
-  create_quote_concept: "Create Quote Concept"
-  new_concept_success: "New Quote Concept added successfully"
-  new_concept_error: "Error creating the new Quote Concept"
-  delete_concept: "Delete"
-  concept_deleted_success: "Quote Concept deleted successfully"
-  edit_concept: "Edit"
-  edit_concept_page: "Edit Quote Concept"
-  update_concept: "Update Quote Concept"
-  concept_edition_success: "Quote Concept edited successfully"
-  concept_edition_error: "Error updating the concept"
-  # orders
-  order_page: "Order #"
-  my_orders: "My Orders"
-  edit_order: "Edit Order id#"
-  edit_order_status: "Change status"
-  business: "Business"
-  personal: "Personal"
-  Mr: "Mr."
-  Mrs/Ms: "Mrs., Ms."
+    city:
+      name: Name
+  my_account: My account
+  states_management: States management
+  orders_management: Orders management
+  status_management: Status management
+  taxes_management: Taxes management
+  welcome: Welcome to Matricula El Coche
+  check_availability: Check your State for service availability
+  check: Check State
+  taxes: taxes
+  vat_exempt: No VAT
+  vat_general: VAT general
+  taxes_list: List of Taxes
+  new_tax: New Tax
+  create_new_tax: Create New Tax
+  create_tax: Create Tax
+  new_tax_success: Tax successfully created
+  new_tax_error: Error creating the new Tax
+  delete_tax: Delete
+  tax_deleted_success: Tax successfully deleted
+  edit_tax_page: Edit Tax
+  edit_tax: Edit
+  update_tax: Update Tax
+  tax_edition_success: Tax successfully edited
+  tax_edition_error: Error updating the tax
+  traffic_tax_global: Tasa de Jefatura de Tráfico
+  college_tax: Tasa del Colegio de Gestores
+  traffic_tax_ciclo: Tasa de Jefatura de Tráfico
+  our_fee: Fees
+  ivtm_line: IVTM
+  vat_line: VAT
+  sure_to_cancel_quote?: Do you know that big savings are possible?
+  did_you_at_least_review_the_Quote?: Take a moment and review the Quote you obtained from your Car Dealer; the Plaking tax and all related steps could add quite a lot to your car total Quote.
+  cancel: Cancel
+  really_quit: It's ok, let me quit
+  legal_advice: ! 'Legal Advice: any change in public taxes will be reflected accordingly'
+  concepts_list: List of Quote Concepts
+  quote_concepts: Quote Concepts
+  new_concept_page: New Concept
+  new_concept: New Concept
+  concept: Concept
+  tax: Tax
+  net_amount: Net amount
+  show_before: Show before IVTM
+  ordering: Order in list
+  for_car: Apply to cars
+  for_ciclo: Apply to cyclomotors
+  for_moto: Apply to motorcycles
+  actions: Actions
+  create_concept: Create a new Quote Concept
+  create_quote_concept: Create Quote Concept
+  new_concept_success: New Quote Concept added successfully
+  new_concept_error: Error creating the new Quote Concept
+  delete_concept: Delete
+  concept_deleted_success: Quote Concept deleted successfully
+  edit_concept: Edit
+  edit_concept_page: Edit Quote Concept
+  update_concept: Update Quote Concept
+  concept_edition_success: Quote Concept edited successfully
+  concept_edition_error: Error updating the concept
+  order_page: ! 'Order #'
+  my_orders: My Orders
+  edit_order: Edit Order id#
+  edit_order_status: Change status
+  business: Business
+  personal: Personal
+  Mr: Mr.
+  Mrs/Ms: Mrs., Ms.
+  helpers:
+    submit:
+      order:
+        create: Create Order
+      quote:
+        create: Create Quote
+      user:
+        create: Create User
+  order:
+    new:
+      address: ''
+      cif: ''
+      email: ''
+      first_name: ''
+      gender: ''
+      last_name: ''
+      nif: ''
+      owner: ''
+      phone_number: ''
+      registered_name: ''
+      salesman: ''
+      shop: ''
+      shop_phone: ''
+  quote:
+    new:
+      cc_engine: ''
+      city_id: ''
+      number_cylinders: ''
+      plaking_date: ''
+      vehicle: ''
+  session:
+    new:
+      email: ''
+      password: ''
+  simple_form:
+    required:
+      html: <abbr title="required">*</abbr>
+  user:
+    new:
+      email: ''
+      name: ''
+      password: ''
+      password_confirmation: ''

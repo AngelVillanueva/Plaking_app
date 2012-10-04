@@ -1,3 +1,5 @@
+tratamiento = @order.gender==1 && "D." || "Dña."
+
 shy = Prawn::Text::SHY #to insert soft hyphen interpolate use #{shy}
 pdf.default_leading 5
 pdf.default_leading 0
@@ -9,7 +11,7 @@ pdf.image "#{Rails.root}/public/images/header.png", position: :center, scale: 0.
 pdf.bounding_box([20, pdf.cursor], width: 490, height: 800) do
   pdf.move_down 40
   pdf.font_size 10
-  pdf.text "D./Dña #{@order.first_name} #{@order.last_name}, con DNI ___________________, y domicilio legal en __________________, calle #{@order.address}, en concepto de <b>MANDANTE</b>:", inline_format: true
+  pdf.text "#{tratamiento} #{@order.first_name} #{@order.last_name}, con DNI #{@order.nif}, y domicilio legal en __________________, calle #{@order.address}, <b>declara tener poder para actuar en representación de</b> #{@order.registered_name} <b>con CIF</b> #{@order.cif}, en concepto de <b>MANDANTE</b>:", inline_format: true
   pdf.move_down 20
   pdf.text "<b><u>Dice y otorga:</u></b>", inline_format: true
   pdf.move_down 10
