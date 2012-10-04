@@ -12,8 +12,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'routing-filter' # to prepend locale to url; other uses (pagination, extension, uuid,...)
 
 # Locale app
-gem 'localeapp'
-
+# gem 'localeapp' # issues with pull-push in dev mode
+ 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.10.0'

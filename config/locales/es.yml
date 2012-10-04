@@ -97,7 +97,7 @@ es:
       year: Año
   errors:
     format: ! '%{attribute} %{message}'
-    messages: &2188403580
+    messages: &2176063820
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       confirmation: no coincide con la confirmación
@@ -119,7 +119,7 @@ es:
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-    template: &2188307080
+    template: &2153205200
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
@@ -199,13 +199,13 @@ es:
   activemodel:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *2188403580
-      template: *2188307080
+      messages: *2176063820
+      template: *2153205200
   activerecord:
     errors:
       format: ! '%{attribute} %{message}'
-      messages: *2188403580
-      template: *2188307080
+      messages: *2176063820
+      template: *2153205200
       models:
         order:
           attributes:
