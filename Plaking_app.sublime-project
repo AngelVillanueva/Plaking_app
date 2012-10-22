@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/admin/Documents/7.Rails_projects/Plaking_app",
+			"folder_exclude_patterns": ["doc", "*.esproj", "tmp", "vendor"],
+			"file_exclude_patterns": ["*.dat", "*.lock", "*.ru", "*.rdoc", "*.sqlite3"]
+		}
+	]
+}

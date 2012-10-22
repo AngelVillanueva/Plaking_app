@@ -1,0 +1,344 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"des",
+				"dests	describe (type, string)"
+			],
+			[
+				"desc",
+				"describe"
+			],
+			[
+				"eac",
+				"eac-	each_cons(..) { |group| .. }"
+			],
+			[
+				"if",
+				"ife	if … else … end"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Plaking_app.sublime-project",
+			"settings":
+			{
+				"buffer_size": 243,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/builds/php.sublime-build",
+	"command_palette":
+	{
+		"height": 147.0,
+		"selected_items":
+		[
+			[
+				"proj",
+				"Project: Edit"
+			],
+			[
+				"pro",
+				"Project: Save As"
+			],
+			[
+				"proje",
+				"Project: Edit"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"f",
+				"Fetch: Package"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"gher",
+				"Set Syntax: Gherkin"
+			],
+			[
+				"g",
+				"Gist: Insert Gist"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"insa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"snippetfo",
+				"Snippet: for (…) {…}"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"sideba",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"set Syntax: J",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sint",
+				"Set Syntax: Plain Text"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/.gitignore",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/Plaking_app.sublime-project",
+		"/private/var/folders/7Z/7ZEFPcGjF7eGe1X79nctvU+++TM/-Tmp-/425c11b7-c8d4-4afb-a97c-3f262c7e597b/cuandoescuchodibujo/wp-content/themes/garnish/footer.php",
+		"/Users/admin/Documents/7.Rails_projects/first_app/test.php",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/User/builds/php.sublime-build",
+		"/Users/admin/Documents/7.Rails_projects/first_app/app/views/layouts/application.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/first_app/app/controllers/application_controller.rb",
+		"/Users/admin/Documents/7.Rails_projects/first_app/test.rb",
+		"/Users/admin/Documents/7.Rails_projects/first_app/proyecto.sublime-project",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Default ().sublime-keymap",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/admin/Desktop/index.html",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/features/admin_access.feature",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/Gist/Gist.sublime-settings",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/test.rb",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/SublimeLinter/README.md",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/test.js",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/RSpec/README.md",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/AdvancedNewFile/Default (OSX).sublime-keymap",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/javascripts/test.js",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/admin/Dropbox/Applications/Sublime/Packages/AdvancedNewFile/README.rst",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Settings/SideBarEnhancements.json",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/stylesheets/custom.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/spec/models/affiliation_spec.rb",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/spec/models/ambassador_spec.rb",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Rails/rails_model.sublime-snippet",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/controllers/application_controller.rb",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/javascripts/application.js",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/controllers/embassies_controller.rb",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/javascripts/active_admin.js",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/features/embassy_access.feature",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/features/ambassadors_crud.feature",
+		"/Users/admin/Documents/7.Rails_projects/opiniones/.bundle/config",
+		"/Users/admin/Desktop/test.js",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/orders/_form.html.erb",
+		"/Users/admin/Desktop/test.rb"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"size",
+			"gem"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Plaking_app.sublime-project",
+					"settings":
+					{
+						"buffer_size": 243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				".fe",
+				"features/embassy_access.feature"
+			],
+			[
+				"cus",
+				"app/assets/stylesheets/custom.css.scss"
+			],
+			[
+				"contro",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				".feat",
+				"features/ambassadors_crud.feature"
+			],
+			[
+				"bundle",
+				".bundle/config"
+			],
+			[
+				"gem",
+				"Gemfile"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true
+}
