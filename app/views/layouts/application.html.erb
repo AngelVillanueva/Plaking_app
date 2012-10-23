@@ -12,9 +12,9 @@
 
   <%= render 'layouts/header' %>
 
-  <%= render 'layouts/page-title' unless yield(:title) == 'Welcome'%>
+  <%= render 'layouts/page-title' unless current_page?('/') %>
 
-  <%= render 'layouts/slider' if yield(:title) == 'Welcome'%>
+  <%= render 'layouts/slider' if current_page?('/') %>
   
   <div id="wrapper">
     <div class="container">
@@ -23,6 +23,7 @@
       <% end %>
 
       <%= yield %>
+      <div class="clearfix"><hr></div>
     </div>
   </div>
   <%= render 'layouts/footer' %>
