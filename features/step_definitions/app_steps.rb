@@ -9,6 +9,12 @@ Given /^I am in the Order page$/ do
   visit order_path(@order)
 end
 
+Given /^I am in the Order page for a Company$/ do
+  step "I am a logged common user"
+  @order_c = FactoryGirl.create(:order, owner: "Business", registered_name: "Sinapse", cif: "00000000T", user: @user)
+  visit order_path(@order_c)
+end
+
 Given /^I am in the Edit Order page$/ do
   step "I am a logged common user"
   order = FactoryGirl.create(:order, user: @user)

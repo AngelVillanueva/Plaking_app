@@ -95,9 +95,9 @@ es:
       month: Mes
       second: Segundos
       year: Año
-  errors: &errors
+  errors:
     format: ! '%{attribute} %{message}'
-    messages:
+    messages: &2176063820
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       confirmation: no coincide con la confirmación
@@ -119,7 +119,7 @@ es:
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
-    template:
+    template: &2153205200
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
@@ -131,6 +131,12 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+      order:
+        create: Crear Pedido
+      quote:
+        create: Crear Presupuesto
+      user:
+        create: Crear Usuario
   number:
     currency:
       format:
@@ -190,41 +196,94 @@ es:
       long: ! '%d de %B de %Y %H:%M'
       short: ! '%d de %b %H:%M'
     pm: pm
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: *2176063820
+      template: *2153205200
   activerecord:
     errors:
-      <<: *errors
+      format: ! '%{attribute} %{message}'
+      messages: *2176063820
+      template: *2153205200
+      models:
+        order:
+          attributes:
+            nif:
+              blank: no puede estar en blanco
     models:
-      city: 'Ciudad'
-      order: 'Pedido'
-      price: 'Precio'
-      quote: 'Presupuesto'
-      quote_concept: 'Concepto de Presupuesto'
-      state: 'Provincia'
-      status: 'Estado'
-      user: 'Usuario'
-      tax: 'Impuesto'
-      vehicle: 'Vehículo'
-      vehicle_instance: 'Vehículo Concreto'
+      city: Ciudad
+      order: Pedido
+      price: Precio
+      quote: Presupuesto
+      quote_concept: Concepto de Presupuesto
+      state: Provincia
+      status: Estado
+      user: Usuario
+      tax: Impuesto
+      vehicle: Vehículo
+      vehicle_instance: Vehículo Concreto
     attributes:
       city:
-        name: 'Nombre'
+        name: Nombre
       order:
-        first_name: 'Nombre'
-        last_name: 'Apellido'
-        address: 'Dirección'
-        email: 'Email'
-        phone_number: 'Teléfono'
-        shop: 'Concesionario'
+        first_name: Nombre
+        last_name: Apellido
+        address: Dirección
+        email: Email
+        phone_number: Teléfono
+        shop: Concesionario
+        gender: Gender
+        nif: Nif
+        owner: Owner
+        registered_name: Registered name
       state:
-        name: 'Nombre'
-        covered: 'Disponible'
-        requests: 'Solicitudes'
-  # views:
-  # states:
-  welcome: "Bienvenido a Matricula el coche"
-  check_availability: "Compruebe si el servicio está disponible en su provincia"
-  check: "Comprobar"
+        name: Nombre
+        covered: Disponible
+        requests: Solicitudes
+      quote:
+        city_id: City
+        plaking_date: Plaking date
+        vehicle: Vehicle
+      user:
+        email: Email
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+  welcome: Bienvenido a Matricula el coche
+  check_availability: Compruebe si el servicio está disponible en su provincia
+  check: Comprobar
+  order:
+    new:
+      address: ''
+      cif: ''
+      email: ''
+      first_name: ''
+      gender: ''
+      last_name: ''
+      owner: ''
+      phone_number: ''
+      registered_name: ''
+      shop: ''
+  quote:
+    new:
+      cc_engine: ''
+      city_id: ''
+      number_cylinders: ''
+      plaking_date: ''
+      vehicle: ''
+  session:
+    new:
+      email: ''
+      password: ''
+  simple_form:
+    required:
+      html: <abbr title="required">*</abbr>
+      mark: ! '*'
+      text: required
+  user:
+    new:
+      email: ''
+      name: ''
+      password: ''
+      password_confirmation: ''

@@ -70,15 +70,26 @@ FactoryGirl.define do
   end
   
   factory :order do
+    owner "Personal"
     first_name "Angel"
     last_name "Villalba"
+    gender 1
+    nif "00000000T"
     address "Vandelvira 8, 3 dcha"
     email "ejemplo@ejemplo.es"
     phone_number "933739443"
     shop "Concesionario Estupendo"
+    shop_salesman "Esteban Casado"
+    shop_phone "900100000"
     status
     quote
     user
+  end
+  
+  factory :business_order, parent: :order, class: "Order" do
+    owner "Business"
+    registered_name "Sinapse"
+    cif "B64862600"
   end
   
   factory :user do
