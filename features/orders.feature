@@ -51,7 +51,7 @@ Scenario: After signing in I can create an Order
     And I have been redirected to signup page before creating an Order
   When I sign in as a valid user
   Then I am able to create a new Order
-@issue  
+ 
 Scenario: Happy path to My Account
   Given I am a logged common user
     And I have some orders in place
@@ -66,7 +66,7 @@ Scenario: Happy path to Orders page
   When I follow the "Orders management" link
   Then the page title should be "Orders"
     And I should see a list of all Orders
-@issue     
+    
 Scenario: Happy path to a specific Order page
   Given I am a logged common user
     And I have some orders in place
