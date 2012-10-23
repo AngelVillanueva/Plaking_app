@@ -87,8 +87,8 @@ Given /^I have been redirected to signup page before creating an Order$/ do
 end
 
 Given /^I have some orders in place$/ do
-  order_one = FactoryGirl.create(:order, user: @user)
-  order_two = FactoryGirl.create(:order, shop: "Another", user: @user)
+  order_one = FactoryGirl.create(:order, user: @user, id: 1)
+  order_two = FactoryGirl.create(:order, shop: "Another", user: @user, id: 2)
 end
 
 Given /^there is at least one tax created$/ do
