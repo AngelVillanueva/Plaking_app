@@ -1,0 +1,17 @@
+<div class="slider-wrapper">
+	<div id="da-slider" class="da-slider">
+		<div class="da-slide da-slide-current">
+			<h2><%= t(:claim) %></h2>
+			<p><%= t(:subclaim) %></p>
+			<%= simple_form_for(@state, url: "/#{I18n.locale}/states/checking", html: {class: 'form-inline'}) do |f| %>
+		
+				<%= f.select :name, @states %>
+				<%= f.button :submit, t(:check), class: 'btn-primary' %>
+		
+			<% end %>
+			<div class="da-img">
+				<%= image_tag "women1.png"%>
+			</div>
+		</div>
+	</div>
+</div>

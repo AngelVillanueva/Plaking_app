@@ -63,6 +63,8 @@ en:
   welcome: Welcome to Matricula El Coche
   check_availability: Check your State for service availability
   check: Check State
+  claim: Save between 30% and 50% by getting your plaking online!
+  subclaim: Get your Plaking number and temporary licence in just 24 hours!
   taxes: taxes
   vat_exempt: No VAT
   vat_general: VAT general
@@ -122,6 +124,9 @@ en:
   personal: Personal
   Mr: Mr.
   Mrs/Ms: Mrs., Ms.
+  About us: About us
+  Contact: Contact
+  Legal notice: Legal notice
   helpers:
     submit:
       order:
