@@ -252,7 +252,9 @@ es:
         password_confirmation: Password confirmation
   welcome: Bienvenido a Matricula el coche
   check_availability: Compruebe si el servicio está disponible en su provincia
-  check: Comprobar
+  claim: ¡Ahorre entre un 30% y un 50% matriculando online su vehículo!
+  subclaim: En sólo 24 horas dispondrá del número de matrícula y la documentación transitoria para circular **
+  check: ¡Empezar!
   order:
     new:
       address: ''
