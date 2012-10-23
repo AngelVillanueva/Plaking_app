@@ -1,13 +1,18 @@
-<footer class="footer">
-  <small>
-    <a href="http://www.sinapse.es/">Sinapse</a>,
-    handmade with care
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-      <li><%= link_to "Legal", '#' %></li>
-    </ul>
-  </nav>
-</footer>
+<div id="footer-menu">
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        <small><%= link_to "Sinapse", 'http://www.sinapse.es' %>, handmade with care</small>
+      </div>
+      <div class="span3 offset7">
+        <div id="footer-menu-links">
+          <ul id="footer-nav">
+            <li><%= link_to t("About us"),   '#' %></li>
+                <li><%= link_to t("Contact"), '#' %></li>
+                <li><%= link_to t("Legal notice"), '#' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
