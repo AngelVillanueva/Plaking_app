@@ -80,7 +80,7 @@ en:
   taxes: taxes
   vat_exempt: No VAT
   vat_general: VAT general
-  taxes_list: List of Taxes
+  taxes_list: Admin List of Taxes
   new_tax: New Tax
   create_new_tax: Create New Tax
   create_tax: Create Tax
@@ -104,7 +104,7 @@ en:
   cancel: Cancel
   really_quit: It's ok, let me quit
   legal_advice: ! 'Legal Advice: any change in public taxes will be reflected accordingly'
-  concepts_list: List of Quote Concepts
+  concepts_list: Admin List of Quote Concepts
   quote_concepts: Quote Concepts
   new_concept_page: New Concept
   new_concept: New Concept
