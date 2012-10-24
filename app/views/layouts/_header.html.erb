@@ -14,16 +14,18 @@
             </a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li><%= link_to t("Home"),    root_path %></li>
-                      <% if signed_in? %>
-                        <li><%= link_to t("My Account"),    current_user %></li>
-                         <% if admin_user? %>
-                           <%= render 'layouts/admin_menu' %>
-                        <% end %>
-                        <li><%= link_to t("Sign out"), signout_path, method: "delete", class: "signout" %></li>
-                      <% else %>
-                        <li><%= link_to t("Sign in"), signin_path, class: "signin" %></li>
-                      <% end %>
+                <li<%= class_if_link 'home' %>>
+                  <%= link_to t("Home"), root_path %>
+                </li>
+                <% if signed_in? %>
+                  <li<%= class_if_link 'account' %>><%= link_to t("My Account"),    current_user %></li>
+                   <% if admin_user? %>
+                     <%= render 'layouts/admin_menu' %>
+                  <% end %>
+                  <li><%= link_to t("Sign out"), signout_path, method: "delete", class: "signout" %></li>
+                <% else %>
+                  <li><%= link_to t("Sign in"), signin_path, class: "signin" %></li>
+                <% end %>
               </ul>
             </div>
           </div>

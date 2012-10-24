@@ -9,5 +9,15 @@ module ApplicationHelper
        "#{page_title} | #{base_title}"                 # String interpolation
      end
    end
+
+ # Returns current_page?
+   def class_if_link(this_page)
+   	 case this_page
+   	 	when 'home'
+   	 		" class=active" if current_page? '/'
+   	 	when 'account'
+   	 		" class=active" if current_page? "/users/#{current_user.id}"
+   	 	end
+   end
    
 end
