@@ -264,6 +264,14 @@ es:
   claim: ¡Ahorre entre un 30% y un 50% matriculando online su vehículo!
   subclaim: En sólo 24 horas dispondrá del número de matrícula y la documentación transitoria para circular **
   check: ¡Empezar!
+  Online Quote: Presupuesto online
+  Documentation: Documentación
+  Plaking number: Número de matrícula
+  Original: Documentación original
+  step_1_text: Calcule su presupuesto y pague cómodamente online. ¡Ahorre hasta un 50%!
+  step_2_text: Descargue los formularios de autorización y deposítelos en el concesionario donde compra el vehículo
+  step_3_text: En sólo 24 horas le comunicaremos su número de matrícula y podrá circular con una autorización temporal
+  step_4_text: En otras 24 horas le entregaremos en la dirección que nos indique la documentación definitiva
   order:
     new:
       address: ''
