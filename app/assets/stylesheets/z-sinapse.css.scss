@@ -1,3 +1,6 @@
+.logo a {
+    font-size: 20px;
+}
 .da-slide p {
     color: #AAAAAA;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -15,6 +18,9 @@
 /* Higher than 960 (desktop devices)
 ====================================================================== */
 @media only screen and (min-width: 960px) {
+        .logo a {
+        font-size: 28px;
+    }
     .da-slide h2 {
         line-height: 100%;
     }
@@ -35,6 +41,7 @@
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers)
 ====================================================================== */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
     .da-slide p {
         top: 255px;
     }
@@ -44,6 +51,5 @@
 =================================================================== */
 @media only screen and (max-width: 479px) {
 
-    
 }
 
