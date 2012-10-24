@@ -55,11 +55,15 @@ en:
   attributes:
     city:
       name: Name
-  my_account: My account
-  states_management: States management
-  orders_management: Orders management
-  status_management: Status management
-  taxes_management: Taxes management
+  Home: Home
+  My Account: My Account
+  Sign out: Sign out
+  Sign in: Sign in
+  States management: States management
+  Orders management: Orders management
+  Status management: Status management
+  Taxes management: Taxes management
+  Concept management: Concept management
   welcome: Welcome to Matricula El Coche
   check_availability: Check your State for service availability
   check: Check State

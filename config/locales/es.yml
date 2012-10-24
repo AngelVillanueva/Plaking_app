@@ -250,6 +250,15 @@ es:
         name: Name
         password: Password
         password_confirmation: Password confirmation
+  Home: Inicio
+  My Account: Mi cuenta
+  Sign out: Desconectarse
+  Sign in: Acceder
+  States management: Gestión de provincias
+  Orders management: Gestión de pedidos
+  Status management: Gestión de estados
+  Taxes management: Gestión de impuestos
+  Concept management: Gestión de conceptos
   welcome: Bienvenido a Matricula el coche
   check_availability: Compruebe si el servicio está disponible en su provincia
   claim: ¡Ahorre entre un 30% y un 50% matriculando online su vehículo!
