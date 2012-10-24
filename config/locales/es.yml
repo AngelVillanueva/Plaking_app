@@ -254,6 +254,7 @@ es:
   My Account: Mi cuenta
   Sign out: Desconectarse
   Sign in: Acceder
+  Admin menu: Menú Admin
   States management: Gestión de provincias
   Orders management: Gestión de pedidos
   Status management: Gestión de estados
@@ -272,6 +273,68 @@ es:
   step_2_text: Descargue los formularios de autorización y deposítelos en el concesionario donde compra el vehículo
   step_3_text: En sólo 24 horas le comunicaremos su número de matrícula y podrá circular con una autorización temporal
   step_4_text: En otras 24 horas le entregaremos en la dirección que nos indique la documentación definitiva
+  taxes: impuestos
+  vat_exempt: sin IVA
+  vat_general: IVA general
+  taxes_list: Admin Listado de Impuestos
+  new_tax: Nuevo Impuesto
+  create_new_tax: Crear Nuevo Impuesto
+  create_tax: Crear Impuesto
+  new_tax_success: Impuesto creado correctamente
+  new_tax_error: Error creando el nuevo Impuesto
+  delete_tax: Borrar
+  tax_deleted_success: Impuesto borrado correctamente
+  edit_tax_page: Editar Impuesto
+  edit_tax: Editar
+  update_tax: Actualizar Impuesto
+  tax_edition_success: Impuesto editado correctamente
+  tax_edition_error: Error actualizando el Impuesto
+  traffic_tax_global: Tasa de Jefatura de Tráfico
+  college_tax: Tasa del Colegio de Gestores
+  traffic_tax_ciclo: Tasa de Jefatura de Tráfico
+  our_fee: Honorarios
+  ivtm_line: IVTM
+  vat_line: IVA
+  sure_to_cancel_quote?: ¿Está seguro? Es posible que consiga un ahorro importante en la matriculación...
+  did_you_at_least_review_the_Quote?: Tómese un momento y revise el presupuesto de su concesionario; el Impuesto de matriculación y su gestión pueden representar un importe importante.
+  cancel: Cancelar
+  really_quit: Está claro, no deseo seguir
+  legal_advice: 'Aviso legal: cualquier modificación por parte de la Administración en las tasas se reflejará en el importe definitivo.'
+  concepts_list: Admin Listado de Conceptos del Presupuesto
+  quote_concepts: Conceptos del Presupuesto
+  new_concept_page: Nuevo Concepto
+  new_concept: Nuevo Concepto
+  concept: Concepto
+  tax: Impuesto
+  net_amount: Importe neto
+  show_before: Mostrar antes del IVTM
+  ordering: Orden en el listado
+  for_car: Para turismos
+  for_ciclo: Para ciclomotores
+  for_moto: Para motos
+  actions: Acciones
+  create_concept: Crear un nuevo Concepto de Presupuesto
+  create_quote_concept: Crear Concepto de Presupuesto
+  new_concept_success: Nuevo Concepto creado correctamente
+  new_concept_error: Error creando el nuevo concepto
+  delete_concept: Borrar
+  concept_deleted_success: Concepto borrado correctamente
+  edit_concept: Editar
+  edit_concept_page: Editar Concepto de Presupuesto
+  update_concept: Actualizar Concepto de Presupuesto
+  concept_edition_success: Concepto de Presupuesto editado correctamente
+  concept_edition_error: Error actualizando el concepto
+  order_page: 'Pedido #'
+  my_orders: Mis Pedidos
+  edit_order: Editar Pedido con id#
+  edit_order_status: Cambiar estado
+  business: Persona Jurídica
+  personal: Persona Física
+  Mr: Sr.
+  Mrs/Ms: Sra., Srta.
+  About us: Acerca de
+  Contact: Contacto
+  Legal notice: Aviso legal
   order:
     new:
       address: ''
