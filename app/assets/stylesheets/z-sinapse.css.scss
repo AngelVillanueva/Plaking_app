@@ -67,12 +67,40 @@
     .da-slide p {
         top: 255px;
     }
+    #copyright {padding: 50px 0;}
 
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 =================================================================== */
 @media only screen and (max-width: 479px) {
-
+    .logo i {
+        margin-top: -45px;
+    }
+    .logo a {
+        font-size:10px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .da-slider {
+        height: 430px;
+    }
+    .da-slide p {
+        display:none;
+    }
+    .da-slide form {
+        top: 70%;
+        width: 100px;
+    }
+    .da-slide input[type="submit"]{
+        margin: 20px auto;
+    }
+    #copyright {
+        float: right;
+    }
+    #copyright p {
+        width: auto;
+    }
+    .debug_dump {display:none;}
 }
 
