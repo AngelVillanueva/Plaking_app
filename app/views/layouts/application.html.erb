@@ -10,6 +10,8 @@
 </head>
 <body>
 
+  <%= current_page? "/users/#{current_user.id}" %>
+
   <%= render 'layouts/header' %>
 
   <%= render 'layouts/page-title' unless current_page?('/') %>
