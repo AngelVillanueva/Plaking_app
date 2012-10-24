@@ -1,21 +1,34 @@
-<header class="navbar navbar-fixed-top">
-<div class="navbar-inner">
+<header>
   <div class="container">
-    <%= render 'layouts/logo' %>
-    <nav>
-      <ul class="nav pull-right">
-        <li><%= link_to "Home",    root_path %></li>
-        <% if signed_in? %>
-        	<li><%= link_to "My account",    current_user %></li>
-        	 <% if admin_user? %>
-        	   <%= render 'layouts/admin_menu' %>
-        	<% end %>
-          <li><%= link_to "Sign out", signout_path, method: "delete", class: "signout" %></li>
-        <% else %>
-        	<li><%= link_to "Sign in", signin_path, class: "signin" %></li>
-        <% end %>
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="logo span4">
+        <%= render 'layouts/logo' %>
+      </div>
+      <div class="span8">
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toogle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><%= link_to t("Home"),    root_path %></li>
+                      <% if signed_in? %>
+                        <li><%= link_to t("My Account"),    current_user %></li>
+                         <% if admin_user? %>
+                           <%= render 'layouts/admin_menu' %>
+                        <% end %>
+                        <li><%= link_to t("Sign out"), signout_path, method: "delete", class: "signout" %></li>
+                      <% else %>
+                        <li><%= link_to t("Sign in"), signin_path, class: "signin" %></li>
+                      <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </header>
