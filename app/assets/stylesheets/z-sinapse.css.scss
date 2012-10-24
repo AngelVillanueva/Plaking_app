@@ -14,6 +14,22 @@
 #footer-menu-links {
     float: right;
 }
+.picture .item-description {
+    background-position: 65% top;
+    background-repeat: no-repeat;
+}
+.picture .item-description.uno {
+    background-image: image-url("1.png");
+}
+.picture .item-description.dos {
+    background-image: image-url("2.png");
+}
+.picture .item-description.tres {
+    background-image: image-url("3.png");
+}
+.picture .item-description.cuatro {
+    background-image: image-url("4.png");
+}
 
 /* Media Queries
 ====================================================================== */
@@ -44,10 +60,14 @@
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers)
 ====================================================================== */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-
+    .picture .item-description {
+        background-position: 20%;
+        background-size: 20%;
+    }
     .da-slide p {
         top: 255px;
     }
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
