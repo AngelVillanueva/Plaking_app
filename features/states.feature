@@ -25,7 +25,7 @@ Scenario: Admin users can manage States
 Scenario: Non Admin users cannot manage States
   Given I am a logged common user
   When I go to the States Admin Area
-  Then I should see "Welcome to Matricula El Coche"
+  Then I should see "4 simple steps"
   Then I should not see "States Admin Area"
   And I should not see a list of States
   
@@ -38,7 +38,7 @@ Scenario: Admin users can access State creation
 Scenario: Non Admin users access State creation
   Given I am a logged common user
   When I go to the New State page
-  Then I should see "Welcome to Matricula El Coche"
+  Then I should see "4 simple steps"
   Then I should not see "Create new State"
   
 Scenario: Admin users can create new States

@@ -334,17 +334,17 @@ Then /^I should not see the link "(.*?)"$/ do |link_text|
 end
 
 Then /^I should see the links within the admin menu$/ do 
-  page.should have_link(I18n.t(:states_management), href: states_path)
-  page.should have_link(I18n.t(:orders_management), href: orders_path)
-  page.should have_link(I18n.t(:status_management), href: statuses_path)
-  page.should have_link(I18n.t(:taxes_management), href: taxes_path)
+  page.should have_link(I18n.t("States management"), href: states_path)
+  page.should have_link(I18n.t("Orders management"), href: orders_path)
+  page.should have_link(I18n.t("Status management"), href: statuses_path)
+  page.should have_link(I18n.t("Taxes management"), href: taxes_path)
 end
 
 Then /^I should not see the links within the admin menu$/ do 
-  page.should_not have_link(I18n.t(:states_management), href: states_path)
-  page.should_not have_link(I18n.t(:orders_management), href: orders_path)
-  page.should_not have_link(I18n.t(:status_management), href: statuses_path)
-  page.should_not have_link(I18n.t(:taxes_management), href: taxes_path)
+  page.should_not have_link(I18n.t("States management"), href: states_path)
+  page.should_not have_link(I18n.t("Orders management"), href: orders_path)
+  page.should_not have_link(I18n.t("Status management"), href: statuses_path)
+  page.should_not have_link(I18n.t("Taxes management"), href: taxes_path)
 end
 
 Then /^the page title should be "(.*?)"$/ do |page_title|
@@ -442,7 +442,7 @@ Then /^I am able to create a new Order$/ do
 end
 
 Then /^I should be redirected to the home page$/ do
-  page.should have_selector('h1', text: I18n.t("welcome"))
+  page.should have_selector('h3', text: I18n.t("4 simple steps"))
 end
 
 Then /^I should see a tax deletion confirmation message$/ do
