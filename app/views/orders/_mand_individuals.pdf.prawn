@@ -7,7 +7,7 @@ pdf.default_leading 0
 # Header
 
 # Body
-pdf.image "#{Rails.root}/public/images/header.png", position: :center, scale: 0.5
+pdf.image "assets/pdf/header.png", position: :center, scale: 0.5
 pdf.bounding_box([20, pdf.cursor], width: 490, height: 800) do
   pdf.move_down 40
   pdf.font_size 10
