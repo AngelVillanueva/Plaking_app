@@ -26,6 +26,12 @@
                 <% else %>
                   <li><%= link_to t("Sign in"), signin_path, class: "signin" %></li>
                 <% end %>
+                <% if params[:locale]!='es' %>
+                <li class="flag es"><%= link_to "Español", locale: 'es' %></li>
+                <% end %>
+                <% if params[:locale]!='ca' %>
+                <li class="flag ca"><%= link_to "Català", locale: 'ca' %></li>
+                <% end %>
               </ul>
             </div>
           </div>
