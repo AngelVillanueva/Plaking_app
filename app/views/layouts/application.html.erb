@@ -20,16 +20,14 @@
 
   <%= render 'layouts/header' %>
 
+  <%= render 'layouts/flash', flash: flash %>
+
   <%= render 'layouts/page-title' unless current_page?('/') %>
 
   <%= render 'layouts/slider' if current_page?('/') %>
   
   <div id="wrapper">
     <div class="container">
-      <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "flash alert alert-#{key}") %>
-      <% end %>
-
       <%= yield %>
       <div class="clearfix"><hr></div>
     </div>
