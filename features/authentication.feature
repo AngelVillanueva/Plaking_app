@@ -9,7 +9,7 @@ Scenario: Happy path to Sign in
   And I should not see the header "Sign in"
   And I should see the link "Sign out"
   And I should not see the link "Sign in"
-  And I should see the link "My account"
+  And I should see the link "My Account"
   And I should see "My Orders"
   
 Scenario Outline: Incorrect Sign in
@@ -21,7 +21,7 @@ Scenario Outline: Incorrect Sign in
   And I should see the header "Sign in"
   And I should see the link "Sign in"
   And I should not see the link "Sign out"
-  And I should not see the link "My account"
+  And I should not see the link "My Account"
   
   Examples:
   |    email   | password |
@@ -42,7 +42,7 @@ Scenario: error message dissapears after next request
 Scenario: Happy path to Sign out
   Given I am signed in
   When I follow the "Sign out" link
-  Then I should see "Welcome to Matricula El Coche"
+  Then I should see "4 simple steps"
   And I should see the link "Sign in"
   And I should not see the link "Sign out"
   

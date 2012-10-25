@@ -19,7 +19,7 @@ Scenario: Admin users can access Users page
   
 Scenario: Happy path to the show user page
   Given I am signed in at the application
-  When I follow the "My account" link
+  When I follow the "My Account" link
   Then I should see the header "User page"
   And I should not see "Please, sign in"
   
@@ -27,13 +27,13 @@ Scenario: each User can just be viewed by himself
   Given I am signed in at the application
   When I try to see a different user
   Then I should not see the header "User page for"
-  And I should see the header "Welcome to Matricula El Coche"
+  And I should see "4 simple steps"
   
 Scenario: Admin user can see everybody
   Given I am a logged Admin user
   When I try to see a different user
   Then I should see the header "User page for"
-    And I should not see the header "Welcome to Matricula El Coche"
+    And I should not see "4 simple steps"
   
 Scenario: Happy path to the edit user page
   Given I am a logged Admin user
@@ -59,13 +59,13 @@ Scenario: each User can just be edited by himself
   Given I am signed in at the application
   When I try to edit a different user
   Then I should not see the header "Edit User"
-  And I should see the header "Welcome to Matricula El Coche"
+  And I should see "4 simple steps"
   
 Scenario: Admin User can edit everybody
   Given I am a logged Admin user
   When I try to edit a different user
   Then I should see the header "Edit User"
-    And I should not see the header "Welcome to Matricula El Coche"
+    And I should not see "4 simple steps"
     
 Scenario: Happy path for a user edit
   Given I am at the Edit my User page
