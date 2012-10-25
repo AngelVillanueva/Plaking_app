@@ -34,7 +34,7 @@ describe "StatePages" do
 	  visit root_path   	
 	  end
     
-    it { should have_selector('h2', text: "Check your State") }
+    it { should have_selector('h3', text: "4 simple steps") }
     it { should have_content(@state_available.name) }
     
     it "should confirm that a state is available" do
