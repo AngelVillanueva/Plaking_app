@@ -43,7 +43,7 @@ describe "StatePages" do
       click_button button_text
       page.should have_content success_text
       page.should_not have_content error_text
-      page.should have_selector('h1', text: "New Quote for #{@state_available.name} State")
+      page.should have_selector('h1', text: "New Quote for #{@state_available.name}")
       @state_available.reload
       @state_available.requests.should == reqs + 1
     end

@@ -1,17 +1,24 @@
-<% provide :title, "Create Quote" %>
+<% provide :title, t("Create Quote") %>
 
-<div class="center hero-unit">
-  <h2>Your Quote is <%= number_to_currency(@quote.amount) %></h2>
+
+<%= render 'layouts/status_progress', s1: 2, s2: 4, w:"50" %>
+
+<h2><%= t("Your Quote is", quote_amount: number_to_currency(@quote.amount)) %></h2>
   <div class="row">
-    <h3><%= t(:detailed_quote) %></h3>
-    <div class="span7 toright">
-      <%= render 'quote_lines' %>
+  	<div class="span4 offset3">
+    	<h3><%= t(:detailed_quote) %></h3>
+      	<div class="t-right">
+      		<%= render 'quote_lines' %>
+      	</div>
+    </div>
+    <div class="span4 offset3">
+        <a class="btn btn-small" href="#myModal" role="button" data-toggle="modal"><%= t("Cancel and Start Again") %></a>
+  		<a class="btn btn-primary" href="<%= new_order_path %>"><%= t("Accept and Continue") %></a>
+  		<%= render 'legal_advice' %>
     </div>
   </div>
-  <a class="btn btn-small" href="#myModal" role="button" data-toggle="modal">Cancel and Start Again</a>
-  <a class="btn btn-primary" href="<%= new_order_path %>">Accept and Continue</a>
   
-  <%= render 'legal_advice' %>
-</div>
+  
+  
 
 <%= render 'modal' %>

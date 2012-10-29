@@ -20,15 +20,16 @@
 
   <%= render 'layouts/header' %>
 
-  <%= render 'layouts/flash', flash: flash %>
-
   <%= render 'layouts/page-title' unless current_page?('/') %>
 
   <%= render 'layouts/slider' if current_page?('/') %>
   
   <div id="wrapper">
     <div class="container">
-      <%= yield %>
+      <%= render 'layouts/flash', flash: flash %>
+      <% unless current_page?('/') %><div class="content"><% end %>
+        <%= yield %>
+      <% unless current_page?('/') %></div><% end %>
       <div class="clearfix"><hr></div>
     </div>
   </div>

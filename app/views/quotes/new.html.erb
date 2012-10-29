@@ -1,6 +1,7 @@
-<%= provide :title, "New Quote" %>
+<%= provide :title, t("new_quote_for", state: "#{@state.name}") %>
 
-<h1>New Quote for <%= "#{@state.name}" %> State</h1>
-<h2>Enter the data for your vehicle</h2>
+<%= render 'layouts/status_progress', s1: 1, s2: 4, w:"25" %>
+
+<h2><%= t("Enter the data for your vehicle") %></h2>
 
 <%= render 'form' %>

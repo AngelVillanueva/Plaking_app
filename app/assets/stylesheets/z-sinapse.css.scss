@@ -1,3 +1,15 @@
+/* MISC 
+=========== */
+.floated_left {
+    float:left;
+}
+.alert {
+    z-index: 15;
+}
+.t-right {
+    text-align: right;
+}
+
 /* HEADER 
 =========== */
 .logo a {
@@ -19,12 +31,6 @@
 }
 .navbar .nav >li.flag.ca a {
     background-image: image-url("ca.png")!important;
-}
-
-/* ALERTS 
-=========== */
-.alert {
-    z-index: 100;
 }
 
 /* HOME MAIN SLIDER 
@@ -57,6 +63,12 @@
 }
 .picture .item-description.cuatro {
     background-image: image-url("4.png");
+}
+
+/* INNER PAGES 
+===================== */
+#page-title i {
+    margin: -2px 2px -1px -18px;
 }
 
 /* Media Queries

@@ -55,6 +55,12 @@ en:
   attributes:
     city:
       name: Name
+    quote:
+      city_id: Población
+      plaking_date: Fecha estimada de matriculación
+      vehicle: Tipo de vehículo
+      cc_engine: Cilindrada en c.c.
+      number_cylinders: Número de cilindros
   Home: Home
   My Account: My Account
   Sign out: Sign out
@@ -71,6 +77,8 @@ en:
   claim: Save between 30% and 50% by getting your plaking online!
   subclaim: Get your Plaking number and temporary licence in just 24 hours!
   4 simple steps: 4 simple steps
+  This State is covered: This State is covered
+  Sorry, this State is not covered: Sorry, this State is not covered
   Online Quote: Online Quote
   Documentation: Documentation
   Plaking number: Plaking number
@@ -79,6 +87,16 @@ en:
   step_2_text: Download the authorization docs and bring them to the shop where you are buying the car
   step_3_text: Just 24 hours and you will have your Plaking number and a temporary documentation to drive
   step_4_text: Just another 24 hours and we will deliver the original documentation to you at your home address
+  new_quote_for: "New Quote for %{state}"
+  Step_status: "Step %{s1} out of %{s2}"
+  Enter the data for your vehicle: Enter the data for your vehicle
+  Error saving the Quote: Error saving the Quote
+  Quote created successfully: Quote created successfully
+  Create Quote: Create Quote
+  Your Quote is: Your Quote is
+  detailed_quote: Detailed quote
+  Cancel and Start Again: Cancel and Start Again
+  Accept and Continue: Accept and Continue
   taxes: taxes
   vat_exempt: No VAT
   vat_general: VAT general

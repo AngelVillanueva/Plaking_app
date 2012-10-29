@@ -49,10 +49,10 @@ class QuotesController < ApplicationController
     # save and redirect
     if @quote.save
       session[:quote] = @quote.id
-      flash.now.notice = "Quote created successfully"
+      flash.now[:success] = t("Quote created successfully")
     else
       form_population
-      flash.now[:error] = "Error saving the Quote"
+      flash.now[:error] = t("Error saving the Quote")
       render :new
     end
   end
