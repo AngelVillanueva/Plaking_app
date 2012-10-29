@@ -6,8 +6,8 @@
 			<%= f.select :city_id, @cities %>
 			<%= f.label :vehicle %>
 			<%= f.select :vehicle, @vehicles %>
-			<%= f.input :cc_engine, label: "Engine cc", required: true, wrapper_html: {id: "engine"} %>
-			<%= f.input :number_cylinders, label: "Cylinders", wrapper_html: {id: "cyls"} %>
+			<%= f.input :cc_engine, required: true, wrapper_html: {id: "engine"} %>
+			<%= f.input :number_cylinders, wrapper_html: {id: "cyls"} %>
 			<%= f.label :plaking_date %>
 			<%= f.date_select :plaking_date, order: [:month, :year], start_year: Time.new.year, discard_day: true %>
 			

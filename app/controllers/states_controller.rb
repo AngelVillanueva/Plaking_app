@@ -57,10 +57,10 @@ class StatesController < ApplicationController
   	end
   	if @match && @match.covered
   	  session[:state] = @match
-      flash[:success] = "This State is covered"
+      flash[:success] = I18n.t("This State is covered")
       redirect_to new_quote_path
     else
-      flash[:error] = "Sorry, this State is not covered"
+      flash[:error] = I18n.t("Sorry, this State is not covered")
       redirect_to root_path
     end
   end

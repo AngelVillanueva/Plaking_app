@@ -242,9 +242,11 @@ es:
         covered: Disponible
         requests: Solicitudes
       quote:
-        city_id: City
-        plaking_date: Plaking date
-        vehicle: Vehicle
+        city_id: Población
+        plaking_date: Fecha estimada de matriculación
+        vehicle: Tipo de vehículo
+        cc_engine: Cilindrada en c.c.
+        number_cylinders: Número de cilindros
       user:
         email: Email
         name: Name
@@ -266,6 +268,8 @@ es:
   subclaim: En sólo 24 horas dispondrá del número de matrícula y la documentación transitoria para circular **
   check: ¡Empezar!
   4 simple steps: 4 sencillos pasos
+  This State is covered: "¡Podemos gestionar su matriculación en esta provincia! ¡Empecemos!"
+  Sorry, this State is not covered: "Lo sentimos, pero aún no podemos ofrecerle nuestros servicios en esta provincia."
   Online Quote: Presupuesto online
   Documentation: Documentación
   Plaking number: Número de matrícula
@@ -274,6 +278,16 @@ es:
   step_2_text: Descargue los formularios de autorización y deposítelos en el concesionario donde compra el vehículo
   step_3_text: En sólo 24 horas le comunicaremos su número de matrícula y podrá circular con una autorización temporal
   step_4_text: En otras 24 horas le entregaremos en la dirección que nos indique la documentación definitiva
+  new_quote_for: "Nuevo presupuesto para %{state}"
+  Step_status: "Paso %{s1} de %{s2}"
+  Enter the data for your vehicle: Introduzca la información de su vehículo
+  Error saving the Quote: Por favor, introduzca correctamente toda la información obligatoria
+  Quote created successfully: El presupuesto se ha creado correctamente
+  Create Quote: Confirmar presupuesto
+  Your Quote is: "Su presupuesto es %{quote_amount}"
+  detailed_quote: Detalle del presupuesto
+  Cancel and Start Again: Cancelar y recomenzar
+  Accept and Continue: Aceptar y continuar
   taxes: impuestos
   vat_exempt: sin IVA
   vat_general: IVA general
@@ -300,7 +314,7 @@ es:
   did_you_at_least_review_the_Quote?: Tómese un momento y revise el presupuesto de su concesionario; el Impuesto de matriculación y su gestión pueden representar un importe importante.
   cancel: Cancelar
   really_quit: Está claro, no deseo seguir
-  legal_advice: 'Aviso legal: cualquier modificación por parte de la Administración en las tasas se reflejará en el importe definitivo.'
+  legal_advice: 'Aviso legal: cualquier modificación en las tasas por parte de la Administración se reflejará en el importe definitivo.'
   concepts_list: Admin Listado de Conceptos del Presupuesto
   quote_concepts: Conceptos del Presupuesto
   new_concept_page: Nuevo Concepto
@@ -361,9 +375,9 @@ es:
       password: ''
   simple_form:
     required:
-      html: <abbr title="required">*</abbr>
+      html: <abbr title="obligatorio">*</abbr>
       mark: ! '*'
-      text: required
+      text: obligatorio
   user:
     new:
       email: ''
