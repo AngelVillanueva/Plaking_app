@@ -3,6 +3,7 @@ LlorensApp::Application.routes.draw do
   filter :locale #routing-filter gem, possible to exclude some resources as admin etc
 
   root to: 'states#check'
+  match '/about_us' => 'static_pages#about_us'
   
   resources :states
   match '/states/checking' => 'states#checking', method: 'post'
