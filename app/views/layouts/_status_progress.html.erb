@@ -1,9 +1,16 @@
 <h3><%= t("Step_status", s1: s1, s2: s2) %>: <%= t(step_text) %></h3>
+<% if substep != 0 %>
 <h4 class="steps"><%= substep %>/4 - <%= t(subtext) %></h4>
+<% end %>
 
 <div class="row">
 	<div class="span9 progress">
 		<div class="bar" style="width: <%= w %>%;"></div>
+    <% if substep != 0 %>
     <div class="bar bar-lightblue" style="width: <%= w2 %>%;"></div>
+    <div class="bar bar-grey" style="width: 25%;"></div>
+    <div class="bar bar-grey" style="width: 25%;"></div>
+    <div class="bar bar-grey" style="width: 25%;"></div>
+    <% end %>
 	</div>
 </div>
