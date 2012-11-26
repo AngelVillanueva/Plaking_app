@@ -24,7 +24,7 @@ en:
         phone_number: Phone number
         quote_id: Quote
         registered_name: Registered name
-        salesman: Salesman
+        shop_salesman: Salesman
         shop: Shop
         shop_phone: Shop phone
         status_id: Status
@@ -89,6 +89,14 @@ en:
   step_4_text: Just another 24 hours and we will deliver the original documentation to you at your home address
   new_quote_for: "New Quote for %{state}"
   Step_status: "Step %{s1} out of %{s2}"
+  step_1_minitext: "Online Quote"
+  step_2_minitext: "Authorizations"
+  step_3_minitext: "Plaking number"
+  step_4_minitext: "Original documentation"
+  substep_1: "Information"
+  substep_2: "Confirmation"
+  substep_3: "Order"
+  substep_4: "Payment"
   Enter the data for your vehicle: Enter the data for your vehicle
   Error saving the Quote: Error saving the Quote
   Quote created successfully: Quote created successfully
@@ -148,14 +156,26 @@ en:
   update_concept: Update Quote Concept
   concept_edition_success: Quote Concept edited successfully
   concept_edition_error: Error updating the concept
+  New Order: New Order
+  Enter the data for your Order: Enter the data for your Order
   order_page: 'Order #'
   my_orders: My Orders
   edit_order: Edit Order id#
   edit_order_status: Change status
+  Select one: Select one
   business: Business
   personal: Personal
+  representative: representative
   Mr: Mr.
   Mrs/Ms: Mrs., Ms.
+  Company data: Company data
+  Personal data: Personal data
+  Shop data: Shop data
+  CIF: Vat number
+  Error saving the order: Error saving the order
+  Thanks for your order: Thanks for your order!
+  The order was updated with the new status: The order was updated with the new status
+  Error updating the order: Error updating the order
   About us: About us
   Contact: Contact
   Legal notice: Legal notice

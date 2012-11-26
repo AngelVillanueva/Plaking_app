@@ -1,7 +1,9 @@
-<h3><%= t("Step_status", s1: s1, s2: s2) %></h3>
+<h3><%= t("Step_status", s1: s1, s2: s2) %>: <%= t(step_text) %></h3>
+<h4 class="steps"><%= substep %>/4 - <%= t(subtext) %></h4>
 
 <div class="row">
 	<div class="span9 progress">
 		<div class="bar" style="width: <%= w %>%;"></div>
+    <div class="bar bar-lightblue" style="width: <%= w2 %>%;"></div>
 	</div>
 </div>
