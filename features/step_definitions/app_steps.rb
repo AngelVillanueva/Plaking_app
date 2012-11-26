@@ -237,7 +237,7 @@ end
 
 When /^I create the Quote for (.*?) without (.*?) data$/ do |type, engine_field|
   select type, from: "Vehicle"
-  fill_in "Engine cc", with: 125 unless engine_field == "Engine cc"
+  fill_in "Cc engine", with: 125 unless engine_field == "Cc engine"
   fill_in engine_field, with: ""
 end
 

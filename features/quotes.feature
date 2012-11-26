@@ -11,9 +11,9 @@ Scenario Outline: a Quote needs CC, Cylinders and Stroke data depending on the v
   
 Examples:
   | city |     type    | engine_field |
-  |  VIC |    Turismo  |  Cylinders   |
-  |  VIC |   Turismo   |   Engine cc  |
-  |  VIC | Motocicleta |   Engine cc  |
+  |  VIC |    Turismo  |  Number cylinders   |
+  |  VIC |   Turismo   |   Cc engine  |
+  |  VIC | Motocicleta |   Cc engine  |
 
 Scenario Outline: Happy path for a Quote
   Given I have prepared a Quote for the city of <city>
@@ -25,6 +25,6 @@ Scenario Outline: Happy path for a Quote
   
 Examples:
 |   city   | vehicle_type |                    engine_information   |    quote  |     pdate    |
-|    VIC   |   Turismo    | {"Engine cc": "500", "Cylinders": "2"}  |   $25.24  | "01-03-2012" |
-|   TONA   |  Ciclomotor  |   {"Engine cc": "", "Cylinders": ""}    |    $4.42  | "01-09-2012" |
-| TERRASSA |  Motocicleta |   {"Engine cc": "250", "Cylinders": ""} |   $11.36  | "01-05-2012" | 
+|    VIC   |   Turismo    | {"Cc engine": "500", "Number cylinders": "2"}  |   $25.24  | "01-03-2012" |
+|   TONA   |  Ciclomotor  |   {"Cc engine": "", "Number cylinders": ""}    |    $4.42  | "01-09-2012" |
+| TERRASSA |  Motocicleta |   {"Cc engine": "250", "Number cylinders": ""} |   $11.36  | "01-05-2012" | 
