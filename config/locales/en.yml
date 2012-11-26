@@ -173,12 +173,27 @@ en:
   Shop data: Shop data
   CIF: Vat number
   Error saving the order: Error saving the order
-  Thanks for your order: Thanks for your order!
+  Thanks for your Order: Thanks for your order!
   The order was updated with the new status: The order was updated with the new status
   Error updating the order: Error updating the order
   About us: About us
   Contact: Contact
   Legal notice: Legal notice
+  List of Orders: List of Orders
+  The current status of your order is: The current status of your order is
+  Next steps:
+  Please:
+  download the attached documents:
+  and send them back to us once signed:
+  You will be notified by email as soon as we receive the documentation:
+  We will handle the Tax in your behalf:
+  You will be notified by email as soon as we send you the Tax receipt and complementary documentation:
+  You can come back to this page at any moment to check the status of your Order:
+  Please, do not hesitate to contact us for any further question at 900.000.000:
+  Welcome: Welcome, %{user}
+  You have these orders: You have %{orders} order(s)
+  Order nr: Order id %{nr}
+  Edit Order: Edit order
   helpers:
     submit:
       order:

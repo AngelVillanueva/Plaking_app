@@ -367,12 +367,27 @@ es:
   Shop data: Datos del concesionario
   CIF: CIF
   Error saving the order: Por favor, introduzca correctamente toda la información obligatoria
-  Thanks for your order: ¡Gracias por su pedido!
+  Thanks for your Order: ¡Gracias por su pedido!
   The order was updated with the new status: Estado del pedido actualizado
   Error updating the order: Ocurrió un error actualizando el pedido
   About us: Acerca de
   Contact: Contacto
   Legal notice: Aviso legal
+  List of Orders: Listado de pedidos
+  The current status of your order is: El estado actual de su pedido es
+  Next steps: Próximos pasos
+  Please: Por favor
+  download the attached documents: descargue los documentos adjuntos
+  and send them back to us once signed: entréguelos en su Concesionario y cambie el estado del pedido
+  You will be notified by email as soon as we receive the documentation: Recibirá un email tan pronto los recibamos
+  We will handle the Tax in your behalf: Procederemos a realizar los trámites de matriculación en su nombre
+  You will be notified by email as soon as we send you the Tax receipt and complementary documentation: Finalmente le comunicaremos el número de matrícula y le entregaremos la documentación original
+  You can come back to this page at any moment to check the status of your Order: Puede volver en cualquier momento a esta página a comprobar el estado de su pedido
+  Please, do not hesitate to contact us for any further question at 900000000: Para cualquier duda, no dude en llamar al 900.000.000
+  Welcome: Bienvenido, %{user}
+  You have these orders: Tiene %{orders} pedido(s)
+  Order nr: Pedido id %{nr}
+  Edit Order: Editar pedido
   order:
     new:
       address: ''

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span8">
     <% if @user.orders.any? %>
-    <p>You have <%= @user.orders.count %> orders</p>
+    <p><%= t("You have these orders", orders: @user.orders.count) %></p>
     <ol class="orders">
       <%= render @orders %>
     </ol>

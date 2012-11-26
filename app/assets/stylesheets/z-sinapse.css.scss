@@ -70,12 +70,19 @@
 #page-title i {
     margin: -2px 2px -1px -18px;
 }
+strong.olist {
+    display: inline-block;
+    width: 200px;
+}
 
 /* PROGRESS BARS 
 ===================== */
 h4.steps { padding-left: 20px; }
 .progress .bar-lightblue {
     background: #81CCEF;
+}
+.progress .bar-grey {
+    background: #F6F6F6;
 }
 
 /* ORDER FORM 
