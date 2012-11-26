@@ -93,7 +93,7 @@ en:
   Error saving the Quote: Error saving the Quote
   Quote created successfully: Quote created successfully
   Create Quote: Create Quote
-  Your Quote is: Your Quote is
+  Your Quote is: Your Quote is %{quote_amount}
   detailed_quote: Detailed quote
   Cancel and Start Again: Cancel and Start Again
   Accept and Continue: Accept and Continue
