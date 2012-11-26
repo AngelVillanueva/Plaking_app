@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"num",
+				"number_cylinders"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"w",
+				"when	when …"
+			],
+			[
+				"sta",
+				"state_not_available"
+			],
+			[
+				"pa",
+				"padding-top	zen:css_properties"
+			],
+			[
+				"ba",
+				"background-position	zen:css_properties"
+			],
+			[
+				"di",
+				"display	zen:css_properties"
+			],
+			[
 				"des",
 				"dests	describe (type, string)"
 			],
@@ -23,21 +51,21 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Plaking_app.sublime-project",
-			"settings":
-			{
-				"buffer_size": 243,
-				"line_ending": "Unix"
-			}
-		}
 	],
-	"build_system": "Packages/User/builds/php.sublime-build",
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
 	"command_palette":
 	{
-		"height": 147.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"git",
+				"Gist: Insert Gist"
+			],
+			[
+				"Git",
+				"Gist: Insert Gist"
+			],
 			[
 				"proj",
 				"Project: Edit"
@@ -131,7 +159,7 @@
 				"Set Syntax: Plain Text"
 			]
 		],
-		"width": 449.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -148,8 +176,83 @@
 	},
 	"file_history":
 	[
-		"/Users/admin/Documents/7.Rails_projects/Plaking_app/.gitignore",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/controllers/users_controller.rb",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/private/var/folders/4s/_12vm4nx29n4n8734kyfjsxr0000gp/T/92285991-b511-4cc9-8486-f1a8f12264e3/var/www/vhosts/naturalbcn.com/httpdocs/modules/blockmanufacturer/blockmanufacturer.tpl",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_footer.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/routes.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/application.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_header.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_admin_menu.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/quotes/create.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_slider.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/environments/production.rb",
+		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/static_pages.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/controllers/static_pages_controller.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/step_definitions/app_steps.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/static_pages/about_us.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/locales/es.yml",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/locales/en.yml",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/z-sinapse.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_flash.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_page-title.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/quotes/new.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_status_progress.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/quotes/_form.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/controllers/quotes_controller.rb",
+		"/Users/admin/Downloads/ut/Men in Black 3 (2012) DVDRip XviD-MAXSPEED/Men in Black 3 (2012) DVDRip XviD-MAXSPEED.nfo",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/spec/requests/state_pages_spec.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/states.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/controllers/states_controller.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/slider.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/states/check.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/users.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/orders.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/concepts.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/features/authentication.feature",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_analytics.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/orders/_mand_companies.pdf.prawn",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/orders/_mand_individuals.pdf.prawn",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/application.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/log/development.log",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/public/robots.txt",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/javascripts/application.js",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_font_loader.html.erb",
+		"/Users/admin/Dropbox/Public/gp/sect/II curso/IMPORTANTE.txt",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/helpers/application_helper.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/orders/index.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/states/index.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/statuses/index.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/users/index.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_copyright.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/javascripts/state.js",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/states/_step.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/states/_step1.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_logo.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/icons.css.scss",
 		"/Users/admin/Documents/7.Rails_projects/Plaking_app/Plaking_app.sublime-project",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/script/score.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/score.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/theme.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/sinapse.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/sinapse.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/spec/factories.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layout/_page-title.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/bootstrap_base.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/application.css",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/Gemfile",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/config/environments/development.rb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_footer_menu.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/static_pages/about.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/javascripts/jquery.cslider.js",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/page-title.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/icons-colors.css",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_header_OLD.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/views/layouts/_header2.html.erb",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/app/assets/stylesheets/bootstrap_and_overrides",
+		"/Users/admin/Documents/7.Rails_projects/Plaking_app/.gitignore",
 		"/private/var/folders/7Z/7ZEFPcGjF7eGe1X79nctvU+++TM/-Tmp-/425c11b7-c8d4-4afb-a97c-3f262c7e597b/cuandoescuchodibujo/wp-content/themes/garnish/footer.php",
 		"/Users/admin/Documents/7.Rails_projects/first_app/test.php",
 		"/Users/admin/Dropbox/Applications/Sublime/Packages/User/builds/php.sublime-build",
@@ -160,7 +263,6 @@
 		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
 		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Default ().sublime-keymap",
-		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/admin/Desktop/index.html",
 		"/Users/admin/Documents/7.Rails_projects/opiniones/features/admin_access.feature",
 		"/Users/admin/Dropbox/Applications/Sublime/Packages/Gist/Gist.sublime-settings",
@@ -170,7 +272,6 @@
 		"/Users/admin/Dropbox/Applications/Sublime/Packages/RSpec/README.md",
 		"/Users/admin/Dropbox/Applications/Sublime/Packages/AdvancedNewFile/Default (OSX).sublime-keymap",
 		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/javascripts/test.js",
-		"/Users/admin/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/admin/Dropbox/Applications/Sublime/Packages/AdvancedNewFile/README.rst",
 		"/Users/admin/Library/Application Support/Sublime Text 2/Settings/SideBarEnhancements.json",
 		"/Users/admin/Documents/7.Rails_projects/opiniones/app/assets/stylesheets/custom.css.scss",
@@ -190,7 +291,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -204,6 +305,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"date",
+			"about",
+			"quote",
+			"error",
+			"quote",
+			"see the heade",
+			"overlay",
+			"list",
+			"logo",
+			"url",
+			"droid",
+			"url(",
+			"img/",
+			"url",
+			"asset-path",
+			"asset",
+			"orange",
+			".navbar .nav > li > a",
+			"responsive",
 			"size",
 			"gem"
 		],
@@ -223,35 +343,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Plaking_app.sublime-project",
-					"settings":
-					{
-						"buffer_size": 243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								202,
-								202
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -339,6 +432,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 234.0,
+	"side_bar_width": 259.0,
 	"status_bar_visible": true
 }
