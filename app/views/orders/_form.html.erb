@@ -1,15 +1,14 @@
 <div class="row">
 	<div class="span6 offset3">
 		<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
-		
-		  <%= f.input :owner, collection: [t("business"), t("personal")] %>
+		  <%= f.input :owner, collection: {t("business")=>"Business", t("personal")=>"Personal"}, prompt: t("Select one") %>
 		  <fieldset id="company_data">
 		  <legend><%= t("Company data") %></legend>
 		  <%= f.input :registered_name %>
-		  <%= f.input :cif, label: "CIF" %>
+		  <%= f.input :cif, label: t("CIF") %>
 		  </fieldset>
 		  <fieldset id="personal_data">
-		  <legend><%= t("Personal data") %></legend>
+		  <legend><%= t("Personal data") %><span class="rep"><%= t("representative") %></span></legend>
 		  <%= f.input :first_name, input_html: {value: current_user.name} %>
 		  <%= f.input :last_name %>
 		  <%= f.input :address %>

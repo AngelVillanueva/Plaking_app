@@ -233,10 +233,13 @@ es:
         email: Email
         phone_number: Teléfono
         shop: Concesionario
-        gender: Gender
+        gender: Tratamiento
         nif: Nif
-        owner: Owner
-        registered_name: Registered name
+        owner: Titularidad
+        registered_name: Razón Social
+        CIF: CIF
+        shop_salesman: Comercial del concesionario
+        shop_phone: Teléfono del concesionario
       state:
         name: Nombre
         covered: Disponible
@@ -280,6 +283,14 @@ es:
   step_4_text: En otras 24 horas le entregaremos en la dirección que nos indique la documentación definitiva
   new_quote_for: "Nuevo presupuesto para %{state}"
   Step_status: "Paso %{s1} de %{s2}"
+  step_1_minitext: "Presupuesto online"
+  step_2_minitext: "Formularios de autorización"
+  step_3_minitext: "Número de matrícula"
+  step_4_minitext: "Documentación original"
+  substep_1: "Información"
+  substep_2: "Confirmación"
+  substep_3: "Pedido"
+  substep_4: "Pago"
   Enter the data for your vehicle: Introduzca la información de su vehículo
   Error saving the Quote: Por favor, introduzca correctamente toda la información obligatoria
   Quote created successfully: El presupuesto se ha creado correctamente
@@ -339,14 +350,26 @@ es:
   update_concept: Actualizar Concepto de Presupuesto
   concept_edition_success: Concepto de Presupuesto editado correctamente
   concept_edition_error: Error actualizando el concepto
+  New Order: Nuevo pedido
+  Enter the data for your Order: Complete los datos del pedido
   order_page: 'Pedido #'
   my_orders: Mis Pedidos
   edit_order: Editar Pedido con id#
   edit_order_status: Cambiar estado
+  Select one: Por favor, seleccione
   business: Persona Jurídica
   personal: Persona Física
+  representative: Representante legal
   Mr: Sr.
   Mrs/Ms: Sra., Srta.
+  Company data: Datos de la empresa
+  Personal data: Datos personales
+  Shop data: Datos del concesionario
+  CIF: CIF
+  Error saving the order: Por favor, introduzca correctamente toda la información obligatoria
+  Thanks for your order: ¡Gracias por su pedido!
+  The order was updated with the new status: Estado del pedido actualizado
+  Error updating the order: Ocurrió un error actualizando el pedido
   About us: Acerca de
   Contact: Contacto
   Legal notice: Aviso legal

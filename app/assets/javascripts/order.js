@@ -5,13 +5,13 @@ $(document).ready(function(){
   		var selector = $(this).val();
   		switch (selector) {
   			case "Personal":
-  			$('#company_data').hide();
+  			$('#company_data, span.rep').hide();
   			break;
   			case "Business":
-  			$('#company_data').show();
+  			$('#company_data, span.rep').show();
   			break;
   			default:
-  			$('#company_data').show();
+  			$('#company_data, span.rep').show();
   		}
   	});
   // end of script to hide fields

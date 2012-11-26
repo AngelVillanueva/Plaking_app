@@ -26,9 +26,9 @@ class OrdersController < ApplicationController
     @order.user = current_user
     
     if @order.save
-      redirect_to @order, notice: "Thanks for your Order"
+      redirect_to @order, notice: I18n.t("Thanks for your Order")
     else
-      flash.now[:error] = "Error saving the order"
+      flash.now[:error] = I18n.t("Error saving the order")
       render :new
     end
   end
@@ -40,9 +40,9 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     
     if @order.update_attributes(params[:order])
-      redirect_to @order, notice: "The order was updated with the new status"
+      redirect_to @order, notice: I18n.t("The order was updated with the new status")
     else
-      flash.now[:error] = "Error updating the order"
+      flash.now[:error] = I18n.t("Error updating the order")
       render :edit
     end
   end
