@@ -18,6 +18,10 @@
 #  company_address :string(255)
 #  cif             :string(255)
 #  registered_name :string(255)
+#  gender          :integer
+#  nif             :string(255)
+#  shop_salesman   :string(255)
+#  shop_phone      :string(255)
 #
 
 class Order < ActiveRecord::Base
