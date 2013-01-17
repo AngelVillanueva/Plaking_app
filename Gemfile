@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.1.0.1'
 gem 'bcrypt-ruby', '3.0.1'  # crypted passwords
 gem 'jquery-rails', '2.0.2'
@@ -10,6 +10,7 @@ gem 'simple_form' # add gem 'country_select' if needed
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'routing-filter' # to prepend locale to url; other uses (pagination, extension, uuid,...)
+gem 'nifval' #nifcif validation
 
 # Locale app
 # gem 'localeapp' # issues with pull-push in dev mode

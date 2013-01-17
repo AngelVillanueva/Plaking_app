@@ -18,6 +18,10 @@
 #  company_address :string(255)
 #  cif             :string(255)
 #  registered_name :string(255)
+#  gender          :integer
+#  nif             :string(255)
+#  shop_salesman   :string(255)
+#  shop_phone      :string(255)
 #
 
 class Order < ActiveRecord::Base
@@ -27,11 +31,11 @@ class Order < ActiveRecord::Base
   belongs_to :user
   
   validates :first_name, :last_name, :gender, :nif, :address, :shop, :shop_salesman, :shop_phone, :quote_id, :status_id, :user_id, presence: true
+  validates :nif, nif: true
   validates :owner, inclusion: {in: %w(Business Personal)}
   validates :registered_name, presence: true, if: :business_owner?
   validates :cif, presence: true, if: :business_owner?
-  #validates_spanish_vat :cif
-  #validates_spanish_vat :nif
+  validates :cif, nif: true, if: :business_owner?
   
   private
   def business_owner?

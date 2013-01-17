@@ -37,9 +37,8 @@ describe "Orders" do
       business_order.should_not be_valid
     end
     it "should have a valid CIF if any" do
-      # business_order.cif = "00000000L"
-      # business_order.should_not be_valid
-      pending
+      business_order.cif = "00000000L"
+      business_order.should_not be_valid
     end
     it "should have a gender" do
       order.gender = ""
@@ -50,9 +49,8 @@ describe "Orders" do
       order.should_not be_valid
     end
     it "should have a valid NIF" do
-      # order.nif = "00000000L"
-      # order.should_not be_valid
-      pending
+      order.nif = "00000000L"
+      order.should_not be_valid
     end
     it "should have a salesman" do
       order.shop_salesman = ""

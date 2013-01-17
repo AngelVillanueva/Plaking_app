@@ -1,12 +1,12 @@
 Feature: handling Orders
-
+@nif
 Scenario Outline: Happy Path for a New Order
   Given I am a logged common user
     And I have created a Quote
   When I go to the New Order page
     And I select <owner> as "Owner"
     And I fill <reg_name> in "Registered name"
-    And I fill <cif> in "CIF"
+    And I fill <cif> in "Vat number"
     And I fill <fname> in "First name"
     And I fill <lname> in "Last name"
     And I select <gender> as "Gender"
@@ -15,16 +15,16 @@ Scenario Outline: Happy Path for a New Order
     And I fill <email> in "Email"
     And I fill <phone> in "Phone number"
     And I fill <shop> in "Shop"
-    And I fill <salesm> in "Shop salesman"
+    And I fill <salesm> in "Salesman"
     And I fill <s_phone> in "Shop phone"
     And I click "Create Order"
-  Then I should see "Thanks for your Order"
+  Then I should see "Thanks for your order!"
   
 Examples:
   |  owner   |reg_name|    cif    |   nif    |   gender  |fname| lname |     address     |     email      |    phone    |   shop   |  salesm   |   s_phone   |
-  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Ana"|"Abadí"|"Rambla Llí,15-2"|"un@example.com"| "902100100" |"Auto2000"|"Iñú Gómez"|"+34 9339620"|
-  |"Business"|"Soc SL"|"B64862600"|"OOOOOOOT"|   "Mr."   |"Ivo"|"Gómez"|"Melros Place,1º"|"dos@exam.co.uk"| "967223776" |"Aut 2000"|"Ana Cañüs"| "902100100" |
-  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Eva"|"Pérez"|"Diagonal 8ª 3d."|"t.s@ejemplo.es"|"+34 9339620"|"Ñám?$5%-"|"Eva Ribás"| "902145199" |
+  |"Personal"|   ""   |    ""     |"00000000T"|"Mrs., Ms."|"Ana"|"Abadí"|"Rambla Llí,15-2"|"un@example.com"| "902100100" |"Auto2000"|"Iñú Gómez"|"+34 9339620"|
+  |"Business"|"Soc SL"|"A12345674"|"00000000T"|   "Mr."   |"Ivo"|"Gómez"|"Melros Place,1º"|"dos@exam.co.uk"| "967223776" |"Aut 2000"|"Ana Cañüs"| "902100100" |
+  |"Personal"|   ""   |    ""     |"00000000T"|"Mrs., Ms."|"Eva"|"Pérez"|"Diagonal 8ª 3d."|"t.s@ejemplo.es"|"+34 9339620"|"Ñám?$5%-"|"Eva Ribás"| "902145199" |
   
 Scenario: error creating an Order
   Given I am a logged common user
@@ -57,8 +57,8 @@ Scenario: Happy path to My Account
     And I have some orders in place
   When I follow the "My Account" link
   Then I should see "My Orders"
-    And I should see the item "Order #1" in the list
-    And I should see the item "Order #2" in the list
+    And I should see the item "Order id 1" in the list
+    And I should see the item "Order id 2" in the list
     And I should see "Status: "
     
 Scenario: Happy path to Orders page

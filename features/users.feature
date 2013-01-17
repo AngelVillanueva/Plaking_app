@@ -20,19 +20,19 @@ Scenario: Admin users can access Users page
 Scenario: Happy path to the show user page
   Given I am signed in at the application
   When I follow the "My Account" link
-  Then I should see the header "User page"
+  Then I should see the header "Welcome"
   And I should not see "Please, sign in"
   
 Scenario: each User can just be viewed by himself
   Given I am signed in at the application
   When I try to see a different user
-  Then I should not see the header "User page for"
+  Then I should not see the header "Welcome"
   And I should see "4 simple steps"
   
 Scenario: Admin user can see everybody
   Given I am a logged Admin user
   When I try to see a different user
-  Then I should see the header "User page for"
+  Then I should see the header "Welcome"
     And I should not see "4 simple steps"
   
 Scenario: Happy path to the edit user page
