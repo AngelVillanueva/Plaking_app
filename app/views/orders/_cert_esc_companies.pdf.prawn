@@ -18,12 +18,12 @@ pdf.stroke
 pdf.bounding_box([0, pdf.cursor], width: 540, height: 800) do
   pdf.move_down 20
   pdf.font_size 14
-  pdf.text "En cumplimiento de lo establecido en el Anexo XIII letra A) 3º del Reglamento General de Vehículos (RD 2822/1998, de 23 de Diciembre), y a los efectos de su presentación ante la Jefatura Provincial/Local de Tráfico de __________________, el/los abajo firmantes declara/declaran tener poder suficiente para actuar en nombre y representación de la entidad: #{@order.registered_name} con CIF nº #{@order.cif}, en la tramitación del expediente de matriculación del vehículo matrícula ___________________ (indicar bastidor en caso de matriculación).", align: :justify
+  pdf.text "En cumplimiento de lo establecido en el Anexo XIII letra A) 3º del Reglamento General de Vehículos (RD 2822/1998, de 23 de Diciembre), y a los efectos de su presentación ante la Jefatura Provincial/Local de Tráfico de #{@order.quote.city.state.name}, el/los abajo firmantes declara/declaran tener poder suficiente para actuar en nombre y representación de la entidad: #{@order.registered_name} con CIF nº #{@order.cif}, en la tramitación del expediente de matriculación del vehículo matrícula ___________________ (indicar bastidor en caso de matriculación).", align: :justify
   # Signature
   pdf.move_down 40
   pdf.text "Y para que así conste y surta los efectos oportunos,", align: :center
   pdf.move_down 10
-  pdf.text "______________, a ____ de __________________ de #{Time.new.year}", align: :center
+  pdf.text "#{@order.quote.city.name}, a ____ de __________________ de #{Time.new.year}", align: :center
   pdf.move_down 5
   pdf.font_size 10
   pdf.text "(firma)", align: :center
@@ -33,13 +33,13 @@ pdf.bounding_box([0, pdf.cursor], width: 540, height: 800) do
   pdf.move_down 10
   pdf.bounding_box([0, pdf.cursor], width: 300, height: 200) do
     pdf.text "NOMBRE Y APELLIDOS", style: :bold, inline_format: true
-    pdf.text "______________________________________"
+    pdf.text "#{@order.first_name} #{@order.last_name}"
     pdf.text "______________________________________"
     pdf.text "______________________________________"
   end
   pdf.bounding_box([320, pdf.cursor+200], width: 220, height: 200) do
     pdf.text "DNI", style: :bold, inline_format: true
-    pdf.text "____________________"
+    pdf.text "#{@order.nif}"
     pdf.text "____________________"
     pdf.text "____________________"
   end
