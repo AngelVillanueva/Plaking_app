@@ -1,5 +1,5 @@
 Feature: handling Orders
-
+@nif
 Scenario Outline: Happy Path for a New Order
   Given I am a logged common user
     And I have created a Quote
@@ -22,9 +22,9 @@ Scenario Outline: Happy Path for a New Order
   
 Examples:
   |  owner   |reg_name|    cif    |   nif    |   gender  |fname| lname |     address     |     email      |    phone    |   shop   |  salesm   |   s_phone   |
-  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Ana"|"Abadí"|"Rambla Llí,15-2"|"un@example.com"| "902100100" |"Auto2000"|"Iñú Gómez"|"+34 9339620"|
-  |"Business"|"Soc SL"|"B64862600"|"OOOOOOOT"|   "Mr."   |"Ivo"|"Gómez"|"Melros Place,1º"|"dos@exam.co.uk"| "967223776" |"Aut 2000"|"Ana Cañüs"| "902100100" |
-  |"Personal"|   ""   |    ""     |"OOOOOOOT"|"Mrs., Ms."|"Eva"|"Pérez"|"Diagonal 8ª 3d."|"t.s@ejemplo.es"|"+34 9339620"|"Ñám?$5%-"|"Eva Ribás"| "902145199" |
+  |"Personal"|   ""   |    ""     |"00000000T"|"Mrs., Ms."|"Ana"|"Abadí"|"Rambla Llí,15-2"|"un@example.com"| "902100100" |"Auto2000"|"Iñú Gómez"|"+34 9339620"|
+  |"Business"|"Soc SL"|"A12345674"|"00000000T"|   "Mr."   |"Ivo"|"Gómez"|"Melros Place,1º"|"dos@exam.co.uk"| "967223776" |"Aut 2000"|"Ana Cañüs"| "902100100" |
+  |"Personal"|   ""   |    ""     |"00000000T"|"Mrs., Ms."|"Eva"|"Pérez"|"Diagonal 8ª 3d."|"t.s@ejemplo.es"|"+34 9339620"|"Ñám?$5%-"|"Eva Ribás"| "902145199" |
   
 Scenario: error creating an Order
   Given I am a logged common user

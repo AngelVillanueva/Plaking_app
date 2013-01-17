@@ -84,7 +84,7 @@ business_order.nif = "00000000T"
 business_order.shop_salesman = "Esteban Comercial"
 business_order.shop_phone = "600000000"
 business_order.company_address = "Arquitecto Vandelvira, 8"
-business_order.cif = "B64862600"
+business_order.cif = "A12345674"
 business_order.registered_name = "Sinapse Consulting SL"
 business_order.save!
 
