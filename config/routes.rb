@@ -4,6 +4,8 @@ LlorensApp::Application.routes.draw do
 
   root to: 'states#check'
   match '/about_us' => 'static_pages#about_us'
+  match '/contact' => 'static_pages#contact'
+  match '/legal_notice' => 'static_pages#legal_notice'
   
   resources :states
   match '/states/checking' => 'states#checking', method: 'post'
