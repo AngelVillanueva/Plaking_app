@@ -8,7 +8,7 @@ pdf.move_down 20
 pdf.font("Helvetica", size: 16)
 pdf.text "<u>AUTORIZACIÓN PARA EMPRESAS</u>", style: :bold, align: :center, inline_format: true
 # Body
-pdf.bounding_box([20, pdf.cursor], width: 490, height: 100) do
+pdf.bounding_box([20, pdf.cursor], width: 490, height: 300) do
   pdf.move_down 40
   pdf.font_size 12
   pdf.text "#{tratamiento} #{@order.first_name} #{@order.last_name}, en representación de la Sociedad #{@order.registered_name} autorizo/a a que 'MATRICULA EL COCHE' retire del Concesionario: #{@order.shop} la documentación original del vehículo adquirido por dicha Sociedad, para proceder a su matriculación."
