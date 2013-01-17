@@ -5,7 +5,7 @@ Scenario: Happy path to Sign in
   When I fill "a@b.com" in "Email"
   And I fill "foobar" in "Password"
   And I click "Sign in"
-  Then I should see "User page for Angel"
+  Then I should see "Welcome, Angel"
   And I should not see the header "Sign in"
   And I should see the link "Sign out"
   And I should not see the link "Sign in"

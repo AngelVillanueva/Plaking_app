@@ -25,6 +25,6 @@ Scenario Outline: Happy path for a Quote
   
 Examples:
 |   city   | vehicle_type |                    engine_information   |    quote  |     pdate    |
-|    VIC   |   Turismo    | {"Cc engine": "500", "Number cylinders": "2"}  |   $25.24  | "01-03-2012" |
-|   TONA   |  Ciclomotor  |   {"Cc engine": "", "Number cylinders": ""}    |    $4.42  | "01-09-2012" |
-| TERRASSA |  Motocicleta |   {"Cc engine": "250", "Number cylinders": ""} |   $11.36  | "01-05-2012" | 
+|    VIC   |   Turismo    | {"Cc engine": "500", "Number cylinders": "2"}  |   $25.24  | "01-03-2013" |
+|   TONA   |  Ciclomotor  |   {"Cc engine": "", "Number cylinders": ""}    |    $4.42  | "01-09-2013" |
+| TERRASSA |  Motocicleta |   {"Cc engine": "250", "Number cylinders": ""} |   $11.36  | "01-05-2013" | 

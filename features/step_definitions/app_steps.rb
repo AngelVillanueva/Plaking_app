@@ -510,7 +510,7 @@ Then /^I should be able to edit any of the Orders$/ do
 end
 
 Then /^I should be able to see any of the orders in detail$/ do
-  click_link "Order #1"
+  click_link "Order id 1"
   page.should have_selector('title', text: I18n.t(:order_page))
 end
 
