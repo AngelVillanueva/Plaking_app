@@ -25,8 +25,23 @@ common_user.save!
 
 # status precreated, could be used in production
 status_one = Status.new
-status_one.name = "Pending documentation"
+status_one.name = "Pending authorization"
 status_one.save!
+status_two = Status.new
+status_two.name = "Authorization delivered"
+status_two.save!
+status_three = Status.new
+status_three.name = "Waiting for Plaking number"
+status_three.save!
+status_four = Status.new
+status_four.name = "Temporary Plaking number get"
+status_four.save!
+status_five = Status.new
+status_five.name = "Original documentation get"
+status_five.save!
+status_six = Status.new
+status_six.name = "Original documentation delivered"
+status_six.save!
 
 # fake quotes for development
 quote_one = Quote.new

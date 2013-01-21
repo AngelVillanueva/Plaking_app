@@ -204,6 +204,12 @@ en:
   You have these orders: You have %{orders} order(s)
   Order nr: Order id %{nr}
   Edit Order: Edit order
+  Pending authorization: Pending authorization
+  Authorization delivered: Authorization delivered
+  Waiting for Plaking number: Waiting for Plaking number
+  Temporary Plaking number get: Temporary Plaking number get
+  Original documentation get: Original documentation get
+  Original documentation delivered: Original documentation delivered
   helpers:
     submit:
       order:

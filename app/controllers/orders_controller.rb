@@ -54,9 +54,9 @@ class OrdersController < ApplicationController
   end
   def collect_status
     if admin_user?
-      Status.all.collect{|s| [s.name, s.id] }
+      Status.all.collect{|s| [I18n.t(s.name), s.id] }
     else
-      Status.where(id: 1..2).collect{|s| [s.name, s.id] }
+      Status.where(id: 1..2).collect{|s| [I18n.t(s.name), s.id] }
     end
   end
 end

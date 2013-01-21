@@ -398,6 +398,12 @@ es:
   You have these orders: Tiene %{orders} pedido(s)
   Order nr: Pedido id %{nr}
   Edit Order: Editar pedido
+  Pending authorization: Autorización pendiente
+  Authorization delivered: Autorización en concensionario
+  Waiting for Plaking number: Autorización recogida - Esperando matrícula
+  Temporary Plaking number get: Matrícula temporal obtenida
+  Original documentation get: Documentación original enviada
+  Original documentation delivered: Finalizado - Documentación original entregada
   order:
     new:
       address: ''
