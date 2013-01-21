@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= t("email.admin_new_order.new_order", id: @order.id) %></p>
+    <p><%= link_to t("email.admin_new_order.link", link: @url), orders_url %></p>
+  </body>
+</html>

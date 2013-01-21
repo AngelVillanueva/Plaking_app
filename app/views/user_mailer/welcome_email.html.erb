@@ -4,14 +4,9 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.name %></h1>
-    <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @user.email %>.<br/>
-    </p>
-    <p>
-      To login to the site, just follow this link: <%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+    <p><%= t("email.welcome.greeting", user: @user.name) %>:</p>
+    <p><%= t("email.welcome.order_created", amount: @order.quote.amount) %></p>
+    <p><%= link_to t("email.welcome.link", link: @url), @url %></p>
+    <p><%= t("email.welcome.thanks") %></p>
   </body>
 </html>

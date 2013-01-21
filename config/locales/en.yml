@@ -211,6 +211,17 @@ en:
   Temporary Plaking number get: Temporary Plaking number get
   Original documentation get: Original documentation get
   Original documentation delivered: Original documentation delivered
+  email:
+    welcome:
+      subject: New order at Matricula El Coche
+      greeting: Dear %{user}
+      order_created: You have successfully created an order with a value of %{amount}
+      link: You can check the order status at any time here
+      thanks: Thanks for your Order!
+    admin_new_order:
+      subject: New order at Matricula El Coche
+      new_order: A new order has been received at Matricula El Coche with id %{id}
+      link: See the orders
   helpers:
     submit:
       order:

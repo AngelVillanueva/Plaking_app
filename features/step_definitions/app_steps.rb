@@ -320,6 +320,10 @@ When /^I try to edit the order of a different user$/ do
   visit edit_order_path(other_order)
 end
 
+When /^there is at least one Admin user registered$/ do
+  FactoryGirl.create(:user, email: "admin_user@example.com", admin: true)
+end
+
 When /^I create a valid order$/ do
   step "I have created a Quote"
   step "I go to the New Order page"
@@ -568,4 +572,17 @@ end
 
 Then /^I should receive an email with the order summary$/ do
   step '"common@ex.com" should receive an email'
+  step 'I open the email'
+  step 'I should see "New order at Matricula El Coche" in the email subject'
+  step 'I should see "Dear Angel:" in the email body'
+  step 'I should see "order with a value of" in the email body'
 end
+
+Then /^the admin should receive an email reporting the new order$/ do
+  step '"admin_user@example.com" should receive an email'
+  step 'I open the email'
+  step 'I should see "New order at Matricula El Coche" in the email subject'
+  step 'I should see "A new order has been received at Matricula El Coche with id" in the email body'
+end
+
+

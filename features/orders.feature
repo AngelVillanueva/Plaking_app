@@ -2,6 +2,7 @@ Feature: handling Orders
 @nif
 Scenario Outline: Happy Path for a New Order
   Given I am a logged common user
+    And there is at least one Admin user registered
     And I have created a Quote
   When I go to the New Order page
     And I select <owner> as "Owner"
