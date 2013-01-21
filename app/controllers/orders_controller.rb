@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update]
+  before_filter :signed_up_user, only: [:show, :new, :create, :edit, :update, :index]
   before_filter :correct_user, only: [:show, :edit, :update]
   before_filter :admin_user, only: [:index]
 
@@ -45,6 +45,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     
     if @order.update_attributes(params[:order])
+      #send email to the user
+      UserMailer.status_changed_email(@order).deliver
+      #send email to admin users
+      UserMailer.admin_status_changed_email(@order).deliver
+      #final redirect
       redirect_to @order, notice: I18n.t("The order was updated with the new status")
     else
       flash.now[:error] = I18n.t("Error updating the order")

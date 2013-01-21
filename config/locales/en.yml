@@ -222,6 +222,17 @@ en:
       subject: New order at Matricula El Coche
       new_order: A new order has been received at Matricula El Coche with id %{id}
       link: See the orders
+    status_changed:
+      subject: Status changed for Order nr. %{id}
+      greeting: Dear %{user}
+      header: The Order nr. %{id} has been edited to change its Status
+      new_status: New status is %{status}
+      link: You can check the order status at any time here
+    admin_status_changed:
+      subject: Status changed for Order nr. %{id}
+      body: The Order nr. %{id} has been edited to change its Status
+      new_status: New status is %{status}
+      link: See the orders
   helpers:
     submit:
       order:

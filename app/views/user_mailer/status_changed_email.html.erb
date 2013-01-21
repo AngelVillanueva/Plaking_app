@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= t("email.status_changed.greeting", user: @user.name) %>:</p>
+    <p><%= t("email.status_changed.header", id: @order.id) %>:</p>
+    <p><%= t("email.status_changed.new_status", status: @order.status.name) %></p>
+    <p><%= link_to t("email.status_changed.link", link: @url), @url %></p>
+  </body>
+</html>

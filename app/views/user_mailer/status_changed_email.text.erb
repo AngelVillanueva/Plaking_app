@@ -1,0 +1,8 @@
+<%= t("email.status_changed.greeting", user: @user.name) %>:
+===============================================
+ 
+<%= t("email.status_changed.header", id: @order.id) %>
+
+<%= t("email.status_changed.new_status", status: @order.status.name) %>
+ 
+<%= t("email.status_changed.link", link: @url)%>: <%= @url %>.

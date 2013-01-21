@@ -342,6 +342,14 @@ When /^I create a valid order$/ do
   step 'I should see "Thanks for your order!"'
 end
 
+When /^I change the status of an Order$/ do
+  order = FactoryGirl.create(:order, user: @user)
+  FactoryGirl.create(:status, name: "Documentation sent")
+  visit edit_order_path(order)
+  step 'I select "Documentation sent" as "Status"'
+  step 'I click "Update Order"'
+  step 'I should see "The order was updated with the new status"'
+end
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -578,11 +586,29 @@ Then /^I should receive an email with the order summary$/ do
   step 'I should see "order with a value of" in the email body'
 end
 
-Then /^the admin should receive an email reporting the new order$/ do
+Then /^the Admin users should receive an email reporting the new order$/ do
   step '"admin_user@example.com" should receive an email'
   step 'I open the email'
   step 'I should see "New order at Matricula El Coche" in the email subject'
   step 'I should see "A new order has been received at Matricula El Coche with id" in the email body'
+end
+
+Then /^I should receive an email with the new status$/ do
+  step '"common@ex.com" should receive an email'
+  step 'I open the email'
+  step 'I should see "Status changed for Order nr. 1" in the email subject'
+  step 'I should see "The Order nr. 1 has been edited to change its Status" in the email body'
+  step 'I should see "New status is Documentation sent" in the email body'
+  step 'I follow "You can check the order status at any time here" in the email'
+  step 'I should see "Order # 1"'
+end
+
+Then /^the Admin users should receive an email with the new status$/ do
+  step '"admin_user@example.com" should receive an email'
+  step 'I open the email'
+  step 'I should see "Status changed for Order nr. 1" in the email subject'
+  step 'I should see "The Order nr. 1 has been edited to change its Status" in the email body'
+  step 'I should see "New status is Documentation sent" in the email body'
 end
 
 
