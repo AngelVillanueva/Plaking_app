@@ -34,4 +34,9 @@ LlorensApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # default host for Mailer
+  config.before_initialize do                                                                                                                                                                                                       
+    LlorensApp::Application.routes.default_url_options[:host] = 'localhost'
+  end
 end

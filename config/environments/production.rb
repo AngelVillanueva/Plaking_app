@@ -70,4 +70,9 @@ LlorensApp::Application.configure do
   config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Matricula El Coche") do |u, p|
     [u, p] == ['coche', 'coche']
   end
+
+  # default host for Mailer
+  config.before_initialize do                                                                                                                                                                                                       
+    LlorensApp::Application.routes.default_url_options[:host] = 'matriculaelcoche.com'
+  end
 end

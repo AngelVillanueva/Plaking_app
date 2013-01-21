@@ -34,4 +34,9 @@ LlorensApp::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # default host for Mailer
+  config.before_initialize do                                                                                                                                                                                                       
+    LlorensApp::Application.routes.default_url_options[:host] = 'matriculaelcoche.com'
+  end
 end
