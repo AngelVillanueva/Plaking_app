@@ -320,6 +320,24 @@ When /^I try to edit the order of a different user$/ do
   visit edit_order_path(other_order)
 end
 
+When /^I create a valid order$/ do
+  step "I have created a Quote"
+  step "I go to the New Order page"
+  step 'I select "Personal" as "Owner"'
+  step 'I fill "Angel" in "First name"'
+  step 'I fill "Villanueva" in "Last name"'
+  step 'I select "Mr." as "Gender"'
+  step 'I fill "00000000T" in "Nif"'
+  step 'I fill "Rambla Jujol" in "Address"'
+  step 'I fill "usuario@example.com" in "Email"'
+  step 'I fill "60000000" in "Phone number"'
+  step 'I fill "Auto 2000" in "Shop"'
+  step 'I fill "Esteban" in "Salesman"'
+  step 'I fill "900000000" in "Shop phone"'
+  step 'I click "Create Order"'
+  step 'I should see "Thanks for your order!"'
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -546,4 +564,8 @@ end
 
 Then /^I should not be able to upload a Clip$/ do
   page.should_not have_selector('input[type=file]')
+end
+
+Then /^I should receive an email with the order summary$/ do
+  step '"common@ex.com" should receive an email'
 end

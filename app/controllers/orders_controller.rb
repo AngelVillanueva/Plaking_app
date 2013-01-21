@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     
     if @order.save
+      UserMailer.welcome_email(@order.user).deliver
       redirect_to @order, notice: I18n.t("Thanks for your Order")
     else
       flash.now[:error] = I18n.t("Error saving the order")
