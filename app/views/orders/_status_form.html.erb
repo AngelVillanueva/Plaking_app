@@ -4,6 +4,7 @@
 		  <%= f.label :status_id %>
 		  <%= f.select :status_id, @statuses %>
 		  <% if admin_user? %>
+		  	<p><%= t("Attach documentation") %></p>
         <%= f.file_field :clip %>
       <% end %>
 

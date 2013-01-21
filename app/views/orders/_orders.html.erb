@@ -18,7 +18,7 @@
 	   <tr>
 	     <td><%= order.id %></td>
        <td><%= "Order ##{order.id}" %></td>
-       <td><%= order.status.name %></td>
+       <td><%= t(order.status.name) %></td>
        <td><%= order.user.id %></td>
        <td><%= order.shop %></td>
        <td><%= order.quote.city.name %></td>
