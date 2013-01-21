@@ -1,1 +1,1 @@
-<li><%= link_to t("Order nr", nr: order.id), order %>. Status: <strong class="olist"><%= order.status.name %></strong><%= link_to t(:edit_order_status), edit_order_path(order), class: 'btn' %></li>
+<li><%= link_to t("Order nr", nr: order.id), order %>. Status: <strong class="olist"><%= t(order.status.name) %></strong><%= link_to t(:edit_order_status), edit_order_path(order), class: 'btn' %></li>
