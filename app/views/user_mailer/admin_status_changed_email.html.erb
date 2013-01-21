@@ -5,7 +5,7 @@
   </head>
   <body>
     <p><%= t("email.admin_status_changed.body", id: @order.id) %>:</p>
-    <p><%= t("email.admin_status_changed.new_status", status: @order.status.name) %></p>
-    <p><%= link_to t("email.admin_status_changed.link"), orders_url %></p>
+    <p><%= t("email.admin_status_changed.new_status") %> <strong><%= t(@order.status.name) %></strong></p>
+    <p><%= link_to t("email.admin_status_changed.link"), @url %></p>
   </body>
 </html>

@@ -13,9 +13,14 @@
 <% status = 2 unless status > 2 %>
 <%= render 'layouts/status_progress', s1: status, s2: 4, step_text: "step_#{status}_minitext", w:"#{status*25}", w2:"", substep: 0, subtext: "" %>
 
-<p class="alert alert-info"><%= t("The current status of your order is") %>: <strong><%= @order.status.name %></strong></p>
-<% if @order.status.id < 3 %>
-<p><%= link_to t(:edit_order_status), edit_order_path(@order), class: "btn" %></p>
+<p class="alert alert-info"><%= t("The current status of your order is") %>: <strong><%= t(@order.status.name) %></strong>
+<% if @order.clip_file_name %>
+  <br>
+    <%= link_to t("Download temporary documentation"), @order.clip.url %>
+  </p>
+<% end %>
+<% if @order.status.id < 3 || admin_user? %>
+  <p><%= link_to t(:edit_order_status), edit_order_path(@order), class: "btn" %></p>
 <% end %>
 
 <h2><%= t("Next steps") %></h2>

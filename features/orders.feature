@@ -89,6 +89,7 @@ Scenario: Happy Path for a User to Edit an Order
     
 Scenario: Happy Path of Order edition
   Given I am in the Edit Order page
+    And there is at least one Admin user registered
   When I select "Documentation sent" as "Status"
     And I click "Update Order"
   Then I should see "The order was updated with the new status"

@@ -9,7 +9,7 @@
 # admin user precreated, could be used in production
 admin_user = User.new
 admin_user.name = "Admin"
-admin_user.email = "admin@example.com"
+admin_user.email = "info@sinapse.es"
 admin_user.password = "foobar"
 admin_user.password_confirmation = "foobar"
 admin_user.save!
@@ -18,7 +18,7 @@ admin_user.save!
 # fake common user just for development
 common_user = User.new
 common_user.name = "Usuario"
-common_user.email = "usuario@example.com"
+common_user.email = "avillanueva@sinapse.es"
 common_user.password = "foobar"
 common_user.password_confirmation = "foobar"
 common_user.save!

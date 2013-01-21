@@ -211,6 +211,7 @@ en:
   Temporary Plaking number get: Temporary Plaking number get
   Original documentation get: Original documentation get
   Original documentation delivered: Original documentation delivered
+  Download temporary documentation: Download temporary documentation
   email:
     welcome:
       subject: New order at Matricula El Coche
@@ -226,12 +227,13 @@ en:
       subject: Status changed for Order nr. %{id}
       greeting: Dear %{user}
       header: The Order nr. %{id} has been edited to change its Status
-      new_status: New status is %{status}
+      new_status: New status is
       link: You can check the order status at any time here
+      attachment: The temporary plaking number is attached
     admin_status_changed:
       subject: Status changed for Order nr. %{id}
       body: The Order nr. %{id} has been edited to change its Status
-      new_status: New status is %{status}
+      new_status: New status is
       link: See the orders
   helpers:
     submit:

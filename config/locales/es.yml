@@ -405,6 +405,30 @@ es:
   Temporary Plaking number get: Matrícula temporal obtenida
   Original documentation get: Documentación original enviada
   Original documentation delivered: Finalizado - Documentación original entregada
+  Download temporary documentation: Descargar documentación transitoria
+  email:
+    welcome:
+      subject: Nuevo pedido en Matricula El Coche
+      greeting: Estimado/a %{user}
+      order_created: Ha creado con éxito un pedido por un total de %{amount}
+      link: Puede comprobar el status de su pedido en cualquier momento aquí
+      thanks: ¡Gracias por su pedido!
+    admin_new_order:
+      subject: Nuevo pedido en Matricula El Coche
+      new_order: Se ha recibido un nuevo pedido en Matricula El Coche con id %{id}
+      link: Ver los pedidos
+    status_changed:
+      subject: Cambió el Status del pedido nr. %{id}
+      greeting: Estimado/a %{user}
+      header: El pedido nr. %{id} ha sido editado para cambiar el Status
+      new_status: El nuevo Status es
+      link: Puede comprobar el status de su pedido en cualquier momento aquí
+      attachment: Se adjunta la documentación de matrícula transitoria en espera del original
+    admin_status_changed:
+      subject: Cambió el Status del pedido nr. %{id}
+      body: El pedido nr. %{id} ha sido editado para cambiar el Status
+      new_status: El nuevo Status es
+      link: Ver los pedidos
   order:
     new:
       address: ''

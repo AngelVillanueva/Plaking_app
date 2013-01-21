@@ -5,7 +5,7 @@
   </head>
   <body>
     <p><%= t("email.welcome.greeting", user: @user.name) %>:</p>
-    <p><%= t("email.welcome.order_created", amount: @order.quote.amount) %></p>
+    <p><%= t("email.welcome.order_created", amount: number_to_currency(@order.quote.amount)) %></p>
     <p><%= link_to t("email.welcome.link", link: @url), @url %></p>
     <p><%= t("email.welcome.thanks") %></p>
   </body>

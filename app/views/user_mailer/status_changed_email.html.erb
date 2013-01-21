@@ -6,7 +6,10 @@
   <body>
     <p><%= t("email.status_changed.greeting", user: @user.name) %>:</p>
     <p><%= t("email.status_changed.header", id: @order.id) %>:</p>
-    <p><%= t("email.status_changed.new_status", status: @order.status.name) %></p>
+    <p><%= t("email.status_changed.new_status") %> <strong><%= t(@order.status.name) %></strong></p>
+    <% if @order.clip_file_name %>
+      <p><%= t("email.status_changed.attachment") %></p>
+    <% end %>
     <p><%= link_to t("email.status_changed.link", link: @url), @url %></p>
   </body>
 </html>
