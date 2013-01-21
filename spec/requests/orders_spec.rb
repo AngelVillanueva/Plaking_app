@@ -80,6 +80,7 @@ describe "Orders" do
     it { should respond_to :status }
     it { should respond_to :quote }
     it { should respond_to :user_id }
+    it { should respond_to :clip }
     its(:quote) { should == quote }
     its(:status) { should == status }
     its(:user) { should == user }

@@ -22,6 +22,14 @@ Given /^I am in the Edit Order page$/ do
   visit edit_order_path(order)
 end
 
+Given /^I am in the Edit Order page as an Admin$/ do
+  user = FactoryGirl.create(:user, email: "test@example.com")
+  order = FactoryGirl.create(:order, user: user)
+  FactoryGirl.create(:status, name: "Documentation sent")
+  FactoryGirl.create(:status, name: "Documentation attached")
+  visit edit_order_path(order)
+end
+
 Given /^I am in the Sign in page$/ do
   FactoryGirl.create(:user)
   visit signin_path
@@ -530,4 +538,12 @@ end
 Then /^my options to change the Order status should not be restricted$/ do
   all_options = Status.all.size
   page.should have_selector('option', count: all_options)
+end
+
+Then /^I should be able to upload a Clip$/ do
+  page.should have_selector('input[type=file]')
+end
+
+Then /^I should not be able to upload a Clip$/ do
+  page.should_not have_selector('input[type=file]')
 end

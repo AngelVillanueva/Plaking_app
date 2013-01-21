@@ -97,11 +97,13 @@ Scenario: a not Admin user can just change the Order status within a few options
   Given I am a logged common user
   When I go to the Edit Order page
   Then my options to change the Order status should be very limited
+    And I should not be able to upload a Clip
 
 Scenario: Admin user can change the Order status without restrictions
   Given I am a logged Admin user
-  When I am in the Edit Order page
+  When I am in the Edit Order page as an Admin
   Then my options to change the Order status should not be restricted
+    And I should be able to upload a Clip
   
 Scenario: a user cannot edit other user's order
   Given I am a logged common user

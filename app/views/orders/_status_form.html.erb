@@ -3,7 +3,10 @@
 		<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
 		  <%= f.label :status_id %>
 		  <%= f.select :status_id, @statuses %>
-		
+		  <% if admin_user? %>
+        <%= f.file_field :clip %>
+      <% end %>
+
 		  <%= f.button :submit, class: 'btn btn-primary' %>
 		
 		<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004105204) do
+ActiveRecord::Schema.define(:version => 20130121092526) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20121004105204) do
     t.string   "email"
     t.string   "phone_number"
     t.integer  "quote_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "status_id"
     t.string   "shop"
     t.integer  "user_id"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(:version => 20121004105204) do
     t.string   "nif"
     t.string   "shop_salesman"
     t.string   "shop_phone"
+    t.string   "clip_file_name"
+    t.string   "clip_content_type"
+    t.integer  "clip_file_size"
+    t.datetime "clip_updated_at"
   end
 
   create_table "prices", :force => true do |t|
@@ -105,11 +109,11 @@ ActiveRecord::Schema.define(:version => 20121004105204) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
-    t.string   "remember_token",  :limit => nil
-    t.boolean  "admin",                          :default => false
+    t.string   "remember_token"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

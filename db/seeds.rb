@@ -23,7 +23,7 @@ common_user.password = "foobar"
 common_user.password_confirmation = "foobar"
 common_user.save!
 
-# fake status for development
+# status precreated, could be used in production
 status_one = Status.new
 status_one.name = "Pending documentation"
 status_one.save!
