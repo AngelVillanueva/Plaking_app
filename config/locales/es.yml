@@ -389,10 +389,11 @@ es:
   Next steps: Próximos pasos
   Please: Por favor
   download the attached documents: descargue los documentos adjuntos
-  and send them back to us once signed: entréguelos en su Concesionario y cambie el estado del pedido
-  You will be notified by email as soon as we receive the documentation: Recibirá un email tan pronto los recibamos
-  We will handle the Tax in your behalf: Procederemos a realizar los trámites de matriculación en su nombre
-  You will be notified by email as soon as we send you the Tax receipt and complementary documentation: Finalmente le comunicaremos el número de matrícula y le entregaremos la documentación original
+  and send them back to us once signed: entréguelos en su Concesionario y cambie el estado del pedido a Autorización en Concesionario
+  You will be notified by email as soon as we receive the documentation: Recibirá un email tan pronto recojamos la Autorización
+  We will handle the Tax in your behalf: Procederemos a realizar los trámites de matriculación en su nombre en un plazo de 24 horas
+  You will be notified by email as soon as we send you the Tax receipt and complementary documentation: Le comunicaremos el número de matrícula y podrá descargarse la documentación transitoria.
+  We will let you know when the final documentation is ready: Le entregaremos la documentación original en su concesionario y se lo comunicaremos por email, todo en el plazo aproximado de 24 horas.
   You can come back to this page at any moment to check the status of your Order: Puede volver en cualquier momento a esta página a comprobar el estado de su pedido
   Please, do not hesitate to contact us for any further question at 900000000: Para cualquier duda, no dude en llamar al 900.000.000
   Welcome: Bienvenido, %{user}

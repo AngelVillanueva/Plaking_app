@@ -25,10 +25,19 @@
 
 <h2><%= t("Next steps") %></h2>
 <ol>
+  <% if @order.status.id <= 1 %>
 <li><%= t("Please") %> <%= link_to(t("download the attached documents"), yield(:pdf_order_path), target: "_blank") %> <%= t("and send them back to us once signed") %></li>
+  <% end %>
+  <% if @order.status.id <= 2 %>
 <li><%= t("You will be notified by email as soon as we receive the documentation") %></li>
+  <% end %>
+  <% if @order.status.id <= 3 %>
 <li><%= t("We will handle the Tax in your behalf") %></li>
 <li><%= t("You will be notified by email as soon as we send you the Tax receipt and complementary documentation") %></li>
+  <% end %>
+  <% if @order.status.id <= 4 %>
+<li><%= t("We will let you know when the final documentation is ready") %></li>
+  <% end %>
 <li><%= t("You can come back to this page at any moment to check the status of your Order") %></li>
 </ol>
 
