@@ -385,6 +385,9 @@ es:
   Edit: Editar
   Delete: Borrar
   Attach documentation: Adjuntar documentación transitoria (PDF)
+  Shop email1: Email del concesionario (opcional).
+  Shop email2: Si se introduce el email el concesionario recibirá una copia del justificante profesional
+  Shop email body: Adjuntamos justificante profesional de la matriculación de %{owner}
   The current status of your order is: El estado actual de su pedido es
   Next steps: Próximos pasos
   Please: Por favor
