@@ -598,7 +598,7 @@ Then /^I should receive an email with the new status$/ do
   step 'I open the email'
   step 'I should see "Status changed for Order nr. 1" in the email subject'
   step 'I should see "The Order nr. 1 has been edited to change its Status" in the email body'
-  step 'I should see "New status is Documentation sent" in the email body'
+  step 'I should see "New status is <strong>Documentation sent</strong>" in the email body'
   step 'I follow "You can check the order status at any time here" in the email'
   step 'I should see "Order # 1"'
 end
@@ -608,7 +608,7 @@ Then /^the Admin users should receive an email with the new status$/ do
   step 'I open the email'
   step 'I should see "Status changed for Order nr. 1" in the email subject'
   step 'I should see "The Order nr. 1 has been edited to change its Status" in the email body'
-  step 'I should see "New status is Documentation sent" in the email body'
+  step 'I should see "New status is <strong>Documentation sent</strong>" in the email body'
 end
 
 

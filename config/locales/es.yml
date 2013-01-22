@@ -384,7 +384,7 @@ es:
   Actions: Acciones
   Edit: Editar
   Delete: Borrar
-  Attach documentation: Adjuntar documentación transitoria (PDF)
+  Attach documentation: Adjuntar justificante profesional (PDF)
   Shop email1: Email del concesionario (opcional).
   Shop email2: Si se introduce el email el concesionario recibirá una copia del justificante profesional
   Shop email body: Adjuntamos justificante profesional de la matriculación de %{owner}
@@ -398,7 +398,7 @@ es:
   You will be notified by email as soon as we send you the Tax receipt and complementary documentation: Le comunicaremos el número de matrícula y podrá descargarse la documentación transitoria.
   We will let you know when the final documentation is ready: Le entregaremos la documentación original en su concesionario y se lo comunicaremos por email, todo en el plazo aproximado de 24 horas.
   You can come back to this page at any moment to check the status of your Order: Puede volver en cualquier momento a esta página a comprobar el estado de su pedido
-  Please, do not hesitate to contact us for any further question at 900000000: Para cualquier duda, no dude en llamar al 900.000.000
+  Please, do not hesitate to contact us for any further question at: Para cualquier duda, no dude en llamar al %{phone}
   Welcome: Bienvenido, %{user}
   You have these orders: Tiene %{orders} pedido(s)
   Order nr: Pedido id %{nr}
@@ -406,7 +406,7 @@ es:
   Pending authorization: Autorización pendiente
   Authorization delivered: Autorización en concensionario
   Waiting for Plaking number: Autorización recogida - Esperando matrícula
-  Temporary Plaking number get: Matrícula temporal obtenida
+  Temporary Plaking number get: Matrícula definitiva obtenida - Documentación transitoria
   Original documentation get: Documentación original enviada
   Original documentation delivered: Finalizado - Documentación original entregada
   Download temporary documentation: Descargar documentación transitoria

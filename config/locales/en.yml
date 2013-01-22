@@ -201,11 +201,12 @@ en:
   You will be notified by email as soon as we send you the Tax receipt and complementary documentation:
   We will let you know when the final documentation is ready:
   You can come back to this page at any moment to check the status of your Order:
-  Please, do not hesitate to contact us for any further question at 900.000.000:
+  Please, do not hesitate to contact us for any further question at:
   Welcome: Welcome, %{user}
   You have these orders: You have %{orders} order(s)
   Order nr: Order id %{nr}
   Edit Order: Edit order
+  Documentation sent: Documentation sent
   Pending authorization: Pending authorization
   Authorization delivered: Authorization delivered
   Waiting for Plaking number: Waiting for Plaking number
