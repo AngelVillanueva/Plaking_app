@@ -103,6 +103,9 @@ span.rep {
     color: grey;
 }
 input[type="file"] { display:block; }
+// preparing js for the file input
+.attachment, #order_clip { display: none;}
+#order_clip + input { display: block;}
 
 /* Media Queries
 ====================================================================== */
