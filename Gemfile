@@ -11,7 +11,9 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'routing-filter' # to prepend locale to url; other uses (pagination, extension, uuid,...)
 gem 'nifval' #nifcif validation
-gem "paperclip", "~> 3.0"
+gem 'paperclip', "~> 3.0"
+gem 'delayed_job_active_record'
+gem 'daemons'
 
 # Locale app
 # gem 'localeapp' # issues with pull-push in dev mode
