@@ -5,6 +5,9 @@
 		  <%= f.select :status_id, @statuses %>
 		  <% if admin_user? %>
 		  	<p class="attachment"><%= t("Attach documentation") %></p>
+        <% if @order.clip_file_name %>
+          <p class="attachment">(<%= t("Current documentation") %>: <%= @order.clip_file_name %>)</p>
+        <% end %>
         <%= f.file_field :clip %>
         <%= f.input :shop_email, label: t("Shop email1"), hint: t("Shop email2"), :wrapper_html => { :class => 'attachment' } %>
       <% end %>
