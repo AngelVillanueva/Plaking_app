@@ -25,7 +25,7 @@
                 <% if @order.clip_file_name %>
                   <br><%= t("email.status_changed.attachment") %>
                 <% end %>
-                <br><%= link_to t("email.status_changed.link", link: @url), @url %>
+                <br><br><%= link_to t("email.status_changed.link", link: @url), @url %>
                 <br><br><br><strong><%= t("Next steps") %></strong>
                 <ol>
                   <% if @order.status.id <= 1 %>

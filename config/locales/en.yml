@@ -199,6 +199,7 @@ en:
   Shop email subject: New temporary documentation
   Shop email body: Please find attached a temporary documentation for
   The current status of your order is: The current status of your order is
+  Current documentation:
   Next steps:
   Please:
   download the attached documents: download the attached documents
@@ -225,6 +226,17 @@ en:
   Follow on Twitter: FOLLOW ON TWITTER
   Friend on Facebook: FRIEND ON FACEBOOK
   Friend on Google+: FRIEND ON GOOGLE+
+  Sign in: Sign in
+  New user?: New user?
+  Sign up now!: Sign up now!
+  Password: Password
+  New User: New User
+  Create new User: Create new User
+  Already an account?: Already an account?
+  Sign in here!: Sign in here!
+  The new user was created successfully: The new user was created successfully
+  Error saving the user: Error saving the user
+  The User was updated successfully: The User was updated successfully
   email:
     welcome:
       subject: New order at Matricula El Coche

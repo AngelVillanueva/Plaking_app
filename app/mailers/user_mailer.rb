@@ -69,7 +69,7 @@ class UserMailer < ActionMailer::Base
     I18n.locale = locale
     # view variables
     @order = order
-    if @order.owner = "Business"
+    if @order.owner == "Business"
       @owner = order.registered_name
     else
       @owner = order.first_name << ' ' << order.last_name

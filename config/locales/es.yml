@@ -252,9 +252,12 @@ es:
         number_cylinders: Número de cilindros
       user:
         email: Email
-        name: Name
-        password: Password
-        password_confirmation: Password confirmation
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirme la contraseña
+      session:
+        email: Email
+        password: Contraseña
   Home: Inicio
   My Account: Mi cuenta
   Sign out: Desconectarse
@@ -393,6 +396,7 @@ es:
   Shop email subject: Nuevo justificante profesional
   Shop email body: Adjuntamos justificante profesional de la matriculación del cliente
   The current status of your order is: El estado actual de su pedido es
+  Current documentation: Ahora existe ya un archivo de justificante profesional
   Next steps: Próximos pasos
   Please: Por favor
   download the attached documents: descargue los documentos adjuntos
@@ -418,6 +422,17 @@ es:
   Follow on Twitter: ENVIAR A TWITTER
   Friend on Facebook: ENVIAR A FACEBOOK
   Friend on Google+: ENVIAR A GOOGLE+
+  Sign in: Acceso
+  New user?: ¿Nuevo usuario?
+  Sign up now!: ¡Regístrese ahora!
+  Password: Contraseña
+  New User: Nuevo usuario
+  Create new User: Crear nuevo usuario
+  Already an account?: ¿Ya tiene una cuenta?
+  Sign in here!: ¡Acceda aquí!
+  The new user was created successfully: El nuevo usuario se creó correctamente
+  Error saving the user: Error guardando al usuario
+  The User was updated successfully: El usuario se actualizó correctamente
   email:
     welcome:
       subject: Nuevo pedido en Matricula El Coche
@@ -434,7 +449,7 @@ es:
       greeting: Estimado/a %{user}
       header: El pedido nr. %{id} ha sido editado para cambiar el Status
       new_status: El nuevo Status es
-      link: Puede comprobar el status de su pedido en cualquier momento aquí
+      link: Recuerde que puede comprobar el status de su pedido en cualquier momento aquí
       attachment: Se adjunta la documentación de matrícula transitoria en espera del original
     admin_status_changed:
       subject: Cambió el Status del pedido nr. %{id}

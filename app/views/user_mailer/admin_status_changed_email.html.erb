@@ -22,7 +22,7 @@
                 <%= t("email.admin_status_changed.body", id: @order.id) %>:
                 <br />
                 <%= t("email.admin_status_changed.new_status") %> <strong><%= t(@order.status.name) %></strong>
-                <br />
+                <br /><br />
                 <%= link_to t("email.admin_status_changed.link"), @url %>
             </td>
 
