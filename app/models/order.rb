@@ -29,7 +29,7 @@
 #
 
 class Order < ActiveRecord::Base
-  attr_accessible :owner, :registered_name, :cif, :first_name, :last_name, :gender, :nif, :address, :email, :phone_number, :shop, :shop_salesman, :shop_phone, :status_id, :clip
+  attr_accessible :owner, :registered_name, :cif, :first_name, :last_name, :gender, :nif, :address, :email, :phone_number, :shop, :shop_salesman, :shop_phone, :status_id, :clip, :shop_email
   has_attached_file :clip
   belongs_to :quote
   belongs_to :status
@@ -41,6 +41,8 @@ class Order < ActiveRecord::Base
   validates :registered_name, presence: true, if: :business_owner?
   validates :cif, presence: true, if: :business_owner?
   validates :cif, nif: true, if: :business_owner?
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :shop_email, allow_blank: true, format: {with: VALID_EMAIL_REGEX}
   
   private
   def business_owner?

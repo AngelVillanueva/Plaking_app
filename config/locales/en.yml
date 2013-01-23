@@ -191,6 +191,13 @@ en:
   Edit: Edit
   Delete: Delete
   Attach documentation: Attach documentation
+  Why this email?: Why this email?
+  Write us and you will know: Write us and you will know
+  A new temporary documentation from Matricula El Coche: A new temporary documentation from Matricula El Coche
+  Shop email1: Shop email (optional).
+  Shop email2: If entered, the Shop will receive a copy of the temporary documentation
+  Shop email subject: New temporary documentation
+  Shop email body: Please find attached a temporary documentation for
   The current status of your order is: The current status of your order is
   Next steps:
   Please:
@@ -200,6 +207,7 @@ en:
   We will handle the Tax in your behalf:
   You will be notified by email as soon as we send you the Tax receipt and complementary documentation:
   We will let you know when the final documentation is ready:
+  Please, take your final documentation from the Shop:
   You can come back to this page at any moment to check the status of your Order:
   Please, do not hesitate to contact us for any further question at:
   Welcome: Welcome, %{user}
@@ -214,6 +222,9 @@ en:
   Original documentation get: Original documentation get
   Original documentation delivered: Original documentation delivered
   Download temporary documentation: Download temporary documentation
+  Follow on Twitter: FOLLOW ON TWITTER
+  Friend on Facebook: FRIEND ON FACEBOOK
+  Friend on Google+: FRIEND ON GOOGLE+
   email:
     welcome:
       subject: New order at Matricula El Coche

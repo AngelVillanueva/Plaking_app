@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><%= t("email.admin_new_order.subject") %></title>
+    <title><%= t("Shop email subject") %></title>
     <%= render 'email_inline_style' %>
   </head>
   <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
@@ -11,17 +11,17 @@
       <tr>
         <td align="center" valign="top">        
           <%=  render partial: 'email_preheader', locals: {
-            b1: '',
-            b2: ''} %>
+            b1: t("Why this email?"),
+            b2: t("Write us and you will know")} %>
           
           <!-- // BEGIN CONTAINER -->
           <%= render partial: 'email_container_1', locals: {
-            subject: t("email.admin_new_order.subject")} %>
+            subject: t("Shop email subject")} %>
 
             <td valign="top" class="bodyContent">
-                <%= t("email.admin_new_order.new_order", id: @order.id) %>:
+                <%= t("Shop email body") %>:
                 <br />
-                <%= link_to t("email.admin_new_order.link", link: @url), orders_url %>
+                <strong><%= @owner %></strong>
             </td>
 
           <%= render partial: 'email_container_2', locals: {

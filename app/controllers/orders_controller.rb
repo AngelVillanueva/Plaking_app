@@ -27,9 +27,9 @@ class OrdersController < ApplicationController
     
     if @order.save
       #send email to the user
-      UserMailer.welcome_email(@order).deliver
+      UserMailer.delay.welcome_email(@order)
       #send email to admin users
-      UserMailer.admin_new_order_email(@order).deliver
+      UserMailer.delay.admin_new_order_email(@order)
       #final redirect
       redirect_to @order, notice: I18n.t("Thanks for your Order")
     else
@@ -46,9 +46,13 @@ class OrdersController < ApplicationController
     
     if @order.update_attributes(params[:order])
       #send email to the user
-      UserMailer.status_changed_email(@order).deliver
+      UserMailer.delay.status_changed_email(@order)
       #send email to admin users
-      UserMailer.admin_status_changed_email(@order).deliver
+      UserMailer.delay.admin_status_changed_email(@order)
+      #send email to Shop if the email is informed
+      if @order.shop_email
+        UserMailer.delay.shop_email(@order, I18n.locale)
+      end
       #final redirect
       redirect_to @order, notice: I18n.t("The order was updated with the new status")
     else

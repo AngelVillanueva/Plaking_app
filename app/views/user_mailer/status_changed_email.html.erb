@@ -1,15 +1,60 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><%= t("email.admin_status_changed.subject", id: @order.id) %></title>
+    <%= render 'email_inline_style' %>
   </head>
-  <body>
-    <p><%= t("email.status_changed.greeting", user: @user.name) %>:</p>
-    <p><%= t("email.status_changed.header", id: @order.id) %>:</p>
-    <p><%= t("email.status_changed.new_status") %> <strong><%= t(@order.status.name) %></strong></p>
-    <% if @order.clip_file_name %>
-      <p><%= t("email.status_changed.attachment") %></p>
-    <% end %>
-    <p><%= link_to t("email.status_changed.link", link: @url), @url %></p>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <tr>
+        <td align="center" valign="top">        
+          <%=  render partial: 'email_preheader', locals: {
+            b1: t("Why this email?"),
+            b2: t("Write us and you will know")} %>
+          
+          <!-- // BEGIN CONTAINER -->
+          <%= render partial: 'email_container_1', locals: {
+            subject: t("email.admin_status_changed.subject", id: @order.id)} %>
+
+            <td valign="top" class="bodyContent">
+                <%= t("email.status_changed.greeting", user: @order.first_name) %>:
+                <br><%= t("email.status_changed.header", id: @order.id) %>
+                <br><%= t("email.status_changed.new_status") %> <strong><%= t(@order.status.name) %></strong>
+                <% if @order.clip_file_name %>
+                  <br><%= t("email.status_changed.attachment") %>
+                <% end %>
+                <br><%= link_to t("email.status_changed.link", link: @url), @url %>
+                <br><br><br><strong><%= t("Next steps") %></strong>
+                <ol>
+                  <% if @order.status.id <= 1 %>
+                    <li><%= t("Please") %> <%= link_to(t("download the attached documents"), yield(:pdf_order_path), target: "_blank") %> <%= t("and send them back to us once signed") %></li>
+                  <% end %>
+                  <% if @order.status.id <= 2 %>
+                    <li><%= t("You will be notified by email as soon as we receive the documentation") %></li>
+                  <% end %>
+                  <% if @order.status.id <= 3 %>
+                    <li><%= t("We will handle the Tax in your behalf") %></li>
+                    <li><%= t("You will be notified by email as soon as we send you the Tax receipt and complementary documentation") %></li>
+                  <% end %>
+                  <% if @order.status.id <= 4 %>
+                    <li><%= t("We will let you know when the final documentation is ready") %></li>
+                  <% end %>
+                    <li><%= t("Please, take your final documentation from the Shop") %>
+                </ol>
+            </td>
+
+          <%= render partial: 'email_container_2', locals: {
+            c1: t("Follow on Twitter"),
+            c2: t("Friend on Facebook"),
+            c3: t("Friend on Google+")
+          } %>
+
+          <!-- END CONTAINER \\ -->
+        </td>
+      </tr>
+    </table>
+    </center>
   </body>
 </html>

@@ -385,9 +385,13 @@ es:
   Edit: Editar
   Delete: Borrar
   Attach documentation: Adjuntar justificante profesional (PDF)
+  Why this email?: ¿Por qué recibo este email?
+  Write us and you will know: Escríbanos si tiene alguna duda
+  A new temporary documentation from Matricula El Coche: Un nuevo justificante profesional de Matricula El Coche
   Shop email1: Email del concesionario (opcional).
   Shop email2: Si se introduce el email el concesionario recibirá una copia del justificante profesional
-  Shop email body: Adjuntamos justificante profesional de la matriculación de %{owner}
+  Shop email subject: Nuevo justificante profesional
+  Shop email body: Adjuntamos justificante profesional de la matriculación del cliente
   The current status of your order is: El estado actual de su pedido es
   Next steps: Próximos pasos
   Please: Por favor
@@ -397,6 +401,7 @@ es:
   We will handle the Tax in your behalf: Procederemos a realizar los trámites de matriculación en su nombre en un plazo de 24 horas
   You will be notified by email as soon as we send you the Tax receipt and complementary documentation: Le comunicaremos el número de matrícula y podrá descargarse la documentación transitoria.
   We will let you know when the final documentation is ready: Le entregaremos la documentación original en su concesionario y se lo comunicaremos por email, todo en el plazo aproximado de 24 horas.
+  Please, take your final documentation from the Shop: Por favor, recoja la documentación definitiva del concesionario.
   You can come back to this page at any moment to check the status of your Order: Puede volver en cualquier momento a esta página a comprobar el estado de su pedido
   Please, do not hesitate to contact us for any further question at: Para cualquier duda, no dude en llamar al %{phone}
   Welcome: Bienvenido, %{user}
@@ -404,12 +409,15 @@ es:
   Order nr: Pedido id %{nr}
   Edit Order: Editar pedido
   Pending authorization: Autorización pendiente
-  Authorization delivered: Autorización en concensionario
+  Authorization delivered: Autorización en concesionario
   Waiting for Plaking number: Autorización recogida - Esperando matrícula
   Temporary Plaking number get: Matrícula definitiva obtenida - Documentación transitoria
   Original documentation get: Documentación original enviada
   Original documentation delivered: Finalizado - Documentación original entregada
   Download temporary documentation: Descargar documentación transitoria
+  Follow on Twitter: ENVIAR A TWITTER
+  Friend on Facebook: ENVIAR A FACEBOOK
+  Friend on Google+: ENVIAR A GOOGLE+
   email:
     welcome:
       subject: Nuevo pedido en Matricula El Coche

@@ -106,6 +106,7 @@ Scenario: Admin user can change the Order status without restrictions
   When I am in the Edit Order page as an Admin
   Then my options to change the Order status should not be restricted
     And I should be able to upload a Clip
+    And I should be able to enter the Shop email
   
 Scenario: a user cannot edit other user's order
   Given I am a logged common user

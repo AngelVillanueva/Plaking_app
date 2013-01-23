@@ -38,6 +38,9 @@
   <% if @order.status.id <= 4 %>
 <li><%= t("We will let you know when the final documentation is ready") %></li>
   <% end %>
+  <% if @order.status.id == 5 %>
+<li><%= t("Please, take your final documentation from the Shop") %></li>
+  <% end %>
 <li><%= t("You can come back to this page at any moment to check the status of your Order") %></li>
 </ol>
 

@@ -9,6 +9,9 @@
 .t-right {
     text-align: right;
 }
+.block {
+    display: block;
+}
 
 /* HEADER 
 =========== */
@@ -103,9 +106,11 @@ span.rep {
     color: grey;
 }
 input[type="file"] { display:block; }
+.edit-status select, .edit-status input[type=file] {
+    margin-bottom: 20px;
+}
 // preparing js for the file input
 .attachment, #order_clip { display: none;}
-#order_clip + input { display: block;}
 
 /* Media Queries
 ====================================================================== */

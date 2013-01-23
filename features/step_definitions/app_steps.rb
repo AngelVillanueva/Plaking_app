@@ -350,6 +350,21 @@ When /^I change the status of an Order$/ do
   step 'I click "Update Order"'
   step 'I should see "The order was updated with the new status"'
 end
+
+When /^I go to change the status of an Order$/ do
+  order = FactoryGirl.create(:order)
+  FactoryGirl.create(:status, name: "Documentation sent")
+  visit edit_order_path(order)
+end
+
+When /^I enter the Shop email$/ do
+  step 'I select "Documentation sent" as "Status"'
+  attach_file 'order_clip', 'features/resources/empty.file' 
+  step 'I fill "shop@example.com" in "order_shop_email"'
+  step 'I click "Update Order"'
+  step 'I should see "The order was updated with the new status"'
+end
+
 ## Then
 Then /^I should see "(.*?)"$/ do |text_message|
   page.should have_content text_message
@@ -578,6 +593,10 @@ Then /^I should not be able to upload a Clip$/ do
   page.should_not have_selector('input[type=file]')
 end
 
+Then /^I should be able to enter the Shop email$/ do
+  page.should have_selector('#order_shop_email')
+end
+
 Then /^I should receive an email with the order summary$/ do
   step '"common@ex.com" should receive an email'
   step 'I open the email'
@@ -609,6 +628,13 @@ Then /^the Admin users should receive an email with the new status$/ do
   step 'I should see "Status changed for Order nr. 1" in the email subject'
   step 'I should see "The Order nr. 1 has been edited to change its Status" in the email body'
   step 'I should see "New status is <strong>Documentation sent</strong>" in the email body'
+end
+
+Then /^the Shop should receive an email with the temporary documentation$/ do
+  step '"shop@example.com" should receive an email'
+  step 'I open the email'
+  step 'I should see "New temporary documentation" in the email subject'
+  step 'I should see "Please find attached a temporary documentation for" in the email body'
 end
 
 

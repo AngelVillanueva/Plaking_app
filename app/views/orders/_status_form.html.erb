@@ -1,14 +1,15 @@
 <div class="row">
 	<div class="span6 offset4">
-		<%= simple_form_for(@order, html: {class: 'form-vertical'}) do |f| %>
+		<%= simple_form_for(@order, html: {class: 'form-vertical edit-status'}) do |f| %>
 		  <%= f.label :status_id %>
 		  <%= f.select :status_id, @statuses %>
 		  <% if admin_user? %>
 		  	<p class="attachment"><%= t("Attach documentation") %></p>
         <%= f.file_field :clip %>
+        <%= f.input :shop_email, label: t("Shop email1"), hint: t("Shop email2"), :wrapper_html => { :class => 'attachment' } %>
       <% end %>
 
-		  <%= f.button :submit, class: 'btn btn-primary' %>
+		  <%= f.button :submit, class: 'btn btn-primary block' %>
 		
 		<% end %>
 	</div>
